@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Common Grounds - Graha Famili Surabaya. Kedai kopi modern dengan view taman golf, menu western, bakery, dan suasana cozy. Tempat nongkrong favorit di Graha Famili.">
+    <meta name="keywords" content="Common Grounds, Cafe Surabaya, Kopi Graha Famili, Cafe Golf View, Nongkrong Surabaya, Western Food Surabaya">
+    <meta name="author" content="Amantrana">
+    <meta name="theme-color" content="#6F4E37">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://commongrounds-grahafamili.com/">
+    <meta property="og:title" content="Common Grounds - Graha Famili | Coffee & Dining">
+    <meta property="og:description" content="Pengalaman ngopi dan bersantai dengan view taman golf yang asri di Surabaya Barat.">
+    <meta property="og:image" content="https://picsum.photos/seed/coffeehero/1200/630">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Common Grounds - Graha Famili">
+    <meta property="twitter:description" content="Kedai kopi modern dengan view taman golf di Graha Famili, Surabaya.">
+    <meta property="twitter:image" content="https://picsum.photos/seed/coffeehero/1200/630">
+
+    <title>Common Grounds - Graha Famili | Coffee & Dining</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        coffee: {
+                            50: '#f7f3f0',
+                            100: '#efe6e0',
+                            200: '#e2cdc2',
+                            300: '#d0b0a0',
+                            400: '#bb8c76',
+                            500: '#a6765d', // adjusted for better contrast
+                            600: '#8B6F4E',
+                            700: '#6F4E37',
+                            800: '#5a3e2d',
+                            900: '#4a3325',
+                        },
+                        cream: {
+                            100: '#FFF8DC',
+                            200: '#F5F5DC',
+                        },
+                        nature: {
+                            500: '#2D5A27',
+                            600: '#244a1f',
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://picsum.photos/seed/golfview/1920/1080')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6F4E37;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8B6F4E;
+        }
+
+        /* Loading Animation */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #FFF8DC;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        .dark #loader {
+            background: #1f2937;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #6F4E37;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            animation: rotation 1s linear infinite;
+        }
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Scroll Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Text Shadow */
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        /* Popular Times Bar Animation */
+        .busy-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #2D5A27, #4ade80);
+            border-radius: 4px;
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Menu Card Hover */
+        .menu-card:hover .menu-img {
+            transform: scale(1.1);
+        }
+    </style>
+
+    <!-- Schema.org LocalBusiness Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "Common Grounds - Graha Famili",
+      "image": "https://picsum.photos/seed/commongrounds/1200/600",
+      "telephone": "0811-384-729",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Raya Golf Graha Famili Bundaran Blok I",
+        "addressLocality": "Pradahkalikendal, Kec. Dukuhpakis",
+        "addressRegion": "Jawa Timur",
+        "postalCode": "60226",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -7.275, 
+        "longitude": 112.665 
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "07:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "06:00",
+          "closes": "21:00"
+        }
+      ],
+      "priceRange": "Rp 50.000 - Rp 150.000",
+      "servesCuisine": "Western, Bakery, Coffee"
+    }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-cream-100 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="text-center">
+            <div class="spinner mx-auto mb-4"></div>
+            <p class="text-coffee-700 dark:text-coffee-300 font-semibold tracking-widest">COMMON GROUNDS</p>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header id="header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-cream-100/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center gap-2 group">
+                        <i class="fa-solid fa-mug-hot text-3xl text-coffee-700 dark:text-coffee-500 group-hover:rotate-12 transition-transform"></i>
+                        <div class="flex flex-col">
+                            <span class="font-bold text-xl leading-none text-coffee-800 dark:text-cream-100 tracking-wide">COMMON GROUNDS</span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 font-medium tracking-widest">GRAHA FAMILI</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 dark:text-gray-200 hover:text-coffee-600 dark:hover:text-coffee-400 font-medium transition">Home</a>
+                    <a href="#about" class="text-gray-700 dark:text-gray-200 hover:text-coffee-600 dark:hover:text-coffee-400 font-medium transition">About</a>
+                    <a href="#info" class="text-gray-700 dark:text-gray-200 hover:text-coffee-600 dark:hover:text-coffee-400 font-medium transition">Info</a>
+                    <a href="#menu" class="text-gray-700 dark:text-gray-200 hover:text-coffee-600 dark:hover:text-coffee-400 font-medium transition">Menu</a>
+                    <a href="#gallery" class="text-gray-700 dark:text-gray-200 hover:text-coffee-600 dark:hover:text-coffee-400 font-medium transition">Gallery</a>
+                    <a href="#reviews" class="text-gray-700 dark:text-gray-200 hover:text-coffee-600 dark:hover:text-coffee-400 font-medium transition">Reviews</a>
+                </nav>
+
+                <!-- Right Side Actions -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition focus:outline-none" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon text-gray-600 dark:text-yellow-300 text-lg"></i>
+                    </button>
+                    <!-- WhatsApp Button -->
+                    <a href="https://wa.me/+62811384729" target="_blank" class="bg-nature-500 hover:bg-nature-600 text-white px-5 py-2 rounded-full font-medium transition flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-4">
+                     <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition focus:outline-none">
+                        <i class="fas fa-moon text-gray-600 dark:text-yellow-300 text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-700 dark:text-gray-200 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream-100 dark:bg-gray-900 border-t dark:border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-coffee-600 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">Home</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-coffee-600 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">About</a>
+                <a href="#info" class="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-coffee-600 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">Info</a>
+                <a href="#menu" class="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-coffee-600 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">Menu</a>
+                <a href="#gallery" class="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-coffee-600 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">Gallery</a>
+                <a href="#reviews" class="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-coffee-600 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">Reviews</a>
+                <a href="https://wa.me/+62811384729" class="block px-3 py-2 text-base font-medium text-nature-600 hover:bg-green-50 dark:hover:bg-gray-800 rounded-md">
+                    <i class="fab fa-whatsapp mr-2"></i>Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://picsum.photos/seed/golfcafe/1920/1080" alt="Common Grounds Interior" class="w-full h-full object-cover object-center" loading="eager">
+                <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-coffee-900/80"></div>
+            </div>
+
+            <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16 reveal">
+                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6 shadow-lg">
+                    <span class="flex text-yellow-400 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </span>
+                    <span>4.5 (969 Reviews)</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 text-shadow tracking-tight">
+                    Common Grounds
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-light text-cream-100 mb-8 text-shadow">
+                    Graha Famili, Surabaya
+                </h2>
+                <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                    Your perfect coffee & dining destination with a stunning golf course view. Cozy, relaxing, and delicious.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#menu" class="px-8 py-4 bg-coffee-600 hover:bg-coffee-700 text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition transform hover:-translate-y-1">
+                        Lihat Menu
+                    </a>
+                    <a href="https://wa.me/+62811384729" class="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-coffee-800 rounded-full font-bold text-lg shadow-lg transition transform hover:-translate-y-1">
+                        <i class="fab fa-whatsapp mr-2"></i> Reservasi
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/80 z-10">
+                <a href="#about" aria-label="Scroll Down">
+                    <i class="fas fa-chevron-down text-3xl"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Image -->
+                    <div class="relative reveal">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-nature-500/20 rounded-full z-0"></div>
+                        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-coffee-500/20 rounded-full z-0"></div>
+                        <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
+                            <img src="https://picsum.photos/seed/coffeeshopinterior/800/600" alt="Interior Common Grounds" class="w-full h-auto object-cover transform hover:scale-105 transition duration-700">
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="reveal">
+                        <h3 class="text-nature-600 dark:text-nature-400 font-bold uppercase tracking-wider mb-2">Tentang Kami</h3>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">More Than Just Coffee</h2>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                            Common Grounds adalah kedai kopi modern yang berlokasi strategis di area Golf Graha Famili, Surabaya. Menawarkan pengalaman ngopi dan bersantai dengan view taman golf yang asri, tempat ini menjadi destinasi favorit untuk nongkrong anak muda maupun keluarga.
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                            Dengan konsep cozy dan relaxing, kami menyajikan berbagai menu western, bakery, dan minuman kopi berkualitas dengan harga terjangkau. Dine-in atau takeaway, kami siap melayani Anda.
+                        </p>
+
+                        <!-- Highlights -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+                            <div class="text-center p-4 bg-cream-100 dark:bg-gray-700 rounded-xl">
+                                <i class="fas fa-tree text-3xl text-nature-600 mb-3"></i>
+                                <h4 class="font-bold text-gray-800 dark:text-white">Golf View</h4>
+                            </div>
+                            <div class="text-center p-4 bg-cream-100 dark:bg-gray-700 rounded-xl">
+                                <i class="fas fa-couch text-3xl text-coffee-600 mb-3"></i>
+                                <h4 class="font-bold text-gray-800 dark:text-white">Cozy Space</h4>
+                            </div>
+                            <div class="text-center p-4 bg-cream-100 dark:bg-gray-700 rounded-xl">
+                                <i class="fas fa-utensils text-3xl text-red-500 mb-3"></i>
+                                <h4 class="font-bold text-gray-800 dark:text-white">Tasty Food</h4>
+                            </div>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="flex border-t border-gray-200 dark:border-gray-700 pt-6 gap-8">
+                            <div>
+                                <span class="block text-3xl font-bold text-coffee-700 dark:text-coffee-400">5+</span>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">Years Service</span>
+                            </div>
+                            <div>
+                                <span class="block text-3xl font-bold text-coffee-700 dark:text-coffee-400">10k+</span>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">Happy Customers</span>
+                            </div>
+                            <div>
+                                <span class="block text-3xl font-bold text-coffee-700 dark:text-coffee-400">50+</span>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">Menu Items</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Section (Hours, Facilities, Map) -->
+        <section id="info" class="py-20 bg-cream-100 dark:bg-gray-900 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Informasi & Lokasi</h2>
+                    <p class="text-gray-600 dark:text-gray-400">Kunjungi kami untuk pengalaman terbaik</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Hours -->
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg reveal hover:-translate-y-2 transition duration-300">
+                        <div class="w-12 h-12 bg-coffee-100 dark:bg-coffee-900 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-clock text-coffee-600 dark:text-coffee-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-white">Jam Operasional</h3>
+                        <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                            <li class="flex justify-between"><span>Senin - Jumat</span> <span class="font-semibold">07:00 - 21:00</span></li>
+                            <li class="flex justify-between"><span>Sabtu</span> <span class="font-semibold">06:00 - 21:00</span></li>
+                            <li class="flex justify-between"><span>Minggu</span> <span class="font-semibold">06:00 - 21:00</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Facilities -->
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg reveal hover:-translate-y-2 transition duration-300" style="transition-delay: 100ms;">
+                        <div class="w-12 h-12 bg-nature-100 dark:bg-nature-900 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-concierge-bell text-nature-600 dark:text-nature-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-white">Fasilitas</h3>
+                        <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-nature-500"></i> Indoor & Outdoor Area</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-nature-500"></i> WiFi Gratis</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-nature-500"></i> Parkir Luas</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-nature-500"></i> Toilet Bersih</li>
+                        </ul>
+                    </div>
+
+                    <!-- Map (Simplified Visual) -->
+                    <div class="lg:col-span-2 bg-white dark:bg-gray-800 p-2 rounded-2xl shadow-lg reveal h-full min-h-[300px] flex flex-col" style="transition-delay: 200ms;">
+                         <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.764606688572!2d112.6634063147734!3d-7.275596994747637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbf8381ac47f%3A0x2d7f7f8b8b8b8b8b!2sCommon%20Grounds%20-%20Graha%20Famili!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; border-radius: 1rem;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            class="flex-grow">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Details Row -->
+                <div class="mt-8 flex flex-wrap justify-center gap-6 reveal">
+                    <div class="flex items-center gap-3 bg-white dark:bg-gray-800 px-6 py-3 rounded-full shadow">
+                        <i class="fas fa-map-marker-alt text-red-500"></i>
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Jl. Raya Golf Graha Famili, Surabaya</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white dark:bg-gray-800 px-6 py-3 rounded-full shadow">
+                        <i class="fas fa-phone-alt text-coffee-500"></i>
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">0811-384-729</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Menu Favorit</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8">Pilihan terbaik dari Barista dan Chef kami</p>
+                    
+                    <!-- Filter Buttons -->
+                    <div class="flex flex-wrap justify-center gap-4" id="menu-filters">
+                        <button class="filter-btn active px-6 py-2 rounded-full border-2 border-coffee-600 bg-coffee-600 text-white font-medium transition hover:shadow-lg" data-filter="all">Semua</button>
+                        <button class="filter-btn px-6 py-2 rounded-full border-2 border-gray-300 text-gray-600 dark:border-gray-600 dark:text-gray-300 font-medium hover:border-coffee-600 hover:text-coffee-600 transition" data-filter="food">Makanan Berat</button>
+                        <button class="filter-btn px-6 py-2 rounded-full border-2 border-gray-300 text-gray-600 dark:border-gray-600 dark:text-gray-300 font-medium hover:border-coffee-600 hover:text-coffee-600 transition" data-filter="bakery">Bakery & Pastry</button>
+                        <button class="filter-btn px-6 py-2 rounded-full border-2 border-gray-300 text-gray-600 dark:border-gray-600 dark:text-gray-300 font-medium hover:border-coffee-600 hover:text-coffee-600 transition" data-filter="drink">Minuman</button>
+                    </div>
+                </div>
+
+                <!-- Menu Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="menu-grid">
+                    <!-- Rendered by JS or Static below -->
+                    
+                    <!-- Item: OG Cheeseburger -->
+                    <div class="menu-item group bg-cream-50 dark:bg-gray-700 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 reveal" data-category="food">
+                        <div class="relative h-48 overflow-hidden menu-card">
+                            <img src="https://picsum.photos/seed/burger/400/300" alt="OG Cheeseburger" class="menu-img w-full h-full object-cover transition duration-500">
+                            <div class="absolute top-2 right-2 bg-white/90 dark:bg-gray-800/90 px-2 py-1 rounded-lg text-xs font-bold text-gray-800 dark:text-white shadow">Rp 85k</div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-1">OG Cheeseburger</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Burger klasik dengan daging sapi juicy, keju lumer, dan saus spesial.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item: Phil's Fried Chicken -->
+                    <div class="menu-item group bg-cream-50 dark:bg-gray-700 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 reveal" data-category="food">
+                        <div class="relative h-48 overflow-hidden menu-card">
+                            <img src="https://picsum.photos/seed/friedchicken/400/300" alt="Phil's Fried Chicken" class="menu-img w-full h-full object-cover transition duration-500">
+                            <div class="absolute top-2 right-2 bg-white/90 dark:bg-gray-800/90 px-2 py-1 rounded-lg text-xs font-bold text-gray-800 dark:text-white shadow">Rp 75k</div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-1">Phil's Fried Chicken</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Ayam goreng renyah dengan bumbu rempah rahasia dan sosis.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item: Fish and Chips -->
+                    <div class="menu-item group bg-cream-50 dark:bg-gray-700 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 reveal" data-category="food">
+                        <div class="relative h-48 overflow-hidden menu-card">
+                            <img src="https://picsum.photos/seed/fishnchips/400/300" alt="Fish and Chips" class="menu-img w-full h-full object-cover transition duration-500">
+                            <div class="absolute top-2 right-2 bg-white/90 dark:bg-gray-800/90 px-2 py-1 rounded-lg text-xs font-bold text-gray-800 dark:text-white shadow">Rp 80k</div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-1">Fish and Chips</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Ikan dory goreng tepung renyah disajikan dengan kentang goreng.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item: Chicken Avo Toast -->
+                    <div class="menu-item group bg-cream-50 dark:bg-gray-700 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 reveal" data-category="food">
+                        <div class="relative h-48 overflow-hidden menu-card">
+                            <img src="https://picsum.photos/seed/avotoast/400/300" alt="Chicken Avocado Toast" class="menu-img w-full h-full object-cover transition duration-500">
+                            <div class="absolute top-2 right-2 bg-white/90 dark:bg-gray-800/90 px-2 py-1 rounded-lg text-xs font-bold text-gray-800 dark:text-white shadow">Rp 70k</div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-1">Chicken Avocado Toast</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Roti panggang dengan alpukat mentega, ayam suwir, dan telur poached.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item: Choco Almond Croissant -->
+                    <div class="menu-item group bg-cream-50 dark:bg-gray-700 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 reveal" data-category="bakery">
+                        <div class="relative h-48 overflow-hidden menu-card">
+                            <img src="https://picsum.photos/seed/croissant/400/300" alt="Choco Almond Croissant" class="menu-img w-full h-full object-cover transition duration-500">
+                            <div class="absolute top-2 right-2 bg-white/90 dark:bg-gray-800/90 px-2 py-1 rounded-lg text-xs font-bold text-gray-800 dark:text-white shadow">Rp 45k</div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-1">Choco Almond Croissant</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Croissant mentega berlapis cokelat dan taburan almond panggang.</p>
+                        </div>
+                    </div>
+
+                     <!-- Item: Waffle -->
+                     <div class="menu-item group bg-cream-50 dark:bg-gray-700 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 reveal" data-category="bakery">
+                        <div class="relative h-48 overflow-hidden menu-card">
+                            <img src="https://picsum.photos/seed/waffle/400/300" alt="Waffle" class="menu-img w-full h-full object-cover transition duration-500">
+                            <div class="absolute top-2 right-2 bg-white/90 dark:bg-gray-800/90 px-2 py-1 rounded-lg text-xs font-bold text-gray-800 dark:text-white shadow">Rp 50k</div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-1">Belgian Waffle</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Waffle belgia lembut dengan topping madu, buah, dan es krim.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item: Cappuccino -->
+                    <div class="menu-item group bg-cream-50 dark:bg-gray-700 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 reveal" data-category="drink">
+                        <div class="relative h-48 overflow-hidden menu-card">
+                            <img src="https://picsum.photos/seed/cappuccino/400/300" alt="Cappuccino" class="menu-img w-full h-full object-cover transition duration-500">
+                            <div class="absolute top-2 right-2 bg-white/90 dark:bg-gray-800/90 px-2 py-1 rounded-lg text-xs font-bold text-gray-800 dark:text-white shadow">Rp 35k</div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-1">Cappuccino</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Espresso dengan susu steamed dan foam tebal yang creamy.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item: Cold Brew -->
+                    <div class="menu-item group bg-cream-50 dark:bg-gray-700 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 reveal" data-category="drink">
+                        <div class="relative h-48 overflow-hidden menu-card">
+                            <img src="https://picsum.photos/seed/coldbrew/400/300" alt="Cold Brew" class="menu-img w-full h-full object-cover transition duration-500">
+                            <div class="absolute top-2 right-2 bg-white/90 dark:bg-gray-800/90 px-2 py-1 rounded-lg text-xs font-bold text-gray-800 dark:text-white shadow">Rp 40k</div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-1">Cold Brew</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Kopi seduh dingin selama 12 jam, rasa halus dan rendah asam.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="https://wa.me/+62811384729?text=Halo,%20saya%20ingin%20melihat%20menu%20lengkapnya." class="inline-block border-2 border-coffee-600 text-coffee-600 dark:text-coffee-400 dark:border-coffee-400 px-8 py-3 rounded-full font-bold hover:bg-coffee-600 hover:text-white transition">
+                        Lihat Menu Lengkap via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-10 reveal">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">Galeri</h2>
+                        <p class="text-gray-600 dark:text-gray-400">Intip suasana dan hidangan kami</p>
+                    </div>
+                    <!-- Navigation Buttons -->
+                    <div class="flex gap-2">
+                        <button class="gallery-prev w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-coffee-600 hover:text-white hover:border-coffee-600 transition text-gray-600 dark:text-gray-300">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="gallery-next w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-coffee-600 hover:text-white hover:border-coffee-600 transition text-gray-600 dark:text-gray-300">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Swiper Gallery -->
+                <div class="swiper mySwiper reveal">
+                    <div class="swiper-wrapper pb-10">
+                        <div class="swiper-slide rounded-2xl overflow-hidden shadow-lg aspect-video">
+                            <img src="https://picsum.photos/seed/cafe1/800/450" alt="Gallery 1" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                        </div>
+                        <div class="swiper-slide rounded-2xl overflow-hidden shadow-lg aspect-video">
+                            <img src="https://picsum.photos/seed/cafe2/800/450" alt="Gallery 2" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                        </div>
+                        <div class="swiper-slide rounded-2xl overflow-hidden shadow-lg aspect-video">
+                            <img src="https://picsum.photos/seed/cafe3/800/450" alt="Gallery 3" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                        </div>
+                        <div class="swiper-slide rounded-2xl overflow-hidden shadow-lg aspect-video">
+                            <img src="https://picsum.photos/seed/food1/800/450" alt="Gallery 4" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                        </div>
+                        <div class="swiper-slide rounded-2xl overflow-hidden shadow-lg aspect-video">
+                            <img src="https://picsum.photos/seed/food2/800/450" alt="Gallery 5" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Times Section -->
+        <section class="py-16 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+            <div class="max-w-4xl mx-auto px-4 reveal">
+                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-6 text-center">Popular Times (Estimasi)</h3>
+                
+                <div class="space-y-4">
+                    <!-- Day Row -->
+                    <div class="flex items-center gap-4 text-sm">
+                        <div class="w-16 font-medium text-gray-600 dark:text-gray-300">Senin</div>
+                        <div class="flex-1 h-4 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden relative">
+                            <!-- Mock data: Busy at lunch and dinner -->
+                            <div class="busy-bar absolute top-0 h-full" style="left: 20%; width: 25%;"></div>
+                            <div class="busy-bar absolute top-0 h-full" style="left: 60%; width: 20%;"></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 text-sm">
+                        <div class="w-16 font-medium text-gray-600 dark:text-gray-300">Sabtu</div>
+                        <div class="flex-1 h-4 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden relative">
+                            <!-- Mock data: Very busy -->
+                            <div class="busy-bar absolute top-0 h-full" style="left: 10%; width: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 text-sm">
+                        <div class="w-16 font-medium text-gray-600 dark:text-gray-300">Minggu</div>
+                        <div class="flex-1 h-4 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden relative">
+                            <!-- Mock data: Breakfast busy -->
+                            <div class="busy-bar absolute top-0 h-full" style="left: 15%; width: 40%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4 text-center text-xs text-gray-500">
+                    *Grafik berdasarkan estimasi kebiasaan pengunjung. Waktu terbaik untuk datang: Weekdays pagi/sore.
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="py-20 bg-cream-100 dark:bg-gray-900 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Apa Kata Mereka?</h2>
+                    <div class="flex items-center justify-center gap-2">
+                        <div class="flex text-yellow-400 text-lg">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-600 dark:text-gray-400 font-bold">4.5/5.0</span>
+                        <span class="text-gray-500 text-sm">(969 Google Reviews)</span>
+                    </div>
+                </div>
+
+                <div class="swiper reviewsSwiper reveal">
+                    <div class="swiper-wrapper pb-12">
+                        
+                        <!-- Review 1 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg h-full flex flex-col">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn1BUm81t32TUPC2xQyizFOZl98nyA_wofiM5-x5bGxc9go6Sw9HqfSy_c_" alt="Sonia" class="w-12 h-12 rounded-full object-cover border-2 border-coffee-200">
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 dark:text-white">Sonia</h4>
+                                        <div class="text-yellow-400 text-xs">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed flex-grow">
+                                    "Kemarin lunch disini, enak banget puas. Kami pesan caesar salad dan chicken avo toast. Caesar salad cukup gede porsinya, dressingnya enak. Chicken avo toast nya gede bgt sih, kenyang banget. Viewnya juga bagus, cozy dan sejuk. Recommended banget!"
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Review 2 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg h-full flex flex-col">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn1MLP_jz-YWHmmyhYnBs2zFNjnEqvTOc_2haXklvYs6tFdRj3PqGH093L-" alt="Ryka Afhe Amela" class="w-12 h-12 rounded-full object-cover border-2 border-coffee-200">
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 dark:text-white">Ryka Afhe Amela</h4>
+                                        <div class="text-yellow-400 text-xs">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed flex-grow">
+                                    "Viewnyaaa bagus sekali, cozy dan sejuk. Makanan-minumannyaaa enak-enak, staff nya ramah dan toiletnya bersih. Tempatnya strategis, adem, dan nyaman. Bonus ada tupai di pohon lucu banget. Pasti bakal balik lagi!"
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Review 3 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg h-full flex flex-col">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn3Wj_mO6N0OuhTh-9XBE9HqkAyBURVxOzGX2XBc-YCVcsnbPCMlsznOVvXO6kDt_0wLCj63xqbF0wzkXgLIoSU_" alt="Grace Ongkowidjojo" class="w-12 h-12 rounded-full object-cover border-2 border-coffee-200">
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 dark:text-white">Grace Ongkowidjojo</h4>
+                                        <div class="text-yellow-400 text-xs">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed flex-grow">
+                                    "Solid food options, despite the limited menu selections. Menu western and bakery tersedia dengan kualitas yang baik. Tempatnya strategis di area golf, viewnya bagus. Cocok untuk lunch atau dinner santai."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Review 4 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg h-full flex flex-col">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 font-bold">R</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 dark:text-white">Reviewer</h4>
+                                        <div class="text-yellow-400 text-xs">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed flex-grow">
+                                    "Tempat nongkrong anak muda dengan view taman golf & gedung yang keren. Suasananya asik banget, ada indoor dan outdoor area. Makanannya enak-enak, terutama pastry dan kopinya. Harga juga masih terjangkau untuk kualitas segini."
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-coffee-700 text-white relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-10">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="pattern-circles" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+                            <circle cx="25" cy="25" r="20" fill="none" stroke="white" stroke-width="2"/>
+                        </pattern>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles)" />
+                </svg>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 text-center relative z-10 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Siap untuk Menikmati Kopi Terbaik?</h2>
+                <p class="text-xl text-coffee-100 mb-8">Kunjungi Common Grounds Graha Famili hari ini atau pesan dari rumah.</p>
+                
+                <a href="https://wa.me/+62811384729" class="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white text-xl font-bold px-10 py-4 rounded-full shadow-2xl hover:shadow-green-500/50 transition transform hover:-translate-y-1">
+                    <i class="fab fa-whatsapp text-3xl"></i>
+                    <span>Order via WhatsApp</span>
+                </a>
+                
+                <div class="mt-8 text-sm text-coffee-200">
+                    <p>Buka Setiap Hari: 06.00 - 21.00 WIB</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4 text-white">
+                        <i class="fa-solid fa-mug-hot text-2xl text-coffee-500"></i>
+                        <span class="font-bold text-xl tracking-wide">COMMON GROUNDS</span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-4">
+                        Kedai kopi modern di Graha Famili dengan view golf, hidangan western lezat, dan suasana cozy untuk keluarga dan teman.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="hover:text-coffee-500 transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-coffee-500 transition">Tentang Kami</a></li>
+                        <li><a href="#menu" class="hover:text-coffee-500 transition">Menu</a></li>
+                        <li><a href="#reviews" class="hover:text-coffee-500 transition">Ulasan</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Hubungi Kami</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-coffee-500"></i>
+                            <span>Jl. Raya Golf Graha Famili Bundaran Blok I, Surabaya</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-coffee-500"></i>
+                            <span>0811-384-729</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-gray-500">&copy; 2023 Common Grounds Graha Famili. All rights reserved.</p>
+                <p class="text-xs text-gray-500">Made by <span class="text-coffee-500 font-bold">Amantrana</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="fixed bottom-6 right-6 flex flex-col gap-4 z-40">
+        <!-- Back to Top -->
+        <button id="back-to-top" class="w-12 h-12 bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-coffee-600 hover:text-white focus:outline-none" aria-label="Back to Top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <!-- Floating WA -->
+        <a href="https://wa.me/+62811384729" target="_blank" class="w-14 h-14 bg-green-500 text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-green-600 hover:scale-110 transition duration-300 z-50" aria-label="Chat WhatsApp">
+            <i class="fab fa-whatsapp text-3xl"></i>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- 1. Loading Animation ---
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
+            }, 1000);
+
+            // --- 2. Dark Mode Toggle ---
+            const themeToggleBtns = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
+            const html = document.documentElement;
+            
+            // Check local storage or system preference
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+            } else {
+                html.classList.remove('dark');
+            }
+
+            themeToggleBtns.forEach(btn => {
+                if(btn) {
+                    btn.addEventListener('click', () => {
+                        html.classList.toggle('dark');
+                        const icon = btn.querySelector('i');
+                        if (html.classList.contains('dark')) {
+                            localStorage.theme = 'dark';
+                            icon.classList.remove('fa-moon');
+                            icon.classList.add('fa-sun');
+                        } else {
+                            localStorage.theme = 'light';
+                            icon.classList.remove('fa-sun');
+                            icon.classList.add('fa-moon');
+                        }
+                    });
+                }
+            });
+
+            // --- 3. Sticky Navigation & Back to Top ---
+            const header = document.getElementById('header');
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-md', 'py-0');
+                    header.classList.remove('py-2');
+                } else {
+                    header.classList.remove('shadow-md', 'py-0');
+                    header.classList.add('py-2');
+                }
+
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.remove('opacity-0', 'invisible');
+                    backToTopBtn.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopBtn.classList.add('opacity-0', 'invisible');
+                    backToTopBtn.classList.remove('opacity-100', 'visible');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // --- 4. Mobile Menu ---
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // --- 5. Scroll Animations (Intersection Observer) ---
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+
+            // --- 6. Menu Filtering ---
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const menuItems = document.querySelectorAll('.menu-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-coffee-600', 'text-white', 'border-coffee-600');
+                        b.classList.add('text-gray-600', 'border-gray-300', 'dark:text-gray-300', 'dark:border-gray-600');
+                    });
+                    // Add active to clicked
+                    btn.classList.remove('text-gray-600', 'border-gray-300', 'dark:text-gray-300', 'dark:border-gray-600');
+                    btn.classList.add('bg-coffee-600', 'text-white', 'border-coffee-600');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    menuItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                            setTimeout(() => item.style.opacity = '1', 50);
+                        } else {
+                            item.style.display = 'none';
+                            item.style.opacity = '0';
+                        }
+                    });
+                });
+            });
+
+            // --- 7. Swiper Initialization ---
+            
+            // Gallery Swiper
+            new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: ".gallery-next",
+                    prevEl: ".gallery-prev",
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                },
+            });
+
+            // Reviews Swiper
+            new Swiper(".reviewsSwiper", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                grabCursor: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 5000,
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                },
+            });
+        });
+    </script>
+</body>
+</html>

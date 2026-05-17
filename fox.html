@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fox Coffee & Roastery Jakarta | Kedai Kopi Terbaik</title>
+  <meta name="description" content="Kedai kopi modern di Jakarta Selatan dengan rating 4.9 bintang. Suasana cozy untuk WDH, meeting, atau nongkrong. Kopi premium & makanan enak harga terjangkau.">
+  <meta name="keywords" content="fox coffee, roastery jakarta, kedai kopi jakarta selatan, coffee shop, cafe jakarta, kopi terbaik">
+  <meta name="author" content="Fox Coffee & Roastery">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Fox Coffee & Roastery Jakarta | Kedai Kopi Terbaik">
+  <meta property="og:description" content="Kedai kopi modern dengan rating 4.9 bintang. Suasana cozy untuk WDH, meeting, atau nongkrong.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:image" content="https://picsum.photos/seed/foxcoffee-hero/1200/630.jpg">
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Fox Coffee & Roastery Jakarta",
+    "image": "https://picsum.photos/seed/foxcoffee-hero/1200/630.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Cidodol Raya No.40, RT.7/RW.6, Grogol Sel.",
+      "addressLocality": "Jakarta Selatan",
+      "addressRegion": "DKI Jakarta",
+      "postalCode": "12220",
+      "addressCountry": "ID"
+    },
+    "telephone": "+6289531522895",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00",
+      "closes": "00:00"
+    },
+    "priceRange": "Rp 25.000 - Rp 50.000",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "416"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            coffee: {
+              50: '#FDF8F4',
+              100: '#F5EDE4',
+              200: '#E8D5C0',
+              300: '#D4A574',
+              400: '#C08B52',
+              500: '#A0714A',
+              600: '#6F4E37',
+              700: '#5A3E2B',
+              800: '#4A3728',
+              900: '#3B2C20',
+              950: '#2A1D14',
+            },
+            cream: {
+              50: '#FFFDF7',
+              100: '#FDF8F0',
+              200: '#F5F0E8',
+              300: '#E8DFD0',
+              400: '#D4C9B5',
+            },
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Swiper.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Iconify -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .font-heading { font-family: 'Poppins', sans-serif; }
+
+    /* Scroll Animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+    .fade-up.delay-3 { transition-delay: 0.3s; }
+    .fade-up.delay-4 { transition-delay: 0.4s; }
+    .fade-up.delay-5 { transition-delay: 0.5s; }
+
+    /* Scroll Indicator */
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+    .scroll-indicator { animation: scrollBounce 2s ease-in-out infinite; }
+
+    /* Loading skeleton */
+    @keyframes shimmer {
+      0% { background-position: -400px 0; }
+      100% { background-position: 400px 0; }
+    }
+    .skeleton {
+      background: linear-gradient(90deg, #e5e5e5 25%, #f5f5f5 50%, #e5e5e5 75%);
+      background-size: 400px 100%;
+      animation: shimmer 1.5s infinite;
+    }
+    .dark .skeleton {
+      background: linear-gradient(90deg, #374151 25%, #4B5563 50%, #374151 75%);
+      background-size: 400px 100%;
+    }
+
+    /* Swiper custom */
+    .swiper-pagination-bullet-active {
+      background: #6F4E37 !important;
+    }
+    .dark .swiper-pagination-bullet-active {
+      background: #D4A574 !important;
+    }
+
+    /* Lightbox */
+    .lightbox-overlay {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .lightbox-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f5f0e8; }
+    ::-webkit-scrollbar-thumb { background: #6F4E37; border-radius: 4px; }
+    .dark ::-webkit-scrollbar-track { background: #1f2937; }
+    .dark ::-webkit-scrollbar-thumb { background: #D4A574; }
+
+    /* Menu tab active */
+    .menu-tab.active {
+      background-color: #6F4E37;
+      color: white;
+    }
+    .dark .menu-tab.active {
+      background-color: #D4A574;
+      color: #1f2937;
+    }
+
+    /* Noise texture overlay */
+    .noise-overlay::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body class="bg-cream-50 text-coffee-900 dark:bg-gray-950 dark:text-cream-200 transition-colors duration-300">
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
+      <div class="flex items-center justify-between py-4 md:py-5">
+        <!-- Logo -->
+        <a href="#beranda" class="flex items-center gap-2 group">
+          <div class="w-10 h-10 bg-coffee-600 dark:bg-coffee-300 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+            <iconify-icon icon="lucide:coffee" class="text-white dark:text-coffee-900 text-xl"></iconify-icon>
+          </div>
+          <div>
+            <span class="font-heading font-bold text-lg text-coffee-800 dark:text-cream-100 leading-none">Fox Coffee</span>
+            <span class="block text-[10px] font-medium text-coffee-500 dark:text-coffee-300 tracking-widest uppercase">& Roastery</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-8">
+          <a href="#beranda" class="text-sm font-medium text-coffee-700 dark:text-cream-300 hover:text-coffee-500 dark:hover:text-coffee-300 transition-colors">Beranda</a>
+          <a href="#tentang" class="text-sm font-medium text-coffee-700 dark:text-cream-300 hover:text-coffee-500 dark:hover:text-coffee-300 transition-colors">Tentang</a>
+          <a href="#menu" class="text-sm font-medium text-coffee-700 dark:text-cream-300 hover:text-coffee-500 dark:hover:text-coffee-300 transition-colors">Menu</a>
+          <a href="#galeri" class="text-sm font-medium text-coffee-700 dark:text-cream-300 hover:text-coffee-500 dark:hover:text-coffee-300 transition-colors">Galeri</a>
+          <a href="#ulasan" class="text-sm font-medium text-coffee-700 dark:text-cream-300 hover:text-coffee-500 dark:hover:text-coffee-300 transition-colors">Ulasan</a>
+          <a href="#lokasi" class="text-sm font-medium text-coffee-700 dark:text-cream-300 hover:text-coffee-500 dark:hover:text-coffee-300 transition-colors">Lokasi</a>
+        </div>
+
+        <!-- Right Actions -->
+        <div class="flex items-center gap-3">
+          <!-- Dark Mode Toggle -->
+          <button id="darkToggle" aria-label="Toggle dark mode" class="w-10 h-10 rounded-lg border border-coffee-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 flex items-center justify-center hover:bg-coffee-100 dark:hover:bg-gray-700 transition-colors">
+            <iconify-icon id="sunIcon" icon="lucide:sun" class="text-coffee-600 dark:text-coffee-300 text-lg hidden dark:block"></iconify-icon>
+            <iconify-icon id="moonIcon" icon="lucide:moon" class="text-coffee-600 dark:text-coffee-300 text-lg block dark:hidden"></iconify-icon>
+          </button>
+
+          <!-- CTA Desktop -->
+          <a href="https://wa.me/6289531522895" target="_blank" rel="noopener" class="hidden md:flex items-center gap-2 bg-coffee-600 dark:bg-coffee-300 text-white dark:text-coffee-900 px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-coffee-700 dark:hover:bg-coffee-200 transition-colors">
+            <iconify-icon icon="lucide:phone" class="text-base"></iconify-icon>
+            Hubungi Kami
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobileMenuBtn" aria-label="Toggle menu" class="lg:hidden w-10 h-10 rounded-lg border border-coffee-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 flex items-center justify-center hover:bg-coffee-100 dark:hover:bg-gray-700 transition-colors">
+            <iconify-icon icon="lucide:menu" class="text-coffee-700 dark:text-cream-200 text-lg" id="menuIcon"></iconify-icon>
+            <iconify-icon icon="lucide:x" class="text-coffee-700 dark:text-cream-200 text-lg hidden" id="closeIcon"></iconify-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="lg:hidden hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-coffee-100 dark:border-gray-800">
+      <div class="px-6 py-4 space-y-1">
+        <a href="#beranda" class="mobile-nav-link block py-3 px-4 rounded-lg text-coffee-700 dark:text-cream-300 hover:bg-coffee-100 dark:hover:bg-gray-800 font-medium transition-colors">Beranda</a>
+        <a href="#tentang" class="mobile-nav-link block py-3 px-4 rounded-lg text-coffee-700 dark:text-cream-300 hover:bg-coffee-100 dark:hover:bg-gray-800 font-medium transition-colors">Tentang</a>
+        <a href="#menu" class="mobile-nav-link block py-3 px-4 rounded-lg text-coffee-700 dark:text-cream-300 hover:bg-coffee-100 dark:hover:bg-gray-800 font-medium transition-colors">Menu</a>
+        <a href="#galeri" class="mobile-nav-link block py-3 px-4 rounded-lg text-coffee-700 dark:text-cream-300 hover:bg-coffee-100 dark:hover:bg-gray-800 font-medium transition-colors">Galeri</a>
+        <a href="#ulasan" class="mobile-nav-link block py-3 px-4 rounded-lg text-coffee-700 dark:text-cream-300 hover:bg-coffee-100 dark:hover:bg-gray-800 font-medium transition-colors">Ulasan</a>
+        <a href="#lokasi" class="mobile-nav-link block py-3 px-4 rounded-lg text-coffee-700 dark:text-cream-300 hover:bg-coffee-100 dark:hover:bg-gray-800 font-medium transition-colors">Lokasi</a>
+        <a href="https://wa.me/6289531522895" target="_blank" rel="noopener" class="block py-3 px-4 rounded-lg bg-coffee-600 dark:bg-coffee-300 text-white dark:text-coffee-900 font-semibold text-center mt-2">Hubungi via WhatsApp</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="beranda" class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://picsum.photos/seed/foxcoffee-hero/1920/1080.jpg" alt="Suasana Fox Coffee & Roastery Jakarta" class="w-full h-full object-cover" loading="eager">
+      <div class="absolute inset-0 bg-gradient-to-r from-coffee-950/90 via-coffee-900/70 to-coffee-900/50 dark:from-gray-950/95 dark:via-gray-950/80 dark:to-gray-950/60"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 mx-auto max-w-7xl px-6 md:px-12 lg:px-24 pt-24 pb-16 w-full">
+      <div class="max-w-2xl">
+        <!-- Badge -->
+        <div class="fade-up inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
+          <div class="flex items-center gap-1 text-yellow-400">
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <span class="text-sm font-semibold text-white">4.9</span>
+          </div>
+          <span class="text-white/70 text-sm">416 ulasan</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="fade-up delay-1 font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
+          Fox Coffee<br>
+          <span class="text-coffee-300">& Roastery</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="fade-up delay-2 mt-4 text-lg md:text-xl text-cream-300/80 font-light leading-relaxed max-w-lg">
+          Your Perfect Coffee Spot di Jakarta Selatan. Suasana cozy untuk WDH, meeting, atau sekadar nongkrong.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="fade-up delay-3 flex flex-wrap gap-4 mt-8">
+          <a href="#menu" class="inline-flex items-center gap-2 bg-coffee-300 hover:bg-coffee-200 text-coffee-900 px-7 py-3.5 rounded-lg font-semibold text-sm transition-colors">
+            <iconify-icon icon="lucide:book-open" class="text-lg"></iconify-icon>
+            Lihat Menu
+          </a>
+          <a href="https://wa.me/6289531522895" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-7 py-3.5 rounded-lg font-semibold text-sm transition-colors">
+            <iconify-icon icon="lucide:message-circle" class="text-lg"></iconify-icon>
+            Hubungi Kami
+          </a>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="fade-up delay-4 flex flex-wrap items-center gap-6 mt-10 text-white/60 text-sm">
+          <div class="flex items-center gap-2">
+            <iconify-icon icon="lucide:clock" class="text-coffee-300"></iconify-icon>
+            <span>Buka 09.00 - 00.00</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <iconify-icon icon="lucide:map-pin" class="text-coffee-300"></iconify-icon>
+            <span>Jakarta Selatan</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <iconify-icon icon="lucide:wallet" class="text-coffee-300"></iconify-icon>
+            <span>Rp 25K - 50K</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 scroll-indicator">
+      <a href="#tentang" aria-label="Scroll ke bawah" class="flex flex-col items-center gap-2 text-white/50 hover:text-white/80 transition-colors">
+        <span class="text-xs font-medium tracking-widest uppercase">Scroll</span>
+        <iconify-icon icon="lucide:chevron-down" class="text-xl"></iconify-icon>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT SECTION ==================== -->
+  <section id="tentang" class="py-16 md:py-24 bg-cream-50 dark:bg-gray-950">
+    <div class="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
+      <!-- Section Label -->
+      <div class="fade-up mb-4">
+        <span class="text-xs font-semibold tracking-widest uppercase text-coffee-500 dark:text-coffee-300">Tentang Kami</span>
+      </div>
+      <h2 class="fade-up font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-coffee-800 dark:text-cream-100 tracking-tight">
+        Lebih dari Sekadar Kopi
+      </h2>
+
+      <div class="mt-12 grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <!-- Image -->
+        <div class="fade-up relative">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden">
+            <img src="https://picsum.photos/seed/foxcoffee-about/800/1000.jpg" alt="Interior Fox Coffee & Roastery" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy">
+          </div>
+          <!-- Floating Stats Card -->
+          <div class="absolute -bottom-6 -right-4 md:right-8 bg-white dark:bg-gray-900 rounded-xl shadow-xl p-5 border border-coffee-100 dark:border-gray-800">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-yellow-50 dark:bg-yellow-900/30 rounded-lg flex items-center justify-center">
+                <iconify-icon icon="lucide:star" class="text-yellow-500 text-2xl"></iconify-icon>
+              </div>
+              <div>
+                <div class="font-heading font-bold text-2xl text-coffee-800 dark:text-cream-100">4.9</div>
+                <div class="text-xs text-coffee-500 dark:text-cream-400">dari 416 ulasan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text Content -->
+        <div class="space-y-8">
+          <p class="fade-up text-base md:text-lg text-coffee-600 dark:text-cream-300 leading-relaxed">
+            Fox Coffee & Roastery adalah kedai kopi modern di Jakarta Selatan yang menawarkan pengalaman ngopi yang nyaman dengan suasana cozy. Cocok untuk WDH (Work From Home/Hotel), meeting, atau sekadar nongkrong bersama teman dan keluarga.
+          </p>
+          <p class="fade-up text-base md:text-lg text-coffee-600 dark:text-cream-300 leading-relaxed">
+            Kami menyediakan berbagai varian kopi pilihan dan makanan lezat dengan harga terjangkau. Dengan fasilitas lengkap dan pelayanan ramah, kami berkomitmen menjadi tempat favorit Anda.
+          </p>
+
+          <!-- Stats Grid -->
+          <div class="fade-up grid grid-cols-3 gap-4">
+            <div class="text-center p-4 bg-coffee-50 dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800">
+              <div class="font-heading font-bold text-2xl text-coffee-700 dark:text-coffee-300">4.9</div>
+              <div class="text-xs text-coffee-500 dark:text-cream-400 mt-1">Rating</div>
+            </div>
+            <div class="text-center p-4 bg-coffee-50 dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800">
+              <div class="font-heading font-bold text-2xl text-coffee-700 dark:text-coffee-300">416</div>
+              <div class="text-xs text-coffee-500 dark:text-cream-400 mt-1">Ulasan</div>
+            </div>
+            <div class="text-center p-4 bg-coffee-50 dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800">
+              <div class="font-heading font-bold text-2xl text-coffee-700 dark:text-coffee-300">25K</div>
+              <div class="text-xs text-coffee-500 dark:text-cream-400 mt-1">Mulai dari</div>
+            </div>
+          </div>
+
+          <!-- Opening Hours -->
+          <div class="fade-up bg-coffee-800 dark:bg-gray-900 rounded-xl p-6 text-white">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-coffee-300/20 rounded-lg flex items-center justify-center">
+                <iconify-icon icon="lucide:clock" class="text-coffee-300 text-xl"></iconify-icon>
+              </div>
+              <h3 class="font-heading font-semibold text-lg">Jam Operasional</h3>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-cream-300">Senin - Minggu</span>
+              <span class="font-semibold text-coffee-300">09.00 - 00.00 WIB</span>
+            </div>
+            <div class="mt-3 pt-3 border-t border-white/10 flex items-center gap-2">
+              <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+              <span class="text-sm text-green-400 font-medium" id="openStatus">Buka Sekarang</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FACILITIES SECTION ==================== -->
+  <section id="fasilitas" class="py-16 md:py-24 bg-coffee-800 dark:bg-gray-900 relative noise-overlay">
+    <div class="relative z-10 mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
+      <div class="text-center mb-12">
+        <span class="fade-up text-xs font-semibold tracking-widest uppercase text-coffee-300">Fasilitas</span>
+        <h2 class="fade-up font-heading text-3xl md:text-4xl font-bold text-white mt-3 tracking-tight">
+          Fasilitas Lengkap untuk Anda
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <!-- Facility Items -->
+        <div class="fade-up group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-coffee-300/30 rounded-xl p-5 text-center transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-coffee-300/10 group-hover:bg-coffee-300/20 rounded-xl flex items-center justify-center mx-auto mb-3 transition-colors">
+            <iconify-icon icon="lucide:utensils" class="text-coffee-300 text-2xl"></iconify-icon>
+          </div>
+          <h4 class="text-white font-semibold text-sm">Dine-in</h4>
+          <p class="text-white/50 text-xs mt-1">Makan di tempat</p>
+        </div>
+
+        <div class="fade-up delay-1 group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-coffee-300/30 rounded-xl p-5 text-center transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-coffee-300/10 group-hover:bg-coffee-300/20 rounded-xl flex items-center justify-center mx-auto mb-3 transition-colors">
+            <iconify-icon icon="lucide:package" class="text-coffee-300 text-2xl"></iconify-icon>
+          </div>
+          <h4 class="text-white font-semibold text-sm">Takeaway</h4>
+          <p class="text-white/50 text-xs mt-1">Ambil di tepi jalan</p>
+        </div>
+
+        <div class="fade-up delay-2 group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-coffee-300/30 rounded-xl p-5 text-center transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-coffee-300/10 group-hover:bg-coffee-300/20 rounded-xl flex items-center justify-center mx-auto mb-3 transition-colors">
+            <iconify-icon icon="lucide:truck" class="text-coffee-300 text-2xl"></iconify-icon>
+          </div>
+          <h4 class="text-white font-semibold text-sm">Delivery</h4>
+          <p class="text-white/50 text-xs mt-1">Pesan antar</p>
+        </div>
+
+        <div class="fade-up delay-3 group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-coffee-300/30 rounded-xl p-5 text-center transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-coffee-300/10 group-hover:bg-coffee-300/20 rounded-xl flex items-center justify-center mx-auto mb-3 transition-colors">
+            <iconify-icon icon="lucide:snowflake" class="text-coffee-300 text-2xl"></iconify-icon>
+          </div>
+          <h4 class="text-white font-semibold text-sm">AC</h4>
+          <p class="text-white/50 text-xs mt-1">Ruangan ber-AC</p>
+        </div>
+
+        <div class="fade-up group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-coffee-300/30 rounded-xl p-5 text-center transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-coffee-300/10 group-hover:bg-coffee-300/20 rounded-xl flex items-center justify-center mx-auto mb-3 transition-colors">
+            <iconify-icon icon="lucide:cigarette" class="text-coffee-300 text-2xl"></iconify-icon>
+          </div>
+          <h4 class="text-white font-semibold text-sm">Smoking Area</h4>
+          <p class="text-white/50 text-xs mt-1">Area merokok</p>
+        </div>
+
+        <div class="fade-up delay-1 group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-coffee-300/30 rounded-xl p-5 text-center transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-coffee-300/10 group-hover:bg-coffee-300/20 rounded-xl flex items-center justify-center mx-auto mb-3 transition-colors">
+            <iconify-icon icon="lucide:baby" class="text-coffee-300 text-2xl"></iconify-icon>
+          </div>
+          <h4 class="text-white font-semibold text-sm">Kid Friendly</h4>
+          <p class="text-white/50 text-xs mt-1">Cocok untuk anak</p>
+        </div>
+
+        <div class="fade-up delay-2 group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-coffee-300/30 rounded-xl p-5 text-center transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-coffee-300/10 group-hover:bg-coffee-300/20 rounded-xl flex items-center justify-center mx-auto mb-3 transition-colors">
+            <iconify-icon icon="lucide:book-open" class="text-coffee-300 text-2xl"></iconify-icon>
+          </div>
+          <h4 class="text-white font-semibold text-sm">Reading Area</h4>
+          <p class="text-white/50 text-xs mt-1">Buku & bacaan</p>
+        </div>
+
+        <div class="fade-up delay-3 group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-coffee-300/30 rounded-xl p-5 text-center transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 bg-coffee-300/10 group-hover:bg-coffee-300/20 rounded-xl flex items-center justify-center mx-auto mb-3 transition-colors">
+            <iconify-icon icon="lucide:wifi" class="text-coffee-300 text-2xl"></iconify-icon>
+          </div>
+          <h4 class="text-white font-semibold text-sm">WiFi</h4>
+          <p class="text-white/50 text-xs mt-1">Internet gratis</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MENU SECTION ==================== -->
+  <section id="menu" class="py-16 md:py-24 bg-cream-50 dark:bg-gray-950">
+    <div class="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
+      <div class="text-center mb-12">
+        <span class="fade-up text-xs font-semibold tracking-widest uppercase text-coffee-500 dark:text-coffee-300">Menu Kami</span>
+        <h2 class="fade-up font-heading text-3xl md:text-4xl font-bold text-coffee-800 dark:text-cream-100 mt-3 tracking-tight">
+          Pilihan Kopi & Makanan
+        </h2>
+        <p class="fade-up mt-4 text-coffee-500 dark:text-cream-400 max-w-lg mx-auto">
+          Nikmati berbagai varian kopi premium dan makanan lezat dengan harga terjangkau
+        </p>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="fade-up flex flex-wrap justify-center gap-3 mb-10">
+        <button onclick="switchTab('coffee')" class="menu-tab active px-6 py-2.5 rounded-full text-sm font-semibold border border-coffee-200 dark:border-gray-700 text-coffee-700 dark:text-cream-300 transition-all duration-300" data-tab="coffee">
+          <iconify-icon icon="lucide:coffee" class="mr-1 align-middle"></iconify-icon> Coffee Based
+        </button>
+        <button onclick="switchTab('noncoffee')" class="menu-tab px-6 py-2.5 rounded-full text-sm font-semibold border border-coffee-200 dark:border-gray-700 text-coffee-700 dark:text-cream-300 transition-all duration-300" data-tab="noncoffee">
+          <iconify-icon icon="lucide:glass-water" class="mr-1 align-middle"></iconify-icon> Non-Coffee
+        </button>
+        <button onclick="switchTab('food')" class="menu-tab px-6 py-2.5 rounded-full text-sm font-semibold border border-coffee-200 dark:border-gray-700 text-coffee-700 dark:text-cream-300 transition-all duration-300" data-tab="food">
+          <iconify-icon icon="lucide:utensils" class="mr-1 align-middle"></iconify-icon> Makanan
+        </button>
+      </div>
+
+      <!-- Menu Grid: Coffee -->
+      <div id="tab-coffee" class="menu-content grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+        <div class="fade-up group bg-white dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://picsum.photos/seed/eskopisusu/400/400.jpg" alt="Es Kopi Susu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-4">
+            <h4 class="font-semibold text-coffee-800 dark:text-cream-100 text-sm">Es Kopi Susu</h4>
+            <p class="text-coffee-400 dark:text-cream-500 text-xs mt-1">Kopi susu segar dingin</p>
+            <p class="font-heading font-bold text-coffee-600 dark:text-coffee-300 mt-2">Rp 25K</p>
+          </div>
+        </div>
+        <div class="fade-up delay-1 group bg-white dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://picsum.photos/seed/cappuccino/400/400.jpg" alt="Cappuccino" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-4">
+            <h4 class="font-semibold text-coffee-800 dark:text-cream-100 text-sm">Cappuccino</h4>
+            <p class="text-coffee-400 dark:text-cream-500 text-xs mt-1">Classic Italian coffee</p>
+            <p class="font-heading font-bold text-coffee-600 dark:text-coffee-300 mt-2">Rp 30K</p>
+          </div>
+        </div>
+        <div class="fade-up delay-2 group bg-white dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://picsum.photos/seed/americano/400/400.jpg" alt="Americano" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-4">
+            <h4 class="font-semibold text-coffee-800 dark:text-cream-100 text-sm">Americano</h4>
+            <p class="text-coffee-400 dark:text-cream-500 text-xs mt-1">Espresso + hot water</p>
+            <p class="font-heading font-bold text-coffee-600 dark:text-coffee-300 mt-2">Rp 28K</p>
+          </div>
+        </div>
+        <div class="fade-up delay-3 group bg-white dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://picsum.photos/seed/latte-art/400/400.jpg" alt="Latte" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-4">
+            <h4 class="font-semibold text-coffee-800 dark:text-cream-100 text-sm">Latte</h4>
+            <p class="text-coffee-400 dark:text-cream-500 text-xs mt-1">Creamy milk coffee</p>
+            <p class="font-heading font-bold text-coffee-600 dark:text-coffee-300 mt-2">Rp 32K</p>
+          </div>
+        </div>
+        <div class="fade-up delay-4 group bg-white dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://picsum.photos/seed/manualbrew/400/400.jpg" alt="Manual Brew" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-4">
+            <h4 class="font-semibold text-coffee-800 dark:text-cream-100 text-sm">Manual Brew</h4>
+            <p class="text-coffee-400 dark:text-cream-500 text-xs mt-1">V60, Aeropress, dll</p>
+            <p class="font-heading font-bold text-coffee-600 dark:text-coffee-300 mt-2">Rp 35K</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Grid: Non-Coffee -->
+      <div id="tab-noncoffee" class="menu-content hidden grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div class="fade-up group bg-white dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://picsum.photos/seed/chocolate-drk/400/400.jpg" alt="Chocolate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-4">
+            <h4 class="font-semibold text-coffee-800 dark:text-cream-100 text-sm">Chocolate</h4>
+            <p class="text-coffee-400 dark:text-cream-500 text-xs mt-1">Coklat rich & creamy</p>
+            <p class="font-heading font-bold text-coffee-600 dark:text-coffee-300 mt-2">Rp 30K</p>
+          </div>
+        </div>
+        <div class="fade-up delay-1 group bg-white dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://picsum.photos/seed/matcha-latte/400/400.jpg" alt="Matcha" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-4">
+            <h4 class="font-semibold text-coffee-800 dark:text-cream-100 text-sm">Matcha</h4>
+            <p class="text-coffee-400 dark:text-cream-500 text-xs mt-1">Japanese green tea</p>
+            <p class="font-heading font-bold text-coffee-600 dark:text-coffee-300 mt-2">Rp 32K</p>
+          </div>
+        </div>
+        <div class="fade-up delay-2 group bg-white dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://picsum.photos/seed/redvelvet-dnk/400/400.jpg" alt="Red Velvet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-4">
+            <h4 class="font-semibold text-coffee-800 dark:text-cream-100 text-sm">Red Velvet</h4>
+            <p class="text-coffee-400 dark:text-cream-500 text-xs mt-1">Sweet & creamy</p>
+            <p class="font-heading font-bold text-coffee-600 dark:text-coffee-300 mt-2">Rp 32K</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Grid: Food -->
+      <div id="tab-food" class="menu-content hidden grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div class="fade-up group bg-white dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://picsum.photos/seed/pastry-bread/400/400.jpg" alt="Pastry & Roti" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-4">
+            <h4 class="font-semibold text-coffee-800 dark:text-cream-100 text-sm">Pastry & Roti</h4>
+            <p class="text-coffee-400 dark:text-cream-500 text-xs mt-1">Fresh baked daily</p>
+            <p class="font-heading font-bold text-coffee-600 dark:text-coffee-300 mt-2">Rp 25K</p>
+          </div>
+        </div>
+        <div class="fade-up delay-1 group bg-white dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://picsum.photos/seed/lightbites/400/400.jpg" alt="Light Bites" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-4">
+            <h4 class="font-semibold text-coffee-800 dark:text-cream-100 text-sm">Light Bites</h4>
+            <p class="text-coffee-400 dark:text-cream-500 text-xs mt-1">Cemilan ringan</p>
+            <p class="font-heading font-bold text-coffee-600 dark:text-coffee-300 mt-2">Rp 30K</p>
+          </div>
+        </div>
+        <div class="fade-up delay-2 group bg-white dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://picsum.photos/seed/maincourse-pl/400/400.jpg" alt="Main Course" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-4">
+            <h4 class="font-semibold text-coffee-800 dark:text-cream-100 text-sm">Main Course</h4>
+            <p class="text-coffee-400 dark:text-cream-500 text-xs mt-1">Menu utama hangat</p>
+            <p class="font-heading font-bold text-coffee-600 dark:text-coffee-300 mt-2">Rp 45K</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GALLERY SECTION ==================== -->
+  <section id="galeri" class="py-16 md:py-24 bg-coffee-50 dark:bg-gray-900">
+    <div class="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
+      <div class="text-center mb-12">
+        <span class="fade-up text-xs font-semibold tracking-widest uppercase text-coffee-500 dark:text-coffee-300">Galeri</span>
+        <h2 class="fade-up font-heading text-3xl md:text-4xl font-bold text-coffee-800 dark:text-cream-100 mt-3 tracking-tight">
+          Suasana Fox Coffee
+        </h2>
+      </div>
+
+      <!-- Swiper Gallery -->
+      <div class="fade-up swiper gallerySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="aspect-[4/3] rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+              <img src="https://picsum.photos/seed/foxcoffee-g1/800/600.jpg" alt="Interior Fox Coffee" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="aspect-[4/3] rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+              <img src="https://picsum.photos/seed/foxcoffee-g2/800/600.jpg" alt="Suasana makan di Fox Coffee" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="aspect-[4/3] rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+              <img src="https://picsum.photos/seed/foxcoffee-g3/800/600.jpg" alt="Kopi Fox Coffee" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="aspect-[4/3] rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+              <img src="https://picsum.photos/seed/foxcoffee-g4/800/600.jpg" alt="Makanan Fox Coffee" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="aspect-[4/3] rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+              <img src="https://picsum.photos/seed/foxcoffee-g5/800/600.jpg" alt="Reading area Fox Coffee" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="aspect-[4/3] rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+              <img src="https://picsum.photos/seed/foxcoffee-g6/800/600.jpg" alt="Barista Fox Coffee" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination mt-6"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Overlay -->
+  <div id="lightbox" class="lightbox-overlay fixed inset-0 z-[60] bg-black/90 flex items-center justify-center p-4" onclick="closeLightbox(event)">
+    <button onclick="closeLightbox(event)" class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-10" aria-label="Close lightbox">
+      <iconify-icon icon="lucide:x" class="text-3xl"></iconify-icon>
+    </button>
+    <img id="lightboxImg" src="" alt="Gallery image" class="max-w-full max-h-[85vh] object-contain rounded-lg">
+  </div>
+
+  <!-- ==================== REVIEWS SECTION ==================== -->
+  <section id="ulasan" class="py-16 md:py-24 bg-cream-50 dark:bg-gray-950">
+    <div class="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
+      <div class="text-center mb-12">
+        <span class="fade-up text-xs font-semibold tracking-widest uppercase text-coffee-500 dark:text-coffee-300">Ulasan</span>
+        <h2 class="fade-up font-heading text-3xl md:text-4xl font-bold text-coffee-800 dark:text-cream-100 mt-3 tracking-tight">
+          Kata Mereka tentang Kami
+        </h2>
+        <div class="fade-up flex items-center justify-center gap-2 mt-4">
+          <div class="flex items-center gap-1 text-yellow-500">
+            <iconify-icon icon="lucide:star" class="text-lg"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-lg"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-lg"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-lg"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-lg"></iconify-icon>
+          </div>
+          <span class="font-heading font-bold text-2xl text-coffee-800 dark:text-cream-100">4.9</span>
+          <span class="text-coffee-500 dark:text-cream-400">dari 416 ulasan</span>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Review 1 -->
+        <div class="fade-up bg-white dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800 p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-1 text-yellow-500 mb-3">
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+          </div>
+          <p class="text-coffee-600 dark:text-cream-300 text-sm leading-relaxed mb-4">
+            "Baik design, suasana, dan kursi yang beraneka macam semakin membuat nyaman."
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-coffee-100 dark:border-gray-800">
+            <div class="w-9 h-9 bg-coffee-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+              <iconify-icon icon="lucide:user" class="text-coffee-500 dark:text-cream-400 text-sm"></iconify-icon>
+            </div>
+            <div>
+              <p class="font-semibold text-sm text-coffee-800 dark:text-cream-100">Diva Syarikri</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="fade-up delay-1 bg-white dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800 p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-1 text-yellow-500 mb-3">
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+          </div>
+          <p class="text-coffee-600 dark:text-cream-300 text-sm leading-relaxed mb-4">
+            "Service nya oke, barista nya asik asik 🫶🏻"
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-coffee-100 dark:border-gray-800">
+            <div class="w-9 h-9 bg-coffee-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+              <iconify-icon icon="lucide:user" class="text-coffee-500 dark:text-cream-400 text-sm"></iconify-icon>
+            </div>
+            <div>
+              <p class="font-semibold text-sm text-coffee-800 dark:text-cream-100">Local Guide</p>
+              <span class="inline-flex items-center gap-1 text-xs text-blue-500 dark:text-blue-400">
+                <iconify-icon icon="lucide:shield-check" class="text-xs"></iconify-icon> Local Guide
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="fade-up delay-2 bg-white dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800 p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-1 text-yellow-500 mb-3">
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+          </div>
+          <p class="text-coffee-600 dark:text-cream-300 text-sm leading-relaxed mb-4">
+            "Mantap tmp kopi dkt rumah👍😇"
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-coffee-100 dark:border-gray-800">
+            <div class="w-9 h-9 bg-coffee-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+              <iconify-icon icon="lucide:user" class="text-coffee-500 dark:text-cream-400 text-sm"></iconify-icon>
+            </div>
+            <div>
+              <p class="font-semibold text-sm text-coffee-800 dark:text-cream-100">Customer</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="fade-up bg-white dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800 p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-1 text-yellow-500 mb-3">
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+          </div>
+          <p class="text-coffee-600 dark:text-cream-300 text-sm leading-relaxed mb-4">
+            "Ini kali kedua kami ke sini. Cukup nyaman untuk anak anak. Kami pilih ruangan yg ada banyak buku. Suasana homey, santai dan adem. Makanan enak semua. Minuman juga ok. Harga standar kafe. Pelayanan ramah. Mantul pokoknya. Bolehlah balik lagi"
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-coffee-100 dark:border-gray-800">
+            <div class="w-9 h-9 bg-coffee-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+              <iconify-icon icon="lucide:user" class="text-coffee-500 dark:text-cream-400 text-sm"></iconify-icon>
+            </div>
+            <div>
+              <p class="font-semibold text-sm text-coffee-800 dark:text-cream-100">Nurul Aini</p>
+              <span class="inline-flex items-center gap-1 text-xs text-blue-500 dark:text-blue-400">
+                <iconify-icon icon="lucide:shield-check" class="text-xs"></iconify-icon> Local Guide · 13 ulasan
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="fade-up delay-1 bg-white dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800 p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-1 text-yellow-500 mb-3">
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+          </div>
+          <p class="text-coffee-600 dark:text-cream-300 text-sm leading-relaxed mb-4">
+            "Sering bolak balik lewat daerah sini, baru kali ini mampir, tempatnya asli nyaman dan cozy banget cocok buat WDH, meeting atau buat nongs biasa. Rekomen banget"
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-coffee-100 dark:border-gray-800">
+            <div class="w-9 h-9 bg-coffee-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+              <iconify-icon icon="lucide:user" class="text-coffee-500 dark:text-cream-400 text-sm"></iconify-icon>
+            </div>
+            <div>
+              <p class="font-semibold text-sm text-coffee-800 dark:text-cream-100">Mas Punk</p>
+              <span class="inline-flex items-center gap-1 text-xs text-blue-500 dark:text-blue-400">
+                <iconify-icon icon="lucide:shield-check" class="text-xs"></iconify-icon> Local Guide · 95 ulasan
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="fade-up delay-2 bg-white dark:bg-gray-900 rounded-xl border border-coffee-100 dark:border-gray-800 p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-1 text-yellow-500 mb-3">
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+          </div>
+          <p class="text-coffee-600 dark:text-cream-300 text-sm leading-relaxed mb-4">
+            "Bener menggugah selera..... tampilan yang bikin seger....."
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-coffee-100 dark:border-gray-800">
+            <div class="w-9 h-9 bg-coffee-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+              <iconify-icon icon="lucide:user" class="text-coffee-500 dark:text-cream-400 text-sm"></iconify-icon>
+            </div>
+            <div>
+              <p class="font-semibold text-sm text-coffee-800 dark:text-cream-100">Customer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LOCATION SECTION ==================== -->
+  <section id="lokasi" class="py-16 md:py-24 bg-coffee-50 dark:bg-gray-900">
+    <div class="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
+      <div class="text-center mb-12">
+        <span class="fade-up text-xs font-semibold tracking-widest uppercase text-coffee-500 dark:text-coffee-300">Lokasi</span>
+        <h2 class="fade-up font-heading text-3xl md:text-4xl font-bold text-coffee-800 dark:text-cream-100 mt-3 tracking-tight">
+          Temukan Kami
+        </h2>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-8">
+        <!-- Map -->
+        <div class="fade-up lg:col-span-3 rounded-xl overflow-hidden border border-coffee-200 dark:border-gray-700 shadow-lg">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2!2d106.78!3d-6.24!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1b0a0b0b0b1%3A0x0!2sFox+Coffee+%26+Roastery!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+            width="100%"
+            height="400"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lokasi Fox Coffee & Roastery Jakarta"
+            class="w-full h-[300px] md:h-[400px]"
+          ></iframe>
+        </div>
+
+        <!-- Info Card -->
+        <div class="fade-up lg:col-span-2 space-y-6">
+          <!-- Address -->
+          <div class="bg-white dark:bg-gray-800 rounded-xl border border-coffee-100 dark:border-gray-700 p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-coffee-100 dark:bg-gray-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                <iconify-icon icon="lucide:map-pin" class="text-coffee-600 dark:text-coffee-300 text-xl"></iconify-icon>
+              </div>
+              <div>
+                <h4 class="font-semibold text-coffee-800 dark:text-cream-100 mb-1">Alamat</h4>
+                <p class="text-sm text-coffee-600 dark:text-cream-400 leading-relaxed">
+                  Jl. Cidodol Raya No.40, RT.7/RW.6, Grogol Sel., Kec. Kebayoran Lama, Kota Jakarta Selatan, DKI Jakarta 12220
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="bg-white dark:bg-gray-800 rounded-xl border border-coffee-100 dark:border-gray-700 p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-coffee-100 dark:bg-gray-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                <iconify-icon icon="lucide:phone" class="text-coffee-600 dark:text-coffee-300 text-xl"></iconify-icon>
+              </div>
+              <div>
+                <h4 class="font-semibold text-coffee-800 dark:text-cream-100 mb-1">Telepon</h4>
+                <a href="tel:+6289531522895" class="text-sm text-coffee-500 dark:text-cream-400 hover:text-coffee-700 dark:hover:text-coffee-300 transition-colors">
+                  0895-3152-2895
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hours -->
+          <div class="bg-white dark:bg-gray-800 rounded-xl border border-coffee-100 dark:border-gray-700 p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-coffee-100 dark:bg-gray-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                <iconify-icon icon="lucide:clock" class="text-coffee-600 dark:text-coffee-300 text-xl"></iconify-icon>
+              </div>
+              <div>
+                <h4 class="font-semibold text-coffee-800 dark:text-cream-100 mb-1">Jam Buka</h4>
+                <p class="text-sm text-coffee-500 dark:text-cream-400">Senin - Minggu</p>
+                <p class="text-sm font-semibold text-coffee-700 dark:text-cream-200">09.00 - 00.00 WIB</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Price Range -->
+          <div class="bg-white dark:bg-gray-800 rounded-xl border border-coffee-100 dark:border-gray-700 p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-coffee-100 dark:bg-gray-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                <iconify-icon icon="lucide:wallet" class="text-coffee-600 dark:text-coffee-300 text-xl"></iconify-icon>
+              </div>
+              <div>
+                <h4 class="font-semibold text-coffee-800 dark:text-cream-100 mb-1">Rentang Harga</h4>
+                <p class="text-sm font-semibold text-coffee-700 dark:text-cream-200">Rp 25.000 - Rp 50.000</p>
+                <p class="text-xs text-coffee-500 dark:text-cream-500 mt-1">Berdasarkan 138 laporan pelanggan</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col gap-3">
+            <a href="https://maps.app.goo.gl/FoxCoffeeJakarta" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-coffee-600 dark:bg-coffee-300 hover:bg-coffee-700 dark:hover:bg-coffee-200 text-white dark:text-coffee-900 px-6 py-3 rounded-lg font-semibold text-sm transition-colors w-full">
+              <iconify-icon icon="lucide:navigation" class="text-lg"></iconify-icon>
+              Buka di Google Maps
+            </a>
+            <a href="tel:+6289531522895" class="flex items-center justify-center gap-2 bg-white dark:bg-gray-800 hover:bg-cream-100 dark:hover:bg-gray-700 border border-coffee-200 dark:border-gray-700 text-coffee-700 dark:text-cream-200 px-6 py-3 rounded-lg font-semibold text-sm transition-colors w-full">
+              <iconify-icon icon="lucide:phone-call" class="text-lg"></iconify-icon>
+              Hubungi Sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA SECTION ==================== -->
+  <section class="py-16 md:py-24 bg-coffee-800 dark:bg-coffee-950 relative overflow-hidden noise-overlay">
+    <div class="absolute inset-0 z-0 opacity-10">
+      <img src="https://picsum.photos/seed/foxcoffee-cta/1920/600.jpg" alt="" class="w-full h-full object-cover" loading="lazy" aria-hidden="true">
+    </div>
+    <div class="relative z-10 mx-auto max-w-7xl px-6 md:px-12 lg:px-24 text-center">
+      <h2 class="fade-up font-heading text-3xl md:text-5xl font-bold text-white tracking-tight">
+        Yuk, Mampir ke Fox Coffee!
+      </h2>
+      <p class="fade-up mt-4 text-cream-300/70 text-lg max-w-lg mx-auto">
+        Nikmati kopi terbaik dengan suasana cozy. Kami tunggu kehadiran Anda!
+      </p>
+      <div class="fade-up flex flex-wrap justify-center gap-4 mt-8">
+        <a href="https://wa.me/6289531522895" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-sm transition-colors">
+          <iconify-icon icon="lucide:message-circle" class="text-lg"></iconify-icon>
+          Chat via WhatsApp
+        </a>
+        <a href="#menu" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-lg font-semibold text-sm transition-colors">
+          <iconify-icon icon="lucide:book-open" class="text-lg"></iconify-icon>
+          Lihat Menu
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-coffee-900 dark:bg-black py-12 md:py-16">
+    <div class="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-10 h-10 bg-coffee-300 rounded-lg flex items-center justify-center">
+              <iconify-icon icon="lucide:coffee" class="text-coffee-900 text-xl"></iconify-icon>
+            </div>
+            <div>
+              <span class="font-heading font-bold text-lg text-cream-100 leading-none">Fox Coffee</span>
+              <span class="block text-[10px] font-medium text-coffee-400 tracking-widest uppercase">& Roastery Jakarta</span>
+            </div>
+          </div>
+          <p class="text-cream-400 text-sm leading-relaxed max-w-sm">
+            Kedai kopi modern dengan suasana cozy di Jakarta Selatan. Cocok untuk WDH, meeting, atau sekadar nongkrong. Buka setiap hari 09.00 - 00.00 WIB.
+          </p>
+          <!-- Social -->
+          <div class="flex items-center gap-3 mt-6">
+            <a href="#" aria-label="Instagram" class="w-10 h-10 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center text-cream-400 hover:text-coffee-300 transition-colors">
+              <iconify-icon icon="lucide:instagram" class="text-lg"></iconify-icon>
+            </a>
+            <a href="#" aria-label="Facebook" class="w-10 h-10 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center text-cream-400 hover:text-coffee-300 transition-colors">
+              <iconify-icon icon="lucide:facebook" class="text-lg"></iconify-icon>
+            </a>
+            <a href="#" aria-label="Twitter" class="w-10 h-10 bg-white/5 hover:bg-white/10 rounded-lg flex items-center justify-center text-cream-400 hover:text-coffee-300 transition-colors">
+              <iconify-icon icon="lucide:twitter" class="text-lg"></iconify-icon>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-semibold text-cream-100 mb-4">Navigasi</h4>
+          <ul class="space-y-2">
+            <li><a href="#beranda" class="text-cream-400 hover:text-coffee-300 text-sm transition-colors">Beranda</a></li>
+            <li><a href="#tentang" class="text-cream-400 hover:text-coffee-300 text-sm transition-colors">Tentang</a></li>
+            <li><a href="#menu" class="text-cream-400 hover:text-coffee-300 text-sm transition-colors">Menu</a></li>
+            <li><a href="#galeri" class="text-cream-400 hover:text-coffee-300 text-sm transition-colors">Galeri</a></li>
+            <li><a href="#ulasan" class="text-cream-400 hover:text-coffee-300 text-sm transition-colors">Ulasan</a></li>
+            <li><a href="#lokasi" class="text-cream-400 hover:text-coffee-300 text-sm transition-colors">Lokasi</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="font-semibold text-cream-100 mb-4">Kontak</h4>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <iconify-icon icon="lucide:map-pin" class="text-coffee-400 mt-0.5"></iconify-icon>
+              <span class="text-cream-400 text-sm">Jl. Cidodol Raya No.40, Jakarta Selatan</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="lucide:phone" class="text-coffee-400"></iconify-icon>
+              <a href="tel:+6289531522895" class="text-cream-400 hover:text-coffee-300 text-sm transition-colors">0895-3152-2895</a>
+            </li>
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="lucide:clock" class="text-coffee-400"></iconify-icon>
+              <span class="text-cream-400 text-sm">09.00 - 00.00 WIB</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-cream-500 text-sm">
+          © 2026 Fox Coffee & Roastery. All rights reserved.
+        </p>
+        <p class="text-cream-600 text-xs">
+          Made by <span class="text-coffee-300 font-semibold">Amantrana</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING BUTTONS ==================== -->
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/6289531522895" target="_blank" rel="noopener" aria-label="Chat WhatsApp" class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
+    <iconify-icon icon="lucide:message-circle" class="text-xl"></iconify-icon>
+    <span class="hidden md:inline text-sm font-semibold">Chat WhatsApp</span>
+  </a>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" aria-label="Kembali ke atas" class="fixed bottom-6 left-6 z-50 w-12 h-12 bg-coffee-600 dark:bg-coffee-300 hover:bg-coffee-700 dark:hover:bg-coffee-200 text-white dark:text-coffee-900 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 opacity-0 pointer-events-none translate-y-4">
+    <iconify-icon icon="lucide:arrow-up" class="text-xl"></iconify-icon>
+  </button>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    // ===== Dark Mode Toggle =====
+    const darkToggle = document.getElementById('darkToggle');
+    const html = document.documentElement;
+
+    // Check saved preference or system preference
+    if (localStorage.getItem('theme') === 'dark' || 
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    }
+
+    darkToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // ===== Mobile Menu Toggle =====
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    const closeIcon = document.getElementById('closeIcon');
+    let menuOpen = false;
+
+    mobileMenuBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        menuOpen = false;
+      });
+    });
+
+    // ===== Sticky Navbar Background =====
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-white/90', 'dark:bg-gray-950/90', 'backdrop-blur-md', 'shadow-sm', 'border-b', 'border-coffee-100', 'dark:border-gray-800');
+      } else {
+        navbar.classList.remove('bg-white/90', 'dark:bg-gray-950/90', 'backdrop-blur-md', 'shadow-sm', 'border-b', 'border-coffee-100', 'dark:border-gray-800');
+      }
+    });
+
+    // ===== Back to Top Button =====
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) {
+        backToTop.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+        backToTop.classList.add('opacity-100', 'translate-y-0');
+      } else {
+        backToTop.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+        backToTop.classList.remove('opacity-100', 'translate-y-0');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ===== Scroll Animations (Intersection Observer) =====
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -80px 0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // ===== Menu Tab Switching =====
+    function switchTab(tab) {
+      // Hide all content
+      document.querySelectorAll('.menu-content').forEach(content => {
+        content.classList.add('hidden');
+      });
+      // Remove active from all tabs
+      document.querySelectorAll('.menu-tab').forEach(tabBtn => {
+        tabBtn.classList.remove('active');
+      });
+      // Show selected content
+      const selectedContent = document.getElementById('tab-' + tab);
+      if (selectedContent) {
+        selectedContent.classList.remove('hidden');
+      }
+      // Add active to clicked tab
+      document.querySelector(`.menu-tab[data-tab="${tab}"]`).classList.add('active');
+
+      // Re-observe fade-up elements in newly shown content
+      selectedContent.querySelectorAll('.fade-up').forEach(el => {
+        el.classList.remove('visible');
+        observer.observe(el);
+      });
+    }
+
+    // ===== Lightbox =====
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+
+    function openLightbox(el) {
+      const img = el.querySelector('img');
+      if (img) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeLightbox(event) {
+      if (event.target === lightbox || event.target.closest('button')) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // ===== Swiper Gallery =====
+    const gallerySwiper = new Swiper('.gallerySwiper', {
+      slidesPerView: 1.2,
+      spaceBetween: 16,
+      grabCursor: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2.2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 3.2,
+          spaceBetween: 24,
+        },
+      },
+    });
+
+    // ===== Open Status Check =====
+    function checkOpenStatus() {
+      const now = new Date();
+      const hours = now.getHours();
+      // Open 09:00 to 00:00 (midnight)
+      const isOpen = hours >= 9;
+      const statusEl = document.getElementById('openStatus');
+      if (isOpen) {
+        statusEl.textContent = 'Buka Sekarang';
+        statusEl.className = 'text-sm text-green-400 font-medium';
+        statusEl.previousElementSibling.className = 'w-2 h-2 bg-green-400 rounded-full animate-pulse';
+      } else {
+        statusEl.textContent = 'Sedang Tutup';
+        statusEl.className = 'text-sm text-red-400 font-medium';
+        statusEl.previousElementSibling.className = 'w-2 h-2 bg-red-400 rounded-full';
+      }
+    }
+    checkOpenStatus();
+
+    // ===== Active Nav Highlight =====
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('text-coffee-600', 'dark:text-coffee-300', 'font-bold');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('text-coffee-600', 'dark:text-coffee-300', 'font-bold');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

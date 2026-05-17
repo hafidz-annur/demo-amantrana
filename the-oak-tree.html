@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Oak Tree Surabaya - Authentic Coffee Experience</title>
+    <meta name="description" content="The Oak Tree Surabaya adalah coffee shop dengan konsep cozy di Darmo Permai. Nikmati kopi autentik, suasana taman mini, dan furniture unik.">
+    <meta name="keywords" content="Coffee Shop Surabaya, The Oak Tree, Kopi Darmo Permai, Tempat Ngopi Cozy, Kopi Terbaik Surabaya">
+    <meta name="author" content="Amantrana">
+    <meta name="theme-color" content="#5D4037">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://theoaktree.surabaya/">
+    <meta property="og:title" content="The Oak Tree Surabaya - Authentic Coffee Experience">
+    <meta property="og:description" content="Coffee shop cozy dengan konsep taman mini dan kopi autentik di Darmo Permai, Surabaya.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="The Oak Tree Surabaya">
+    <meta property="twitter:description" content="Nikmati pengalaman ngopi autentik di suasana tenang Darmo Permai.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D4037', // Oak Brown
+                        secondary: '#2E7D32', // Forest Green
+                        accent: '#D4AF37', // Gold
+                        cream: '#FFF8E1',
+                        'dark-bg': '#1a1a1a',
+                        'dark-card': '#262626'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Utilities */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark .glass-nav {
+            background: rgba(26, 26, 26, 0.85);
+        }
+        
+        /* Hide scrollbar for gallery but keep functionality */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Loading Skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        .dark .skeleton {
+            background: linear-gradient(90deg, #333 25%, #444 50%, #333 75%);
+            background-size: 200% 100%;
+        }
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Reveal on Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #FFF8E1;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+        .dark #preloader {
+            background-color: #1a1a1a;
+        }
+    </style>
+
+    <!-- Schema.org Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "The Oak Tree Surabaya",
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Raya Darmo Permai I No.75",
+        "addressLocality": "Pradahkalikendal, Kec. Dukuhpakis",
+        "addressRegion": "Jawa Timur",
+        "postalCode": "60226",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-7.2746",
+        "longitude": "112.6987"
+      },
+      "url": "https://theoaktree.surabaya",
+      "telephone": "+6281234619056",
+      "priceRange": "Rp 25.000 - Rp 50.000",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "07:00",
+          "closes": "21:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "221"
+      }
+    }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-cream dark:bg-dark-bg dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="text-center">
+            <i class="fas fa-mug-hot text-4xl text-primary animate-bounce mb-4"></i>
+            <h2 class="font-serif text-2xl font-bold text-primary dark:text-white">The Oak Tree</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Brewing magic...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 glass-nav border-b border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <i class="fas fa-tree text-2xl text-primary group-hover:text-accent transition-colors"></i>
+                <span class="font-serif text-xl font-bold tracking-wide text-primary dark:text-white">The Oak Tree</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#home" class="font-medium hover:text-accent transition-colors">Beranda</a>
+                <a href="#about" class="font-medium hover:text-accent transition-colors">Tentang</a>
+                <a href="#menu" class="font-medium hover:text-accent transition-colors">Menu</a>
+                <a href="#reviews" class="font-medium hover:text-accent transition-colors">Ulasan</a>
+                <a href="#location" class="font-medium hover:text-accent transition-colors">Lokasi</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon text-gray-600 dark:text-yellow-300 text-lg"></i>
+                </button>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-primary dark:text-white focus:outline-none" aria-label="Open Menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-card border-t dark:border-gray-800 absolute w-full shadow-lg">
+            <nav class="flex flex-col px-6 py-4 gap-4">
+                <a href="#home" class="mobile-link font-medium hover:text-accent">Beranda</a>
+                <a href="#about" class="mobile-link font-medium hover:text-accent">Tentang</a>
+                <a href="#menu" class="mobile-link font-medium hover:text-accent">Menu</a>
+                <a href="#reviews" class="mobile-link font-medium hover:text-accent">Ulasan</a>
+                <a href="#location" class="mobile-link font-medium hover:text-accent">Lokasi</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1920&auto=format&fit=crop" alt="The Oak Tree Interior" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/60 dark:bg-black/80"></div> <!-- Darker for dark mode -->
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 text-center text-white reveal active">
+            <span class="inline-block py-1 px-3 rounded-full bg-accent/20 border border-accent text-accent text-sm font-semibold mb-4 backdrop-blur-sm">
+                Est. 2018 • Surabaya
+            </span>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-4 leading-tight">
+                The Oak Tree <br> <span class="text-accent">Surabaya</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-8 font-light">
+                Authentic Coffee Experience in Cozy Atmosphere. Nikmati ketenangan di tengah kota dengan rasa yang otentik.
+            </p>
+            
+            <!-- Rating Badge -->
+            <div class="flex justify-center items-center gap-2 mb-8 bg-white/10 backdrop-blur-md py-2 px-6 rounded-full w-fit mx-auto border border-white/20">
+                <div class="flex text-yellow-400 text-sm">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="font-bold text-sm">4.7</span>
+                <span class="text-gray-300 text-sm border-l border-white/30 pl-2">(221 Reviews)</span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#menu" class="px-8 py-3 bg-primary hover:bg-[#3E2723] text-white rounded-full font-medium transition-all transform hover:scale-105 shadow-lg border border-primary">
+                    Lihat Menu
+                </a>
+                <a href="https://wa.me/6281234619056" target="_blank" class="px-8 py-3 bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white rounded-full font-medium transition-all transform hover:scale-105">
+                    <i class="fab fa-whatsapp mr-2"></i> Hubungi Kami
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-white/70">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-dark-bg">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Image -->
+                <div class="lg:w-1/2 reveal">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1000&auto=format&fit=crop" alt="Suasana The Oak Tree" class="w-full h-auto transform hover:scale-110 transition-transform duration-700">
+                        <div class="absolute bottom-4 right-4 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg">
+                            <p class="text-2xl font-serif font-bold text-primary dark:text-accent">2018</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide">Established</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="lg:w-1/2 reveal">
+                    <h4 class="text-accent font-bold uppercase tracking-widest mb-2">Tentang Kami</h4>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold mb-6 text-primary dark:text-white">Lebih dari Sekedar Kopi</h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        The Oak Tree Surabaya adalah coffee shop dengan konsep cozy dan nyaman yang berlokasi di area Darmo Permai. Dikenal dengan kopi berkualitas, suasana yang tenang, dan furniture unik, kami menjadi tempat favorit untuk bersantai, membaca buku, atau sekadar melepas penat.
+                    </p>
+
+                    <!-- Features Grid -->
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <div class="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg text-secondary">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold dark:text-white">Taman Mini Asri</h5>
+                                <p class="text-sm text-gray-500">Suasana hijau menyegarkan</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="p-2 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg text-yellow-600">
+                                <i class="fas fa-couch"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold dark:text-white">Furniture Unik</h5>
+                                <p class="text-sm text-gray-500">Estetik & Nyaman</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="p-2 bg-red-100 dark:bg-red-900/30 rounded-lg text-red-500">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold dark:text-white">Kopi Autentik</h5>
+                                <p class="text-sm text-gray-500">Biji kopi pilihan terbaik</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-500">
+                                <i class="fas fa-book-reader"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold dark:text-white">Cocok Baca</h5>
+                                <p class="text-sm text-gray-500">Tempat tenang & fokus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Stats & Cards -->
+    <section class="py-16 bg-stone-100 dark:bg-[#222]">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center reveal">
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition-transform">
+                    <div class="text-4xl font-serif font-bold text-primary dark:text-accent mb-2">4.7</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400">Google Rating</div>
+                </div>
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition-transform">
+                    <div class="text-4xl font-serif font-bold text-primary dark:text-accent mb-2">200+</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400">Menu Varian</div>
+                </div>
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition-transform">
+                    <div class="text-4xl font-serif font-bold text-primary dark:text-accent mb-2">5</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400">Tahun Melayani</div>
+                </div>
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition-transform">
+                    <div class="text-4xl font-serif font-bold text-primary dark:text-accent mb-2">100%</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400">Kopi Premium</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Info Section (Hours, Location, etc) -->
+    <section id="info" class="py-20 bg-white dark:bg-dark-bg">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="text-center mb-12 reveal">
+                <h2 class="font-serif text-3xl font-bold text-primary dark:text-white">Informasi Cafe</h2>
+                <p class="text-gray-500 mt-2">Segala yang perlu Anda ketahui sebelum berkunjung</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Left: Info Cards -->
+                <div class="space-y-6 reveal">
+                    <!-- Jam Operasional -->
+                    <div class="bg-stone-50 dark:bg-dark-card p-6 rounded-2xl border-l-4 border-secondary">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-white dark:bg-gray-700 p-3 rounded-full shadow-sm text-secondary">
+                                <i class="fas fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg dark:text-white">Jam Operasional</h3>
+                                <p class="text-gray-600 dark:text-gray-300 mt-1">Senin - Minggu: 07.00 - 21.00 WIB</p>
+                                <span class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Buka Sekarang</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lokasi -->
+                    <div class="bg-stone-50 dark:bg-dark-card p-6 rounded-2xl border-l-4 border-primary">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-white dark:bg-gray-700 p-3 rounded-full shadow-sm text-primary">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg dark:text-white">Alamat</h3>
+                                <p class="text-gray-600 dark:text-gray-300 mt-1 text-sm leading-relaxed">
+                                    Jl. Raya Darmo Permai I No.75, Pradahkalikendal, Kec. Dukuhpakis, Surabaya, Jawa Timur 60226
+                                </p>
+                                <button onclick="copyToClipboard('Jl. Raya Darmo Permai I No.75, Surabaya')" class="mt-2 text-accent text-sm hover:underline flex items-center gap-1">
+                                    <i class="far fa-copy"></i> Salin Alamat
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kontak -->
+                    <div class="bg-stone-50 dark:bg-dark-card p-6 rounded-2xl border-l-4 border-accent">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-white dark:bg-gray-700 p-3 rounded-full shadow-sm text-accent">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg dark:text-white">Kontak</h3>
+                                <p class="text-gray-600 dark:text-gray-300 mt-1">0812-3461-9056</p>
+                                <div class="flex gap-3 mt-3">
+                                    <a href="https://wa.me/6281234619056" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-lg text-sm transition-colors">
+                                        <i class="fab fa-whatsapp"></i> Chat WA
+                                    </a>
+                                    <a href="https://www.google.com/maps/place/The+Oak+Tree+Surabaya" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg text-sm transition-colors">
+                                        <i class="fas fa-map"></i> Google Maps
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Map Embed -->
+                <div class="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 reveal">
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        frameborder="0" 
+                        style="border:0; min-height: 400px;" 
+                        src="https://maps.google.com/maps?q=The+Oak+Tree+Surabaya&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-cream dark:bg-dark-bg">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="text-center mb-12 reveal">
+                <h2 class="font-serif text-3xl font-bold text-primary dark:text-white">Menu Andalan</h2>
+                <p class="text-gray-500 mt-2">Pilihan favorit pelanggan kami</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex justify-center mb-10 reveal">
+                <div class="bg-white dark:bg-dark-card p-1 rounded-xl shadow-md inline-flex">
+                    <button onclick="filterMenu('all')" class="menu-tab active px-6 py-2 rounded-lg text-sm font-medium transition-all bg-primary text-white">Semua</button>
+                    <button onclick="filterMenu('coffee')" class="menu-tab px-6 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">Kopi</button>
+                    <button onclick="filterMenu('non-coffee')" class="menu-tab px-6 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">Non-Kopi</button>
+                    <button onclick="filterMenu('food')" class="menu-tab px-6 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">Makanan</button>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Menu Items will be injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews/Testimonials Section -->
+    <section id="reviews" class="py-20 bg-white dark:bg-dark-bg overflow-hidden">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+                <div>
+                    <h2 class="font-serif text-3xl font-bold text-primary dark:text-white">Kata Mereka</h2>
+                    <p class="text-gray-500 mt-2">Ulasan jujur dari pelanggan setia</p>
+                </div>
+                <!-- Navigation buttons for Swiper -->
+                <div class="flex gap-2 mt-4 md:mt-0">
+                    <button class="review-prev w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="review-next w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Swiper -->
+            <div class="swiper review-swiper reveal pb-12">
+                <div class="swiper-wrapper">
+                    <!-- Reviews injected via JS -->
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-stone-50 dark:bg-[#222]">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="text-center mb-12 reveal">
+                <h2 class="font-serif text-3xl font-bold text-primary dark:text-white">Galeri</h2>
+                <p class="text-gray-500 mt-2">Intip suasana cozy kami</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
+                <!-- Gallery Items -->
+                <div class="col-span-2 row-span-2 relative group overflow-hidden rounded-2xl cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200')">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&h=800&fit=crop" alt="Interior" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800')">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=400&h=400&fit=crop" alt="Coffee Art" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-xl"></i>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=800')">
+                    <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=400&h=400&fit=crop" alt="Barista" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-xl"></i>
+                    </div>
+                </div>
+                <div class="col-span-2 relative group overflow-hidden rounded-2xl cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=1200')">
+                    <img src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=800&h=400&fit=crop" alt="Outdoor" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a1a1a] text-white pt-20 pb-10 border-t border-gray-800">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div>
+                    <a href="#" class="flex items-center gap-2 mb-6">
+                        <i class="fas fa-tree text-2xl text-accent"></i>
+                        <span class="font-serif text-2xl font-bold">The Oak Tree</span>
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Coffee shop dengan konsep cozy di Darmo Permai, Surabaya. Tempat terbaik untuk menikmati kopi autentik dan ketenangan.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-accent">Navigasi</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="#menu" class="hover:text-white transition-colors">Menu Favorit</a></li>
+                        <li><a href="#reviews" class="hover:text-white transition-colors">Ulasan</a></li>
+                        <li><a href="#location" class="hover:text-white transition-colors">Lokasi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-accent">Hubungi Kami</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-accent"></i>
+                            <span>Jl. Raya Darmo Permai I No.75, Surabaya</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone-alt text-accent"></i>
+                            <span>0812-3461-9056</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-clock text-accent"></i>
+                            <span>Setiap Hari: 07.00 - 21.00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-accent">Sosial Media</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-accent hover:text-white transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-accent hover:text-white transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-accent hover:text-white transition-all">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2023 The Oak Tree Surabaya. All rights reserved.</p>
+                <p class="mt-2 italic font-medium text-gray-400">Made by <span class="text-white">Amantrana</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <!-- Back to Top -->
+    <button id="back-to-top" class="fixed bottom-24 right-6 z-40 bg-white dark:bg-dark-card text-primary dark:text-white w-12 h-12 rounded-full shadow-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center translate-y-20 opacity-0 transition-all duration-300 hover:bg-accent hover:text-white" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/6281234619056" target="_blank" class="fixed bottom-6 right-6 z-40 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center animate-pulse-slow hover:bg-green-600 transition-colors" aria-label="Chat WhatsApp">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[60] bg-black/90 hidden flex items-center justify-center p-4" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white text-4xl hover:text-gray-300 focus:outline-none">&times;</button>
+        <img id="lightbox-img" src="" alt="Gallery Full" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl">
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-24 right-6 z-[70] bg-gray-800 text-white px-6 py-3 rounded-lg shadow-xl transform translate-x-full transition-transform duration-300 flex items-center gap-3">
+        <i class="fas fa-check-circle text-green-400"></i>
+        <span id="toast-msg">Berhasil disalin!</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        // --- Data ---
+        const menuItems = [
+            { name: 'Flat White', category: 'coffee', price: 'Rp 35.000', desc: 'Espresso creamy dengan milk foam yang halus. Menu Populer!', image: 'https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=400&q=80', badge: 'Populer' },
+            { name: 'Manual Brew', category: 'coffee', price: 'Rp 38.000', desc: 'V60, AeroPress, atau French Press sesuai selera. Menu Populer!', image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80', badge: 'Populer' },
+            { name: 'Espresso with Coconut', category: 'coffee', price: 'Rp 40.000', desc: 'Kopi kuat dengan kesegaran air kelapa murni.', image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80' },
+            { name: 'Cappuccino', category: 'coffee', price: 'Rp 32.000', desc: 'Keseimbangan sempurna antara espresso, susu, dan busa.', image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=400&q=80' },
+            { name: 'White Tea', category: 'non-coffee', price: 'Rp 30.000', desc: 'Teh putih murni yang menyegarkan. Best Seller!', image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=400&q=80', badge: 'Best Seller' },
+            { name: 'Signature Chocolate', category: 'non-coffee', price: 'Rp 35.000', desc: 'Coklat kaya rasa dengan topping marshmallow.', image: 'https://images.unsplash.com/photo-1574785858063-926d8c0d420b?auto=format&fit=crop&w=400&q=80' },
+            { name: 'Brownies', category: 'food', price: 'Rp 25.000', desc: 'Brownies fudgy yang lembut dan lumer di mulut.', image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=400&q=80' },
+            { name: 'Fudge Cake', category: 'food', price: 'Rp 28.000', desc: 'Kue coklat padat dengan topping gula halus.', image: 'https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=400&q=80' },
+        ];
+
+        const reviews = [
+            { name: 'Saruma', rating: 5, date: '2 tahun lalu', text: 'Tempatnya sangat nyaman dengan suasana yang tenang. Cocok untuk bersantai di malam hari sambil menikmati white tea mereka yang segar.', img: 'https://lh3.googleusercontent.com/grass-cs/ANxoTn3Ib7FQP2DI8tn4ZPZalGDdKxBd_8Pa9LL9U4l8XQnD6PzHPvXqAWCMGEFCYi371wtvX_hZUxR6iGnWFl3L4kyfsa4bnc8wRzIvpcjcqmdjOmeZaceglWLLSEEGiGuADF72SbG-=w338-h253-p-k-no' },
+            { name: 'Tengku Putri Sholihah', rating: 5, date: '1 tahun lalu', text: 'Coffee shop yang tempatnya super compact. Tempatnya gak terlalu besar tapi berasa luas dan suasananya nyaman bangeet.', img: 'https://lh3.googleusercontent.com/grass-cs/ANxoTn2Uh4OGFVujXOMARAZ3BDC7QFHSdzVwGE__7Qzbsy48qNDtbvLq-Rj1TG373FAvdLWgqmhWpNKdfOjmjy9qmvExsXlD7uBB0Kv3Z6A23yzxzrs4A-jN3m6z0Ou3bbkbUjOudkzG=w338-h506-p-k-no' },
+            { name: 'Vinda Nurfitri', rating: 5, date: '4 tahun lalu', text: 'My kinda favourite place for authentic coffee. Try Espresso with coconut water for you who like strong coffee but have freshness inside.', img: 'https://lh3.googleusercontent.com/grass-cs/ANxoTn2AWIH7MV2IfOkI4ihh2OL5W5f8_6Za3iUW3bDHQLt5tt-MQCLgqjlqeN7mgfI1R9uS_XIILJp2Gxv5bWZJ4PNEagrkulZf5Czx6_DACfK3MVP6eObof9yOoGTPqAcHTDT1mk6i=w338-h253-p-k-no' },
+            { name: 'Reviewer', rating: 5, date: 'Baru saja', text: 'Taman mini di depan cafe cukup menyegarkan. Suasana yang asri dan hijau membuat betah berlama-lama di sini. Perfect spot untuk healing.', img: null },
+            { name: 'Reviewer', rating: 5, date: 'Baru saja', text: 'Suasana bagus sekali dilengkapi dengan kursi dan meja yang unik. Desain interiornya sangat aesthetic dan instagramable.', img: null },
+            { name: 'Reviewer', rating: 5, date: 'Baru saja', text: 'Cocok buat baca buku, karena mereka gak nyediain wifi. Justru ini jadi keunggulan karena suasananya benar-benar tenang.', img: null },
+            { name: 'Reviewer', rating: 4, date: 'Baru saja', text: 'Kopinya enak dan authentic. Baristanya sangat profesional dan ramah. Harga masih terjangkau untuk kualitas kopi yang diberikan.', img: null },
+        ];
+
+        // --- DOM Elements ---
+        const menuGrid = document.getElementById('menu-grid');
+        const swiperWrapper = document.querySelector('.swiper-wrapper');
+        const themeToggle = document.getElementById('theme-toggle');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const backToTopBtn = document.getElementById('back-to-top');
+        const preloader = document.getElementById('preloader');
+
+        // --- Initialization ---
+        window.addEventListener('load', () => {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+            
+            renderMenu('all');
+            renderReviews();
+            initSwiper();
+            initScrollAnimation();
+            checkTheme();
+        });
+
+        // --- Functions ---
+
+        // 1. Render Menu
+        function renderMenu(category) {
+            menuGrid.innerHTML = '';
+            const filtered = category === 'all' ? menuItems : menuItems.filter(item => item.category === category);
+            
+            filtered.forEach(item => {
+                const badgeHTML = item.badge ? `<span class="absolute top-3 right-3 bg-accent text-white text-xs font-bold px-2 py-1 rounded shadow">${item.badge}</span>` : '';
+                
+                const card = document.createElement('div');
+                card.className = 'bg-white dark:bg-dark-card rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group flex flex-col h-full reveal';
+                card.innerHTML = `
+                    <div class="relative overflow-hidden h-48">
+                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        ${badgeHTML}
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif font-bold text-xl dark:text-white">${item.name}</h3>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow">${item.desc}</p>
+                        <div class="flex justify-between items-center mt-auto border-t border-gray-100 dark:border-gray-700 pt-4">
+                            <span class="text-primary dark:text-accent font-bold">${item.price}</span>
+                            <button class="text-sm text-gray-400 hover:text-primary dark:hover:text-accent transition-colors">
+                                <i class="fas fa-plus-circle"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                `;
+                menuGrid.appendChild(card);
+            });
+            // Re-trigger reveal observer for new elements
+            initScrollAnimation();
+        }
+
+        // Filter Click Handler
+        window.filterMenu = function(cat) {
+            // Update Active Tab
+            document.querySelectorAll('.menu-tab').forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-white');
+                btn.classList.add('text-gray-600', 'dark:text-gray-300');
+                if(btn.textContent.toLowerCase().includes(cat.replace('-', ' ')) || (cat === 'all' && btn.textContent === 'Semua')) {
+                    btn.classList.add('bg-primary', 'text-white');
+                    btn.classList.remove('text-gray-600', 'dark:text-gray-300');
+                }
+            });
+            renderMenu(cat);
+        };
+
+        // 2. Render Reviews
+        function renderReviews() {
+            swiperWrapper.innerHTML = '';
+            reviews.forEach(review => {
+                const stars = Array(5).fill(0).map((_, i) => 
+                    `<i class="fas fa-star ${i < review.rating ? 'text-yellow-400' : 'text-gray-300 dark:text-gray-600'} text-xs"></i>`
+                ).join('');
+
+                const imageHTML = review.img ? 
+                    `<div class="mt-4 flex gap-2 overflow-x-auto hide-scroll">
+                        <img src="${review.img}" class="w-20 h-20 rounded-lg object-cover flex-shrink-0 cursor-pointer hover:opacity-80" onclick="openLightbox('${review.img}')">
+                    </div>` : '';
+
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide h-auto';
+                slide.innerHTML = `
+                    <div class="bg-stone-50 dark:bg-dark-card p-8 rounded-2xl h-full border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">
+                                ${review.name.charAt(0)}
+                            </div>
+                            <div>
+                                <h4 class="font-bold dark:text-white text-sm">${review.name}</h4>
+                                <div class="flex gap-1">${stars}</div>
+                            </div>
+                            <span class="ml-auto text-xs text-gray-400">${review.date}</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 italic text-sm leading-relaxed">"${review.text}"</p>
+                        ${imageHTML}
+                    </div>
+                `;
+                swiperWrapper.appendChild(slide);
+            });
+        }
+
+        function initSwiper() {
+            new Swiper('.review-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.review-next',
+                    prevEl: '.review-prev',
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    }
+                }
+            });
+        }
+
+        // 3. Theme Toggle
+        function checkTheme() {
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun text-yellow-400 text-lg"></i>';
+            } else {
+                document.documentElement.classList.remove('dark');
+                themeToggle.innerHTML = '<i class="fas fa-moon text-gray-600 text-lg"></i>';
+            }
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon text-gray-600 text-lg"></i>';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun text-yellow-400 text-lg"></i>';
+            }
+        });
+
+        // 4. Mobile Menu
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 5. Scroll Animation & Navbar & Back to Top
+        function initScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        window.addEventListener('scroll', () => {
+            // Navbar Glass Effect
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+
+            // Back to Top
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('translate-y-20', 'opacity-0');
+            } else {
+                backToTopBtn.classList.add('translate-y-20', 'opacity-0');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 6. Lightbox
+        window.openLightbox = function(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lightbox.classList.remove('hidden');
+        }
+
+        window.closeLightbox = function() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+
+        // 7. Copy to Clipboard
+        window.copyToClipboard = function(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast();
+            });
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-x-full');
+            setTimeout(() => {
+                toast.classList.add('translate-x-full');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
