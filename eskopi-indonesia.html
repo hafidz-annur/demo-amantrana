@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eskopi Indonesia - Dukuh Pakis | Kedai Kopi Terbaik Surabaya</title>
+    
+    <!-- Meta Description & SEO -->
+    <meta name="description" content="Nikmati kopi nusantara autentik di Eskopi Indonesia Dukuh Pakis. Rating 4.8⭐ dengan 71 ulasan. Buka setiap hari 07.30-21.00. Rp 1.000-25.000.">
+    <meta name="keywords" content="Eskopi Indonesia, Kopi Surabaya, Kedai Kopi Dukuh Pakis, Kopi Nusantara, Cafe Surabaya">
+    <meta name="author" content="Amantrana">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eskopidukuhpakis.com/">
+    <meta property="og:title" content="Eskopi Indonesia - Dukuh Pakis | Kedai Kopi Terbaik Surabaya">
+    <meta property="og:description" content="Nikmati kopi nusantara autentik di Eskopi Indonesia Dukuh Pakis. Tempat nyaman, WiFi cepat, dan harga terjangkau.">
+    <meta property="og:image" content="https://picsum.photos/seed/eskopihero/1200/630.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Eskopi Indonesia - Dukuh Pakis | Kedai Kopi Terbaik Surabaya">
+    <meta property="twitter:description" content="Nikmati kopi nusantara autentik di Eskopi Indonesia Dukuh Pakis. Tempat nyaman, WiFi cepat, dan harga terjangkau.">
+    <meta property="twitter:image" content="https://picsum.photos/seed/eskopihero/1200/630.jpg">
+
+    <!-- Favicon (Generic Coffee Icon) -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/751/751621.png" type="image/png">
+
+    <!-- Fonts: Playfair Display (Headings) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- Tailwind Config for Custom Colors/Fonts -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        coffee: {
+                            50: '#f7f3f0',
+                            100: '#efe6df',
+                            200: '#e0cbb9',
+                            300: '#cca992',
+                            400: '#b8866b',
+                            500: '#a36d54',
+                            600: '#8a5641', // Primary
+                            700: '#6f4e37', // Darker Coffee
+                            800: '#5a3e2c',
+                            900: '#493225',
+                        },
+                        cream: '#F9F7F2',
+                        gold: '#D4A574',
+                        goldDark: '#B8860B',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for specific overrides -->
+    <style>
+        /* Hide scrollbar for clean look in certain elements */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Loading Animation */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: #F9F7F2;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease-out, visibility 0.5s;
+        }
+        .dark #loader {
+            background: #1f2937;
+        }
+        
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark .glass {
+            background: rgba(31, 41, 55, 0.8);
+        }
+
+        /* Swiper customization */
+        .swiper-pagination-bullet-active {
+            background-color: #6F4E37 !important;
+        }
+        .dark .swiper-pagination-bullet-active {
+            background-color: #D4A574 !important;
+        }
+    </style>
+</head>
+<body class="bg-cream text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans antialiased overflow-x-hidden">
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="text-center">
+            <svg class="animate-spin h-12 w-12 text-coffee-700 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <h2 class="text-xl font-serif font-bold text-coffee-700 dark:text-gold">Eskopi Indonesia</h2>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 top-0">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+            <div class="flex justify-between items-center glass rounded-full px-6 py-3 shadow-md">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 bg-coffee-700 rounded-full flex items-center justify-center text-white overflow-hidden">
+                         <img src="https://cdn-icons-png.flaticon.com/512/751/751621.png" alt="Logo Eskopi" class="w-6 h-6">
+                    </div>
+                    <span class="text-xl font-serif font-bold text-coffee-700 dark:text-gold group-hover:text-coffee-500 dark:group-hover:text-goldDark transition-colors">Eskopi Indonesia</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-600 dark:text-gray-300">
+                    <a href="#home" class="hover:text-coffee-600 dark:hover:text-gold transition-colors">Beranda</a>
+                    <a href="#about" class="hover:text-coffee-600 dark:hover:text-gold transition-colors">Tentang</a>
+                    <a href="#menu" class="hover:text-coffee-600 dark:hover:text-gold transition-colors">Menu</a>
+                    <a href="#gallery" class="hover:text-coffee-600 dark:hover:text-gold transition-colors">Galeri</a>
+                    <a href="#reviews" class="hover:text-coffee-600 dark:hover:text-gold transition-colors">Ulasan</a>
+                    <a href="#location" class="hover:text-coffee-600 dark:hover:text-gold transition-colors">Lokasi</a>
+                    
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle-desktop" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none" aria-label="Toggle Dark Mode">
+                        <!-- Sun Icon -->
+                        <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <!-- Moon Icon -->
+                        <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none" aria-label="Toggle Dark Mode">
+                         <svg id="sun-icon-mobile" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                         <svg id="moon-icon-mobile" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-coffee-700 dark:text-gold focus:outline-none">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full glass shadow-xl border-t border-gray-200 dark:border-gray-700 md:hidden">
+            <div class="flex flex-col p-6 space-y-4 font-medium text-center">
+                <a href="#home" class="mobile-link hover:text-coffee-600 dark:hover:text-gold">Beranda</a>
+                <a href="#about" class="mobile-link hover:text-coffee-600 dark:hover:text-gold">Tentang</a>
+                <a href="#menu" class="mobile-link hover:text-coffee-600 dark:hover:text-gold">Menu</a>
+                <a href="#gallery" class="mobile-link hover:text-coffee-600 dark:hover:text-gold">Galeri</a>
+                <a href="#reviews" class="mobile-link hover:text-coffee-600 dark:hover:text-gold">Ulasan</a>
+                <a href="#location" class="mobile-link hover:text-coffee-600 dark:hover:text-gold">Lokasi</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden">
+        <!-- Background Image with Parallax-like effect -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/seed/coffeebean/1920/1080.jpg" alt="Coffee Shop Ambiance" class="w-full h-full object-cover opacity-20 dark:opacity-10">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-cream/80 to-cream dark:via-gray-900/80 dark:to-gray-900"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-24 grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-full mb-6 shadow-sm border border-coffee-100 dark:border-gray-700">
+                    <span class="text-gold text-lg">★★★★★</span>
+                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">4.8 (71 Ulasan)</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-serif font-bold text-gray-900 dark:text-white leading-tight mb-6">
+                    Nikmati Kopi <span class="text-coffee-600 dark:text-gold">Nusantara</span> Autentik
+                </h1>
+                <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                    Rasakan pengalaman ngopi berbeda dengan cita rasa lokal yang kaya, suasana hangat, dan pelayanan ramah di jantung kota Surabaya.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#menu" class="px-8 py-3 bg-coffee-700 hover:bg-coffee-800 text-white rounded-xl font-semibold text-center transition-all shadow-lg hover:shadow-coffee-700/30 transform hover:-translate-y-1">
+                        Lihat Menu
+                    </a>
+                    <a href="#location" class="px-8 py-3 bg-white dark:bg-gray-800 border border-coffee-200 dark:border-gray-700 text-coffee-700 dark:text-gold hover:bg-coffee-50 dark:hover:bg-gray-700 rounded-xl font-semibold text-center transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                        Hubungi Kami
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hidden md:block relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-500 border-4 border-white dark:border-gray-700">
+                    <img src="https://picsum.photos/seed/eskopicup/600/600.jpg" alt="Eskopi Susu Nusantara" class="w-full h-auto object-cover">
+                </div>
+                <!-- Decorative elements -->
+                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-gold/20 rounded-full blur-3xl"></div>
+                <div class="absolute -top-10 -right-10 w-60 h-60 bg-coffee-700/10 rounded-full blur-3xl"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-white dark:bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <!-- Image Grid -->
+                <div class="grid grid-cols-2 gap-4" data-aos="fade-up">
+                    <img src="https://picsum.photos/seed/barista1/400/500.jpg" alt="Barista menyeduh kopi" class="rounded-2xl shadow-lg w-full h-64 object-cover transform translate-y-8">
+                    <img src="https://picsum.photos/seed/interiorcafe/400/500.jpg" alt="Interior Eskopi Indonesia" class="rounded-2xl shadow-lg w-full h-64 object-cover">
+                </div>
+
+                <!-- Content -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="text-gold font-bold uppercase tracking-wider mb-2">Tentang Kami</h4>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 dark:text-white mb-6">
+                        Lebih dari Sekedar Kopi
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        Eskopi Indonesia adalah kedai kopi lokal yang menyajikan berbagai varian kopi nusantara dengan cita rasa autentik. Kami menyediakan tempat nyaman untuk bersantai, bekerja, atau bertemu teman dengan suasana hangat dan pelayanan ramah.
+                    </p>
+                    
+                    <!-- Facilities -->
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-coffee-600 dark:text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-sm font-medium dark:text-gray-300">Dine-in & Takeaway</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-coffee-600 dark:text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-sm font-medium dark:text-gray-300">WiFi Tersedia</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-coffee-600 dark:text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-sm font-medium dark:text-gray-300">Area Parkir Luas</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-coffee-600 dark:text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-sm font-medium dark:text-gray-300">Akses Kursi Roda</span>
+                        </div>
+                    </div>
+
+                    <!-- Opening Hours Card -->
+                    <div class="bg-coffee-50 dark:bg-gray-700/50 p-6 rounded-2xl border-l-4 border-coffee-600 dark:border-gold">
+                        <div class="flex items-center gap-3 mb-3">
+                            <svg class="w-6 h-6 text-coffee-700 dark:text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Jam Operasional</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                            <li class="flex justify-between">
+                                <span>Senin - Sabtu</span>
+                                <span class="font-semibold">07.30 - 21.00 WIB</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Minggu</span>
+                                <span class="font-semibold">08.00 - 21.00 WIB</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 md:py-24 bg-cream dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h4 class="text-gold font-bold uppercase tracking-wider mb-2">Menu Favorit</h4>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 dark:text-white">Pilihan Terbaik Untuk Anda</h2>
+                <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Harga terjangkau mulai Rp 1.000 - Rp 25.000. Diseduh dengan biji kopi pilihan nusantara.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Menu Item 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://picsum.photos/seed/kopi1/600/400.jpg" alt="Eskopi Susu Nusantara" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 dark:bg-gray-900/90 px-3 py-1 rounded-full text-coffee-700 dark:text-gold font-bold text-sm shadow-md">
+                            Rp 15.000
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold font-serif text-gray-900 dark:text-white mb-2">Eskopi Susu Nusantara</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Perpaduan kopi espresso lokal dengan susu creamy yang memanjakan lidah.</p>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://picsum.photos/seed/kopi2/600/400.jpg" alt="Es Kopi Juwara" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 dark:bg-gray-900/90 px-3 py-1 rounded-full text-coffee-700 dark:text-gold font-bold text-sm shadow-md">
+                            Rp 18.000
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold font-serif text-gray-900 dark:text-white mb-2">Es Kopi Juwara</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Kopi kuat dengan rasa yang nendang, cocok untuk melek sepanjang hari.</p>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://picsum.photos/seed/kopi3/600/400.jpg" alt="Kopi Susu Warga" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 dark:bg-gray-900/90 px-3 py-1 rounded-full text-coffee-700 dark:text-gold font-bold text-sm shadow-md">
+                            Rp 16.000
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold font-serif text-gray-900 dark:text-white mb-2">Kopi Susu Warga</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Varian kopi yang tidak terlalu strong, pas untuk pemula atau setelah perjalanan.</p>
+                    </div>
+                </div>
+
+                <!-- Menu Item 4 -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://picsum.photos/seed/matcha/600/400.jpg" alt="Matcha Latte" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 dark:bg-gray-900/90 px-3 py-1 rounded-full text-coffee-700 dark:text-gold font-bold text-sm shadow-md">
+                            Rp 20.000
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold font-serif text-gray-900 dark:text-white mb-2">Matcha Latte</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Teh hijau Jepang premium dengan susu segar yang menenangkan.</p>
+                    </div>
+                </div>
+
+                 <!-- Menu Item 5 -->
+                 <div class="bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://picsum.photos/seed/toast/600/400.jpg" alt="Various Toast & Snacks" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 dark:bg-gray-900/90 px-3 py-1 rounded-full text-coffee-700 dark:text-gold font-bold text-sm shadow-md">
+                            Mulai 15k
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold font-serif text-gray-900 dark:text-white mb-2">Various Toast & Snacks</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Pelengkap ngopi Anda, roti panggang lezat dan camilan manis.</p>
+                    </div>
+                </div>
+
+                <!-- CTA Card -->
+                <div class="bg-coffee-700 dark:bg-gray-700 rounded-3xl p-8 flex flex-col justify-center items-center text-center shadow-xl" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2 font-serif">Lihat Menu Lengkap</h3>
+                    <p class="text-coffee-100 mb-6 text-sm">Dapatkan penawaran eksklusif dan pesan langsung via GoFood.</p>
+                    <a href="https://gofood.link/a/KHpw36S" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-gold hover:bg-goldDark text-white rounded-xl font-bold transition-colors w-full">
+                        Pesan di GoFood
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Swiper) -->
+    <section id="gallery" class="py-16 md:py-24 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12" data-aos="fade-right">
+                <div>
+                    <h4 class="text-gold font-bold uppercase tracking-wider mb-2">Galeri</h4>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 dark:text-white">Suasana Dikedai Kami</h2>
+                </div>
+                <!-- Swiper Controls -->
+                <div class="flex gap-2 mt-4 md:mt-0">
+                    <button id="gallery-prev" class="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-coffee-700 hover:text-white dark:hover:bg-gold transition-colors focus:outline-none">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button id="gallery-next" class="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-coffee-700 hover:text-white dark:hover:bg-gold transition-colors focus:outline-none">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Swiper -->
+            <div class="swiper gallerySwiper rounded-3xl overflow-hidden shadow-2xl" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide relative h-[400px] md:h-[500px]">
+                        <img src="https://picsum.photos/seed/cafe1/1200/800.jpg" alt="Gallery 1" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this)">
+                    </div>
+                    <div class="swiper-slide relative h-[400px] md:h-[500px]">
+                        <img src="https://picsum.photos/seed/cafe2/1200/800.jpg" alt="Gallery 2" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this)">
+                    </div>
+                    <div class="swiper-slide relative h-[400px] md:h-[500px]">
+                        <img src="https://picsum.photos/seed/cafe3/1200/800.jpg" alt="Gallery 3" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this)">
+                    </div>
+                    <div class="swiper-slide relative h-[400px] md:h-[500px]">
+                        <img src="https://picsum.photos/seed/cafe4/1200/800.jpg" alt="Gallery 4" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this)">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-16 md:py-24 bg-cream dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h4 class="text-gold font-bold uppercase tracking-wider mb-2">Testimoni</h4>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 dark:text-white">Apa Kata Mereka?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex text-gold mb-3">★★★★★</div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-4">"Bagi pecinta kopi, wajib nyobain eskopi susu nusantara nya mantap👍👍"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">G</div>
+                        <div>
+                            <h5 class="font-bold text-gray-900 dark:text-white text-sm">Google Reviews</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex text-gold mb-3">★★★★★</div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-4">"Eskopi Susu Warga varian kopi yg tidak strong tapi cukup buat saya gak ngantuk sehabis perjalanan panjang. Untuk staff yg namanya Mbak Miftah juga ramah dan komunikatif ke customer☺🙏"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-coffee-100 rounded-full flex items-center justify-center font-bold text-coffee-700">P</div>
+                        <div>
+                            <h5 class="font-bold text-gray-900 dark:text-white text-sm">Paulus Theodorus</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex text-gold mb-3">★★★★★</div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-4">"Rekomended banget, kopinya enak pelayanan cepet! Kakaknya ramah-ramai banyak senyum puas banget. Next ajak temen-temen kesini🤩"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">W</div>
+                        <div>
+                            <h5 class="font-bold text-gray-900 dark:text-white text-sm">Wijaya Ulfa</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex text-gold mb-3">★★★★★</div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-4">"Rasa coffee nya oke dan balance banget, apalagi diminum pas lagi cuaca panas enak poll"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">X</div>
+                        <div>
+                            <h5 class="font-bold text-gray-900 dark:text-white text-sm">Xean</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex text-gold mb-3">★★★★★</div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-4">"Menu favorite es kopi juwara, kopi nya nendang langsung melek."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">L</div>
+                        <div>
+                            <h5 class="font-bold text-gray-900 dark:text-white text-sm">Local Guide</h5>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Review 6 -->
+                 <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex text-gold mb-3">★★★★☆</div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-4">"Parkir agak susah karena ada perbaikan jalan, tapi kopinya worth it!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">G</div>
+                        <div>
+                            <h5 class="font-bold text-gray-900 dark:text-white text-sm">Google Reviews</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-16 md:py-24 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Map -->
+                <div class="rounded-3xl overflow-hidden shadow-lg h-[400px]" data-aos="fade-right">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.752884846045!2d112.71466431477614!3d-7.276801994762647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f9665e374317%3A0xbba5758966737a3e!2sEskopi%20Indonesia%20-%20Dukuh%20Pakis!5e0!3m2!1sen!2sid!4v1629876543210!5m2!1sen!2sid" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; filter: grayscale(0%);" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        class="dark:grayscale contrast-125 dark:invert">
+                    </iframe>
+                </div>
+
+                <!-- Info -->
+                <div class="flex flex-col justify-center" data-aos="fade-left">
+                    <h4 class="text-gold font-bold uppercase tracking-wider mb-2">Lokasi</h4>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 dark:text-white mb-6">Kunjungi Kami</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-coffee-50 dark:bg-gray-700 rounded-xl flex items-center justify-center flex-shrink-0 text-coffee-700 dark:text-gold">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 dark:text-white">Alamat</h5>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                    Jl. Dukuh Kupang Barat I, Putat Jaya, Kec. Dukuhpakis, Surabaya, Jawa Timur 60189
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-coffee-50 dark:bg-gray-700 rounded-xl flex items-center justify-center flex-shrink-0 text-coffee-700 dark:text-gold">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 dark:text-white">Kontak</h5>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">0812-4450-0189</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center flex-shrink-0 text-green-600 dark:text-green-400">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 dark:text-white">Status</h5>
+                                <p class="text-green-600 dark:text-green-400 font-bold text-sm">● Buka Sekarang</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="https://www.google.com/maps/place/Eskopi+Indonesia+-+Dukuh+Pakis" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-coffee-700 hover:bg-coffee-800 text-white rounded-xl font-semibold transition-all shadow-lg hover:shadow-coffee-700/30">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0121 18.382V7.618a1 1 0 01-.553-.894L15 7m0 13V7"></path></svg>
+                            Dapatkan Rute
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-gold rounded-full flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/751/751621.png" alt="Logo" class="w-5 h-5">
+                        </div>
+                        <span class="text-xl font-serif font-bold">Eskopi Indonesia</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Kedai kopi lokal dengan cita rasa nusantara. Tempat berkumpul, bekerja, dan bersantai di Surabaya.
+                    </p>
+                    <div class="flex gap-4">
+                        <!-- Social Icons (Placeholders) -->
+                        <a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gold hover:text-white transition-colors" aria-label="Instagram">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gold hover:text-white transition-colors" aria-label="Facebook">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-gold">Tautan</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="#menu" class="hover:text-white transition-colors">Menu</a></li>
+                        <li><a href="#reviews" class="hover:text-white transition-colors">Ulasan</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-gold">Hubungi Kami</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                            <span>Jl. Dukuh Kupang Barat I, Putat Jaya, Surabaya</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <span>0812-4450-0189</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span>Senin - Minggu: 07.30 - 21.00</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Made by -->
+                <div class="lg:text-right">
+                    <h4 class="text-lg font-bold mb-6 text-gold">Kredit</h4>
+                    <p class="text-sm text-gray-500 mb-2">Desain & Pengembangan Web</p>
+                    <p class="text-xl font-serif font-bold text-white">Made by Amantrana</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-gray-500 text-center md:text-left">
+                    &copy; 2023 Eskopi Indonesia - Dukuh Pakis. All rights reserved.
+                </p>
+                <div class="flex items-center gap-2 text-xs text-gray-500">
+                    <span>Surabaya, Indonesia</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <!-- Back to Top -->
+    <button id="backToTop" class="fixed bottom-24 right-6 z-40 bg-white dark:bg-gray-800 text-coffee-700 dark:text-gold p-3 rounded-full shadow-lg border border-gray-200 dark:border-gray-700 translate-y-20 opacity-0 transition-all duration-300 hover:scale-110 focus:outline-none" aria-label="Back to Top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    </button>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/6281244500189" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-all duration-300 flex items-center justify-center focus:outline-none" aria-label="Chat WhatsApp">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </a>
+
+    <!-- Lightbox Modal (Simple Implementation) -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 backdrop-blur-sm" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white hover:text-gray-300 focus:outline-none" onclick="closeLightbox()">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <img id="lightbox-img" src="" alt="Zoomed Gallery" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl transform scale-95 transition-transform duration-300">
+    </div>
+
+    <!-- Scripts -->
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+        // 1. Preloader
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            loader.style.visibility = 'hidden';
+        });
+
+        // 2. Dark Mode Logic
+        const themeToggleBtns = document.querySelectorAll('#theme-toggle-desktop, #theme-toggle-mobile');
+        const sunIcons = document.querySelectorAll('#sun-icon, #sun-icon-mobile');
+        const moonIcons = document.querySelectorAll('#moon-icon, #moon-icon-mobile');
+
+        // Check Local Storage or System Preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            sunIcons.forEach(icon => icon.classList.remove('hidden'));
+            moonIcons.forEach(icon => icon.classList.add('hidden'));
+        } else {
+            document.documentElement.classList.remove('dark');
+            sunIcons.forEach(icon => icon.classList.add('hidden'));
+            moonIcons.forEach(icon => icon.classList.remove('hidden'));
+        }
+
+        // Toggle Function
+        themeToggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                
+                if (document.documentElement.classList.contains('dark')) {
+                    localStorage.theme = 'dark';
+                    sunIcons.forEach(icon => icon.classList.remove('hidden'));
+                    moonIcons.forEach(icon => icon.classList.add('hidden'));
+                } else {
+                    localStorage.theme = 'light';
+                    sunIcons.forEach(icon => icon.classList.add('hidden'));
+                    moonIcons.forEach(icon => icon.classList.remove('hidden'));
+                }
+            });
+        });
+
+        // 3. Navbar Scroll Effect & Mobile Menu
+        const navbar = document.getElementById('navbar');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+
+            // Back to Top Button Visibility
+            const backToTopBtn = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('translate-y-20', 'opacity-0');
+            } else {
+                backToTopBtn.classList.add('translate-y-20', 'opacity-0');
+            }
+        });
+
+        // Mobile Menu Toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Back to Top Action
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 4. Initialize AOS
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+
+        // 5. Initialize Swiper (Gallery)
+        const gallerySwiper = new Swiper('.gallerySwiper', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '#gallery-next',
+                prevEl: '#gallery-prev',
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            }
+        });
+
+        // 6. Lightbox Logic
+        function openLightbox(element) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            lightboxImg.src = element.src;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            
+            // Small animation for the image
+            setTimeout(() => {
+                lightboxImg.classList.remove('scale-95');
+                lightboxImg.classList.add('scale-100');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            lightboxImg.classList.remove('scale-100');
+            lightboxImg.classList.add('scale-95');
+            
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }, 300);
+        }
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+    </script>
+
+    <!-- Schema.org LocalBusiness JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "Eskopi Indonesia - Dukuh Pakis",
+      "image": "https://picsum.photos/seed/eskopihero/1200/630.jpg",
+      "telephone": "0812-4450-0189",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Dukuh Kupang Barat I, Putat Jaya, Kec. Dukuhpakis",
+        "addressLocality": "Surabaya",
+        "addressRegion": "Jawa Timur",
+        "postalCode": "60189",
+        "addressCountry": "ID"
+      },
+      "url": "https://eskopidukuhpakis.com/",
+      "priceRange": "Rp 1.000 - Rp 25.000",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "07:30",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "08:00",
+          "closes": "21:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "71"
+      }
+    }
+    </script>
+</body>
+</html>

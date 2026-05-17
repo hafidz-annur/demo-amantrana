@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>The Gade Coffee & Gold Surabaya - Premium Coffee Experience</title>
+    <meta name="description" content="Tempat nongkrong nyaman di Surabaya. Menikmati kopi racikan barista profesional dengan suasana unik modern. Cocok untuk keluarga, kerja, atau bersantai.">
+    <meta name="keywords" content="Coffee Shop Surabaya, Kopi Enak Surabaya, Cafe Keluarga, The Gade Coffee, Nongkrong Surabaya, WiFi Cafe">
+    <meta name="author" content="Amantrana">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thegadecoffee.com/">
+    <meta property="og:title" content="The Gade Coffee & Gold Surabaya">
+    <meta property="og:description" content="Kopi berkualitas dengan harga terjangkau di pusat Surabaya. Tempat cozy untuk bekerja dan bersantai.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thegadecoffee.com/">
+    <meta property="twitter:title" content="The Gade Coffee & Gold Surabaya">
+    <meta property="twitter:description" content="Kopi berkualitas dengan harga terjangkau di pusat Surabaya.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon (Placeholder) -->
+    <link rel="icon" href="https://img.icons8.com/color/96/coffee-bean.png" type="image/png">
+
+    <!-- Google Fonts: Poppins & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- TailwindCSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: {
+                            400: '#FBBF24',
+                            500: '#D97706', // Primary
+                            600: '#B45309',
+                            700: '#92400E', // Secondary
+                            900: '#78350F',
+                        },
+                        coffee: {
+                            800: '#451A03',
+                            900: '#291503',
+                        },
+                        wa: '#25D366',
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D97706;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B45309;
+        }
+
+        /* Preloader Animation */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease-out, visibility 0.5s;
+        }
+        .dark #preloader {
+            background: #111827;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #F3F4F6;
+            border-top: 5px solid #D97706;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        .dark .spinner {
+            border-color: #374151;
+            border-top-color: #D97706;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Pulse Animation for WA Button */
+        .pulse-btn {
+            animation: pulse-animation 2s infinite;
+        }
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Glassmorphism utilities */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark .glass-nav {
+            background: rgba(17, 24, 39, 0.85);
+        }
+    </style>
+
+    <!-- Schema.org LocalBusiness JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "The Gade Coffee & Gold Surabaya",
+      "image": "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=1200&q=80",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Dinoyo No.81, Keputran, Kec. Tegalsari",
+        "addressLocality": "Surabaya Pusat",
+        "addressRegion": "Jawa Timur",
+        "postalCode": "60265",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -7.2654, 
+        "longitude": 112.7428
+      },
+      "url": "https://thegadecoffee.com/",
+      "telephone": "+6281119666634",
+      "priceRange": "Rp 25.000 - Rp 50.000",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "08:00",
+          "closes": "21:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "674"
+      }
+    }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans transition-colors duration-300 overflow-x-hidden">
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gold-500 z-[100] w-0 transition-all duration-100"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="text-center">
+            <div class="spinner mx-auto mb-4"></div>
+            <p class="font-heading font-bold text-gold-600 dark:text-gold-500 tracking-widest animate-pulse">THE GADE</p>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header id="header" class="fixed w-full top-0 z-50 transition-all duration-300 py-4">
+        <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+            <nav class="glass-nav rounded-full px-6 py-3 flex justify-between items-center shadow-lg">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <i class="fa-solid fa-mug-hot text-2xl text-gold-500 group-hover:rotate-12 transition-transform"></i>
+                    <div class="flex flex-col leading-tight">
+                        <span class="font-heading font-bold text-lg text-coffee-900 dark:text-gold-400">THE GADE</span>
+                        <span class="text-[10px] uppercase tracking-wider text-gray-600 dark:text-gray-300">Coffee & Gold</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <li><a href="#home" class="hover:text-gold-500 transition-colors active-nav">Beranda</a></li>
+                    <li><a href="#about" class="hover:text-gold-500 transition-colors">Tentang</a></li>
+                    <li><a href="#menu" class="hover:text-gold-500 transition-colors">Menu</a></li>
+                    <li><a href="#gallery" class="hover:text-gold-500 transition-colors">Galeri</a></li>
+                    <li><a href="#reviews" class="hover:text-gold-500 transition-colors">Ulasan</a></li>
+                    <li><a href="#location" class="hover:text-gold-500 transition-colors">Lokasi</a></li>
+                </ul>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-4">
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none" aria-label="Toggle Dark Mode">
+                        <i class="fa-solid fa-moon text-gray-600 dark:text-gold-400 text-lg"></i>
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-800 dark:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-center items-center gap-8">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-3xl text-gray-800 dark:text-white">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <a href="#home" class="mobile-link text-2xl font-heading font-bold hover:text-gold-500">Beranda</a>
+            <a href="#about" class="mobile-link text-2xl font-heading font-bold hover:text-gold-500">Tentang</a>
+            <a href="#menu" class="mobile-link text-2xl font-heading font-bold hover:text-gold-500">Menu</a>
+            <a href="#gallery" class="mobile-link text-2xl font-heading font-bold hover:text-gold-500">Galeri</a>
+            <a href="#reviews" class="mobile-link text-2xl font-heading font-bold hover:text-gold-500">Ulasan</a>
+            <a href="#location" class="mobile-link text-2xl font-heading font-bold hover:text-gold-500">Lokasi</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1920&q=80" 
+                     alt="Coffee Shop Interior Surabaya" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-coffee-900/90"></div>
+            </div>
+
+            <div class="relative z-10 max-w-[1280px] mx-auto px-6 md:px-12 text-center md:text-left">
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <span class="inline-block py-1 px-3 rounded-full bg-gold-500/20 border border-gold-500/50 text-gold-300 text-sm font-semibold mb-4 backdrop-blur-sm">
+                        <i class="fa-solid fa-star text-xs mr-1"></i> Rated 4.8/5 (674 Ulasan)
+                    </span>
+                    <h1 class="font-heading font-bold text-5xl md:text-7xl text-white mb-4 leading-tight">
+                        The Gade Coffee <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-amber-600">& Gold</span>
+                    </h1>
+                    <p class="text-gray-200 text-lg md:text-xl max-w-2xl mb-8 font-light">
+                        Surabaya's Premium Coffee Experience. Tempat nongkrong nyaman dengan racikan barista profesional dan suasana modern yang unik.
+                    </p>
+                    <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#menu" class="px-8 py-4 bg-gold-500 hover:bg-gold-600 text-white font-bold rounded-full transition-transform hover:scale-105 shadow-lg shadow-gold-500/30 text-center">
+                            Lihat Menu
+                        </a>
+                        <a href="https://wa.me/6281119666634?text=Halo%20The%20Gade%20Coffee,%20saya%20ingin%20bertanya..." target="_blank" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-gray-900 transition-all text-center">
+                            <i class="fa-brands fa-whatsapp mr-2"></i> Hubungi Kami
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Badge -->
+            <div class="absolute bottom-10 right-6 md:right-12 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl text-center animate-bounce" data-aos="fade-left">
+                <div class="text-3xl font-bold text-gold-400">4.8</div>
+                <div class="text-xs text-white uppercase tracking-wide">Google Rating</div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white dark:bg-gray-800 relative">
+            <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Image -->
+                    <div class="relative" data-aos="fade-right">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-gold-200 dark:bg-gold-900 rounded-full blur-2xl opacity-50"></div>
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" 
+                             alt="Barista membuat kopi" 
+                             class="rounded-2xl shadow-2xl relative z-10 w-full object-cover h-[400px]">
+                        <!-- Open Badge -->
+                        <div id="open-badge" class="absolute bottom-6 left-6 z-20 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg flex items-center gap-2 font-bold">
+                            <span class="relative flex h-3 w-3">
+                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                              <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+                            </span>
+                            NOW OPEN
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div data-aos="fade-left">
+                        <h4 class="text-gold-500 font-bold uppercase tracking-wider mb-2">Tentang Kami</h4>
+                        <h2 class="font-heading font-bold text-3xl md:text-4xl mb-6 text-gray-900 dark:text-white">Suasana Unik Modern, <br>Rasa Otentik</h2>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                            Tempat nongkrong yang nyaman untuk menikmati kopi racikan barista profesional. Cafe dengan suasana unik modern yang cocok untuk keluarga, kerja, atau sekadar bersantai. Kami menyajikan berbagai varian kopi berkualitas dengan harga terjangkau.
+                        </p>
+
+                        <!-- Facilities Grid -->
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-gold-600">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Jam Operasional</p>
+                                    <p class="font-bold text-sm">08.00 - 21.00 WIB</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-gold-600">
+                                    <i class="fa-solid fa-wifi"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Fasilitas</p>
+                                    <p class="font-bold text-sm">Free WiFi</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-gold-600">
+                                    <i class="fa-solid fa-wheelchair"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Akses</p>
+                                    <p class="font-bold text-sm">Wheelchair OK</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-gold-600">
+                                    <i class="fa-solid fa-wallet"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Harga</p>
+                                    <p class="font-bold text-sm">25k - 50k</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="py-20 bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h4 class="text-gold-500 font-bold uppercase tracking-wider mb-2">Menu Kami</h4>
+                    <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 dark:text-white">Pilihan Favorit Pelanggan</h2>
+                </div>
+
+                <!-- Filters -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up">
+                    <button class="filter-btn active px-6 py-2 rounded-full border border-gold-500 bg-gold-500 text-white font-medium transition-all hover:bg-gold-600" data-filter="all">Semua</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 font-medium hover:border-gold-500 hover:text-gold-500 transition-all" data-filter="coffee">Coffee</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 font-medium hover:border-gold-500 hover:text-gold-500 transition-all" data-filter="non-coffee">Non-Coffee</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 font-medium hover:border-gold-500 hover:text-gold-500 transition-all" data-filter="snack">Snacks</button>
+                </div>
+
+                <!-- Menu Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="menu-grid">
+                    <!-- Menu Item 1 -->
+                    <div class="menu-item bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group" data-category="coffee" data-aos="fade-up">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80" alt="Kopi Gula Aren" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                            <div class="absolute top-3 right-3 bg-gold-500 text-white text-xs font-bold px-2 py-1 rounded">Signature</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading font-bold text-xl mb-2 dark:text-white">Kopi Gula Aren</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 line-clamp-2">Perpaduan kopi robusta dan arabika dengan gula aren asli yang manis alami.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gold-600 font-bold">Rp 28.000</span>
+                                <button class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-gold-500 hover:text-white transition-colors" aria-label="Add to cart">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 2 -->
+                    <div class="menu-item bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group" data-category="coffee" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=600&q=80" alt="Lychee Coffee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading font-bold text-xl mb-2 dark:text-white">Lychee Coffee</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 line-clamp-2">Kopi susu segar dengan sirup buah leci yang menyegarkan.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gold-600 font-bold">Rp 30.000</span>
+                                <button class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-gold-500 hover:text-white transition-colors" aria-label="Add to cart">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 3 -->
+                    <div class="menu-item bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group" data-category="coffee" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=600&q=80" alt="Vanilla Latte" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading font-bold text-xl mb-2 dark:text-white">Vanilla Latte</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 line-clamp-2">Espresso dengan susu steamed dan aroma vanilla premium.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gold-600 font-bold">Rp 32.000</span>
+                                <button class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-gold-500 hover:text-white transition-colors" aria-label="Add to cart">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 4 -->
+                    <div class="menu-item bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group" data-category="coffee" data-aos="fade-up">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="https://images.unsplash.com/photo-1507133750069-69d3cdad1637?auto=format&fit=crop&w=600&q=80" alt="Americano" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading font-bold text-xl mb-2 dark:text-white">Americano</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 line-clamp-2">Shot espresso ganda dengan air panas, rasa kuat dan murni.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gold-600 font-bold">Rp 25.000</span>
+                                <button class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-gold-500 hover:text-white transition-colors" aria-label="Add to cart">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 5 -->
+                    <div class="menu-item bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group" data-category="coffee" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80" alt="Cappuccino" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading font-bold text-xl mb-2 dark:text-white">Cappuccino</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 line-clamp-2">Keseimbangan sempurna espresso, susu panas, dan foam tebal.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gold-600 font-bold">Rp 30.000</span>
+                                <button class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-gold-500 hover:text-white transition-colors" aria-label="Add to cart">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 6 -->
+                    <div class="menu-item bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group" data-category="snack" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Light Bites" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading font-bold text-xl mb-2 dark:text-white">Various Snacks</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 line-clamp-2">Pilihan camilan manis dan asin untuk teman ngopi Anda.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gold-600 font-bold">Rp 15.000+</span>
+                                <button class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-gold-500 hover:text-white transition-colors" aria-label="Add to cart">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 bg-white dark:bg-gray-800">
+            <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                    <div data-aos="fade-right">
+                        <h4 class="text-gold-500 font-bold uppercase tracking-wider mb-2">Galeri</h4>
+                        <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 dark:text-white">Suasana Cafe</h2>
+                    </div>
+                    <!-- Swiper Controls -->
+                    <div class="flex gap-2 mt-4 md:mt-0" data-aos="fade-left">
+                        <button id="gallery-prev" class="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-gold-500 hover:text-white hover:border-gold-500 transition-colors">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <button id="gallery-next" class="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-gold-500 hover:text-white hover:border-gold-500 transition-colors">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Swiper -->
+                <div class="swiper gallerySwiper" data-aos="fade-up">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-item swiper-slide cursor-pointer overflow-hidden rounded-xl h-64 md:h-80 relative group" onclick="openLightbox(this)">
+                            <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=800&q=80" alt="Interior 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="swiper-item swiper-slide cursor-pointer overflow-hidden rounded-xl h-64 md:h-80 relative group" onclick="openLightbox(this)">
+                            <img src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&w=800&q=80" alt="Interior 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="swiper-item swiper-slide cursor-pointer overflow-hidden rounded-xl h-64 md:h-80 relative group" onclick="openLightbox(this)">
+                            <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=800&q=80" alt="Coffee Making" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="swiper-item swiper-slide cursor-pointer overflow-hidden rounded-xl h-64 md:h-80 relative group" onclick="openLightbox(this)">
+                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="Latte Art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="swiper-item swiper-slide cursor-pointer overflow-hidden rounded-xl h-64 md:h-80 relative group" onclick="openLightbox(this)">
+                            <img src="https://images.unsplash.com/photo-1559496417-e7f25cb247f3?auto=format&fit=crop&w=800&q=80" alt="Exterior" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="reviews" class="py-20 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+            <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h4 class="text-gold-500 font-bold uppercase tracking-wider mb-2">Testimoni</h4>
+                    <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 dark:text-white">Apa Kata Mereka?</h2>
+                </div>
+
+                <div class="swiper testimonialSwiper" data-aos="fade-up">
+                    <div class="swiper-wrapper pb-12">
+                        <!-- Review 1 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg h-full border border-gray-100 dark:border-gray-700">
+                                <div class="text-gold-500 text-2xl mb-4"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="text-gray-600 dark:text-gray-300 italic mb-6">"Tempat nongki yang nyaman untuk menikmati kopi racikan barista, cafe dengan suasana yang unik modern. Pelayanan ok.. recommended!"</p>
+                                <div class="flex items-center gap-4">
+                                    <img src="https://ui-avatars.com/api/?name=Muhamad+Rokhim&background=0D8ABC&color=fff" alt="Muhamad Rokhim" class="w-12 h-12 rounded-full">
+                                    <div>
+                                        <h5 class="font-bold text-gray-900 dark:text-white">Muhamad Rokhim</h5>
+                                        <div class="flex text-yellow-400 text-xs">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            <span class="text-gray-400 ml-2 text-xs">Local Guide</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review 2 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg h-full border border-gray-100 dark:border-gray-700">
+                                <div class="text-gold-500 text-2xl mb-4"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="text-gray-600 dark:text-gray-300 italic mb-6">"Menunya enak enak bgt, pelayanannya ramah, tempatnya bersih dan nyaman bgt!"</p>
+                                <div class="flex items-center gap-4">
+                                    <img src="https://ui-avatars.com/api/?name=Anindia+Raisya&background=random" alt="Anindia Raisya" class="w-12 h-12 rounded-full">
+                                    <div>
+                                        <h5 class="font-bold text-gray-900 dark:text-white">Anindia Raisya</h5>
+                                        <div class="flex text-yellow-400 text-xs">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            <span class="text-gray-400 ml-2 text-xs">Local Guide</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review 3 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg h-full border border-gray-100 dark:border-gray-700">
+                                <div class="text-gold-500 text-2xl mb-4"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="text-gray-600 dark:text-gray-300 italic mb-6">"Mas Baristanya bikin kopi enak banget, dan sangat ramah terhadap customer."</p>
+                                <div class="flex items-center gap-4">
+                                    <img src="https://ui-avatars.com/api/?name=Customer&background=92400E&color=fff" alt="Customer" class="w-12 h-12 rounded-full">
+                                    <div>
+                                        <h5 class="font-bold text-gray-900 dark:text-white">Customer Review</h5>
+                                        <div class="flex text-yellow-400 text-xs">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review 4 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg h-full border border-gray-100 dark:border-gray-700">
+                                <div class="text-gold-500 text-2xl mb-4"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="text-gray-600 dark:text-gray-300 italic mb-6">"Family cafe pilihan ini buat keluarga. Suasana cozy dan kopinya mantap!"</p>
+                                <div class="flex items-center gap-4">
+                                    <img src="https://ui-avatars.com/api/?name=Family+Dad&background=random" alt="Dad" class="w-12 h-12 rounded-full">
+                                    <div>
+                                        <h5 class="font-bold text-gray-900 dark:text-white">Budi Santoso</h5>
+                                        <div class="flex text-yellow-400 text-xs">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review 5 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg h-full border border-gray-100 dark:border-gray-700">
+                                <div class="text-gold-500 text-2xl mb-4"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="text-gray-600 dark:text-gray-300 italic mb-6">"Kopi berkualitas dengan harga terjangkau. Tempatnya luas dan bersih."</p>
+                                <div class="flex items-center gap-4">
+                                    <img src="https://ui-avatars.com/api/?name=Student&background=random" alt="Student" class="w-12 h-12 rounded-full">
+                                    <div>
+                                        <h5 class="font-bold text-gray-900 dark:text-white">Rina M.</h5>
+                                        <div class="flex text-yellow-400 text-xs">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination mt-8"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="location" class="py-20 bg-white dark:bg-gray-800">
+            <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+                <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Map -->
+                    <div class="h-96 lg:h-auto rounded-2xl overflow-hidden shadow-xl border-4 border-gray-100 dark:border-gray-700" data-aos="fade-right">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.758526589332!2d112.7366453147765!3d-7.267749994750585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f9638b4c6f69%3A0x629c47727193132!2sJl.%20Dinoyo%20No.81%2C%20Keputran%2C%20Kec.%20Tegalsari%2C%20Surabaya%2C%20Jawa%20Timur%2060265!5e0!3m2!1sen!2sid!4v1684300000000!5m2!1sen!2sid" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Lokasi The Gade Coffee & Gold">
+                        </iframe>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="flex flex-col justify-center" data-aos="fade-left">
+                        <h4 class="text-gold-500 font-bold uppercase tracking-wider mb-2">Lokasi & Kontak</h4>
+                        <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-6">Kunjungi Kami</h2>
+                        
+                        <div class="space-y-6">
+                            <!-- Address -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gold-100 dark:bg-gold-900/30 flex items-center justify-center text-gold-600 shrink-0">
+                                    <i class="fa-solid fa-location-dot text-xl"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-lg text-gray-900 dark:text-white">Alamat</h5>
+                                    <p class="text-gray-600 dark:text-gray-300">Jl. Dinoyo No.81, Keputran, Kec. Tegalsari, Surabaya Pusat, Jawa Timur 60265</p>
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gold-100 dark:bg-gold-900/30 flex items-center justify-center text-gold-600 shrink-0">
+                                    <i class="fa-solid fa-phone text-xl"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-lg text-gray-900 dark:text-white">Telepon / WhatsApp</h5>
+                                    <a href="https://wa.me/6281119666634" class="text-gray-600 dark:text-gray-300 hover:text-gold-500 transition-colors">0811-1966-6634</a>
+                                </div>
+                            </div>
+
+                            <!-- Hours -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gold-100 dark:bg-gold-900/30 flex items-center justify-center text-gold-600 shrink-0">
+                                    <i class="fa-solid fa-clock text-xl"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-lg text-gray-900 dark:text-white">Jam Buka</h5>
+                                    <ul class="text-gray-600 dark:text-gray-300 text-sm">
+                                        <li>Senin - Minggu</li>
+                                        <li class="font-bold text-gold-600">08.00 - 21.00 WIB</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <a href="https://maps.app.goo.gl/?link=https://www.google.com/maps/place/Jl.+Dinoyo+No.81,+Keputran,+Kec.+Tegalsari,+Surabaya,+Jawa+Timur+60265" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                                <i class="fa-solid fa-diamond-turn-right"></i> Petunjuk Arah
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8 border-t-4 border-gold-500">
+        <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-mug-hot text-2xl text-gold-500"></i>
+                        <span class="font-heading font-bold text-2xl">THE GADE</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Tempat nongkrong nyaman untuk menikmati kopi racikan barista profesional. Family cafe pilihan di Surabaya.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gold-500 transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gold-500 transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://maps.app.goo.gl/?link=https://www.google.com/maps/place/Jl.+Dinoyo+No.81,+Keputran,+Kec.+Tegalsari,+Surabaya,+Jawa+Timur+60265" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gold-500 transition-colors" aria-label="Maps"><i class="fa-solid fa-map-location-dot"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h5 class="font-heading font-bold text-lg mb-6 text-gold-500">Tautan Cepat</h5>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="#menu" class="hover:text-white transition-colors">Menu Favorit</a></li>
+                        <li><a href="#gallery" class="hover:text-white transition-colors">Galeri</a></li>
+                        <li><a href="#location" class="hover:text-white transition-colors">Lokasi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info Footer -->
+                <div>
+                    <h5 class="font-heading font-bold text-lg mb-6 text-gold-500">Hubungi Kami</h5>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-gold-500"></i>
+                            <span>Jl. Dinoyo No.81, Keputran, Surabaya</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-gold-500"></i>
+                            <span>0811-1966-6634</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-gold-500"></i>
+                            <span>info@thegadecoffee.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm text-center md:text-left">
+                    &copy; 2023 The Gade Coffee & Gold Surabaya. All rights reserved.
+                </p>
+                <div class="text-gray-500 text-sm">
+                    Made by <a href="#" class="text-gold-500 hover:text-white font-semibold transition-colors">Amantrana</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <!-- Back to Top -->
+    <a href="#" id="back-to-top" class="fixed bottom-24 right-6 z-40 bg-gray-800 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg translate-y-20 opacity-0 transition-all duration-300 hover:bg-gold-500" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/6281119666634?text=Halo%20The%20Gade%20Coffee,%20saya%20ingin%20bertanya..." target="_blank" class="fixed bottom-6 right-6 z-40 bg-wa text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg pulse-btn hover:scale-110 transition-transform text-2xl" aria-label="Chat WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 hidden opacity-0 transition-opacity duration-300 flex justify-center items-center p-4">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white text-4xl hover:text-gold-500 transition-colors">&times;</button>
+        <img id="lightbox-img" src="" alt="Full size" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl transform scale-95 transition-transform duration-300">
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // --- Preloader ---
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            preloader.style.visibility = 'hidden';
+            
+            // Init AOS after preloader
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 50,
+            });
+        });
+
+        // --- Dark Mode ---
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+        const html = document.documentElement;
+
+        // Check local storage
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        } else {
+            html.classList.remove('dark');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            if (html.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+
+        // --- Navbar Scroll Effect & Active Link ---
+        const header = document.getElementById('header');
+        const backToTopBtn = document.getElementById('back-to-top');
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav ul li a');
+        const scrollProgress = document.getElementById('scroll-progress');
+
+        window.addEventListener('scroll', () => {
+            // Header Blur & Shrink
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+
+            // Scroll Progress
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            scrollProgress.style.width = scrolled + "%";
+
+            // Back to Top
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('translate-y-20', 'opacity-0');
+            } else {
+                backToTopBtn.classList.add('translate-y-20', 'opacity-0');
+            }
+
+            // Active Link Highlight
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-gold-500', 'font-bold');
+                link.classList.add('hover:text-gold-500');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('text-gold-500', 'font-bold');
+                    link.classList.remove('hover:text-gold-500');
+                }
+            });
+        });
+
+        // --- Mobile Menu ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        closeMobileMenuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+        // --- Menu Filtering ---
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Active Class
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-gold-500', 'text-white', 'border-gold-500');
+                    b.classList.add('text-gray-600', 'dark:text-gray-300', 'border-gray-300', 'dark:border-gray-600');
+                });
+                btn.classList.remove('text-gray-600', 'dark:text-gray-300', 'border-gray-300', 'dark:border-gray-600');
+                btn.classList.add('bg-gold-500', 'text-white', 'border-gold-500');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                menuItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.classList.remove('hidden');
+                        // Re-trigger AOS animation slightly
+                        item.classList.remove('aos-animate');
+                        setTimeout(() => item.classList.add('aos-animate'), 50);
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // --- Swiper Init ---
+        // Gallery
+        const gallerySwiper = new Swiper('.gallerySwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            navigation: {
+                nextEl: '#gallery-next',
+                prevEl: '#gallery-prev',
+            },
+            breakpoints: {
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+            },
+        });
+
+        // Testimonials
+        const testimonialSwiper = new Swiper('.testimonialSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+            },
+        });
+
+        // --- Lightbox ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        function openLightbox(element) {
+            const imgSrc = element.querySelector('img').src;
+            // Get higher res image if possible (simple trick for Unsplash)
+            const hdSrc = imgSrc.replace('w=800', 'w=1600');
+            
+            lightboxImg.src = hdSrc;
+            lightbox.classList.remove('hidden');
+            // Small delay to allow display:block to apply before opacity transition
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+                lightboxImg.classList.remove('scale-95');
+                lightboxImg.classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('opacity-0');
+            lightboxImg.classList.remove('scale-100');
+            lightboxImg.classList.add('scale-95');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightboxImg.src = '';
+            }, 300);
+            document.body.style.overflow = 'auto';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        // --- Real-time Open/Close Status ---
+        function updateOpenStatus() {
+            const now = new Date();
+            const currentHour = now.getHours();
+            // 08:00 to 21:00 (8 AM to 9 PM)
+            const isOpen = currentHour >= 8 && currentHour < 21;
+            const badge = document.getElementById('open-badge');
+            
+            if(isOpen) {
+                badge.classList.remove('bg-red-500');
+                badge.classList.add('bg-green-500');
+                badge.innerHTML = `<span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span></span> NOW OPEN`;
+            } else {
+                badge.classList.remove('bg-green-500');
+                badge.classList.add('bg-red-500');
+                badge.innerHTML = `<span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span> CLOSED`;
+            }
+        }
+        updateOpenStatus();
+        setInterval(updateOpenStatus, 60000); // Check every minute
+
+    </script>
+</body>
+</html>
