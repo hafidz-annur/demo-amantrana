@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Terra Socius Coffee & Eatery - Cafe Cozy di Tangerang</title>
+    <meta name="description" content="Tempat ngopi nyaman di Wisma Harapan, Tangerang. Kopi enak, makanan lezat, cocok untuk WFA dan nongkrong. Buka 15.30-23.30">
+    <meta name="keywords" content="cafe tangerang, coffee shop, wisma harapan, terra socius, kopi enak, tempat nongkrong, WFA tangerang">
+    <meta name="author" content="Amantrana">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://terrasocius.com/">
+    <meta property="og:title" content="Terra Socius Coffee & Eatery - Cafe Cozy di Tangerang">
+    <meta property="og:description" content="Tempat ngopi cozy dan nyaman di daerah Wisma Harapan, Regency 2, Tangerang.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEyCai0WXYd7Hd3wfZdNuETQ3Ey710rKQHtFBWYRdG6LPzL6pJok8Ot9yQ37tAk1s5-VRiXxwOSsCNeFV6mnYwnLJwXg8lJ4-1rhFTLAv1mLxUshi42T1NZKi6UR13VHZWrxlY9Th-xxGcW=w408-h583-k-no">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://terrasocius.com/">
+    <meta property="twitter:title" content="Terra Socius Coffee & Eatery">
+    <meta property="twitter:description" content="Tempat ngopi cozy di Wisma Harapan, Tangerang.">
+    <meta property="twitter:image" content="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEyCai0WXYd7Hd3wfZdNuETQ3Ey710rKQHtFBWYRdG6LPzL6pJok8Ot9yQ37tAk1s5-VRiXxwOSsCNeFV6mnYwnLJwXg8lJ4-1rhFTLAv1mLxUshi42T1NZKi6UR13VHZWrxlY9Th-xxGcW=w408-h583-k-no">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',   /* Coffee Brown */
+                        secondary: '#D2691E', /* Chocolate */
+                        accent: '#F4A460',    /* Sandy Brown */
+                        darkbg: '#1a1a1a',
+                        lightbg: '#f5f5f5',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #2d2d2d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D2691E;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8B4513;
+        }
+
+        /* Loader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+        .dark #preloader {
+            background: #1a1a1a;
+        }
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #D2691E;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Animations on Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Parallax & Overlay */
+        .hero-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            backdrop-filter: blur(5px);
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 900px;
+            max-height: 80vh;
+            object-fit: contain;
+            animation: zoom 0.6s;
+        }
+        @keyframes zoom {
+            from {transform:scale(0)} 
+            to {transform:scale(1)}
+        }
+        .close-lightbox {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .close-lightbox:hover {
+            color: #D2691E;
+        }
+
+        /* Custom Cursor Optional */
+        /* body { cursor: default; } */
+    </style>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "Terra Socius Coffee & Eatery",
+      "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEyCai0WXYd7Hd3wfZdNuETQ3Ey710rKQHtFBWYRdG6LPzL6pJok8Ot9yQ37tAk1s5-VRiXxwOSsCNeFV6mnYwnLJwXg8lJ4-1rhFTLAv1mLxUshi42T1NZKi6UR13VHZWrxlY9Th-xxGcW=w408-h583-k-no",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Wisma Harapan No.3 Blok D5, RT.002/RW.011, Gembor, Kec. Periuk",
+        "addressLocality": "Kota Tangerang",
+        "addressRegion": "Banten",
+        "postalCode": "15133",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -6.1765, 
+        "longitude": 106.6355 
+      },
+      "url": "https://terrasocius.com",
+      "telephone": "+62-812-3456-7890",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "15:30",
+          "closes": "23:30"
+        }
+      ],
+      "priceRange": "Rp 25.000 - Rp 50.000",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "8"
+      }
+    }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-lightbg dark:bg-darkbg dark:text-gray-100 transition-colors duration-300 relative">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <span class="loader"></span>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header id="header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/90 dark:bg-darkbg/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-heading font-bold text-primary dark:text-accent tracking-wide flex items-center gap-2">
+                    <i class="fa-solid fa-mug-hot"></i> Terra Socius
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="hover:text-primary dark:hover:text-accent transition-colors font-medium">Beranda</a>
+                    <a href="#about" class="hover:text-primary dark:hover:text-accent transition-colors font-medium">Tentang</a>
+                    <a href="#menu" class="hover:text-primary dark:hover:text-accent transition-colors font-medium">Menu</a>
+                    <a href="#gallery" class="hover:text-primary dark:hover:text-accent transition-colors font-medium">Galeri</a>
+                    <a href="#reviews" class="hover:text-primary dark:hover:text-accent transition-colors font-medium">Ulasan</a>
+                    <a href="#contact" class="hover:text-primary dark:hover:text-accent transition-colors font-medium">Kontak</a>
+                </nav>
+
+                <!-- Controls (Theme & Mobile Toggle) -->
+                <div class="flex items-center gap-4">
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none" aria-label="Toggle Dark Mode">
+                        <i class="fa-solid fa-moon text-gray-600 dark:text-yellow-300 text-xl"></i>
+                    </button>
+
+                    <!-- Mobile Hamburger -->
+                    <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none" aria-label="Menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg absolute w-full left-0 top-full">
+            <nav class="flex flex-col px-6 py-4 space-y-4">
+                <a href="#home" class="mobile-link block hover:text-primary">Beranda</a>
+                <a href="#about" class="mobile-link block hover:text-primary">Tentang</a>
+                <a href="#menu" class="mobile-link block hover:text-primary">Menu</a>
+                <a href="#gallery" class="mobile-link block hover:text-primary">Galeri</a>
+                <a href="#reviews" class="mobile-link block hover:text-primary">Ulasan</a>
+                <a href="#contact" class="mobile-link block hover:text-primary">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center hero-bg" style="background-image: url('https://lh3.googleusercontent.com/gps-cs-s/APNQkAEyCai0WXYd7Hd3wfZdNuETQ3Ey710rKQHtFBWYRdG6LPzL6pJok8Ot9yQ37tAk1s5-VRiXxwOSsCNeFV6mnYwnLJwXg8lJ4-1rhFTLAv1mLxUshi42T1NZKi6UR13VHZWrxlY9Th-xxGcW=w408-h583-k-no');">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/60 dark:bg-black/70"></div>
+
+        <div class="relative container mx-auto px-6 md:px-12 lg:px-24 text-center z-10">
+            <!-- Rating Badge -->
+            <div class="inline-flex items-center gap-2 bg-yellow-500/90 text-white px-4 py-1 rounded-full text-sm font-bold mb-6 animate-float shadow-lg backdrop-blur-sm">
+                <span>4.8 <i class="fa-solid fa-star text-xs"></i></span>
+                <span class="font-normal text-yellow-50"> (8 Ulasan)</span>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-4 drop-shadow-lg leading-tight">
+                Terra Socius <br> <span class="text-accent">Coffee & Eatery</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto font-light">
+                Tempat Ngopi Cozy di Tangerang
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#menu" class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Lihat Menu
+                </a>
+                <a href="#contact" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-semibold py-3 px-8 rounded-full transition-all duration-300 backdrop-blur-md">
+                    Hubungi Kami
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <a href="#about" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce cursor-pointer">
+            <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-darkbg transition-colors duration-300">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Image -->
+                <div class="reveal relative rounded-2xl overflow-hidden shadow-2xl h-80 lg:h-[500px]">
+                    <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn1Hllcf-nb2YxyOGlWqEuGt9E4n9J9fcc19DM3aROlPnEPy2Z4G5tPAqK5znCyDbKyyjMgl2_wK9bMwdrixDOcXATNaZ9JuGojfA94fINpYkcEHw_838GgFOvAmi15J_HqrAqkYrLd4ilo=w338-h506-p-k-no" alt="Suasana Cafe Terra Socius" class="w-full h-full object-cover transform hover:scale-110 transition-duration-700 transition-transform">
+                    <div class="absolute bottom-4 left-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur px-4 py-2 rounded-lg shadow">
+                        <p class="font-heading font-bold text-primary dark:text-accent">Est. 2023</p>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="reveal">
+                    <h4 class="text-primary dark:text-accent font-bold uppercase tracking-wider mb-2">Tentang Kami</h4>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 dark:text-white">Tempat Ngopi Cozy dan Nyaman</h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        Terletak di daerah Wisma Harapan, Regency 2, Tangerang, Terra Socius menyajikan kopi enak dan makanan lezat dengan suasana yang tenang. Kami adalah tempat yang sempurna untuk <strong>WFA (Work From Anywhere)</strong>, nongkrong santai bersama teman, ngumpul keluarga, arisan, atau sekadar me time yang berkualitas.
+                    </p>
+
+                    <!-- Features Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
+                        <div class="flex flex-col items-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-md transition-shadow">
+                            <i class="fa-solid fa-utensils text-primary dark:text-accent text-xl mb-2"></i>
+                            <span class="text-sm font-medium dark:text-gray-200">Dine-in</span>
+                        </div>
+                        <div class="flex flex-col items-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-md transition-shadow">
+                            <i class="fa-solid fa-box-open text-primary dark:text-accent text-xl mb-2"></i>
+                            <span class="text-sm font-medium dark:text-gray-200">Takeaway</span>
+                        </div>
+                        <div class="flex flex-col items-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-md transition-shadow">
+                            <i class="fa-solid fa-wifi text-primary dark:text-accent text-xl mb-2"></i>
+                            <span class="text-sm font-medium dark:text-gray-200">Cocok WFA</span>
+                        </div>
+                        <div class="flex flex-col items-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-md transition-shadow">
+                            <i class="fa-solid fa-mug-hot text-primary dark:text-accent text-xl mb-2"></i>
+                            <span class="text-sm font-medium dark:text-gray-200">Kopi Enak</span>
+                        </div>
+                        <div class="flex flex-col items-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-md transition-shadow">
+                            <i class="fa-solid fa-couch text-primary dark:text-accent text-xl mb-2"></i>
+                            <span class="text-sm font-medium dark:text-gray-200">Nyaman</span>
+                        </div>
+                        <div class="flex flex-col items-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-md transition-shadow">
+                            <i class="fa-solid fa-money-bill-wave text-primary dark:text-accent text-xl mb-2"></i>
+                            <span class="text-sm font-medium dark:text-gray-200">Terjangkau</span>
+                        </div>
+                    </div>
+
+                    <!-- Operating Hours -->
+                    <div class="bg-lightbg dark:bg-gray-800 p-6 rounded-xl border-l-4 border-primary">
+                        <h3 class="font-heading font-bold text-lg mb-3 dark:text-white"><i class="fa-regular fa-clock mr-2"></i>Jam Operasional</h3>
+                        <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                            <li class="flex justify-between border-b border-gray-200 dark:border-gray-700 pb-1">
+                                <span>Senin</span>
+                                <span class="font-semibold text-red-500">Tutup</span>
+                            </li>
+                            <li class="flex justify-between border-b border-gray-200 dark:border-gray-700 pb-1">
+                                <span>Selasa - Sabtu</span>
+                                <span class="font-semibold">15.30 - 23.30</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Minggu</span>
+                                <span class="font-semibold">15.30 - 23.30</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-gray-50 dark:bg-[#222] transition-colors duration-300">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="text-center mb-12 reveal">
+                <h4 class="text-primary dark:text-accent font-bold uppercase tracking-wider mb-2">Menu Kami</h4>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold dark:text-white">Pilihan Favorit</h2>
+                <p class="text-gray-600 dark:text-gray-400 mt-2">Harga: Rp 25.000 - Rp 50.000 per orang</p>
+            </div>
+
+            <!-- Categories -->
+            <div class="flex justify-center gap-4 mb-10 reveal">
+                <button class="menu-filter active bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold transition-all hover:shadow-lg" data-filter="all">Semua</button>
+                <button class="menu-filter bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-6 py-2 rounded-full text-sm font-semibold transition-all hover:bg-primary hover:text-white dark:hover:bg-primary" data-filter="kopi">☕ Kopi</button>
+                <button class="menu-filter bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-6 py-2 rounded-full text-sm font-semibold transition-all hover:bg-primary hover:text-white dark:hover:bg-primary" data-filter="makanan">🍽️ Makanan</button>
+                <button class="menu-filter bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-6 py-2 rounded-full text-sm font-semibold transition-all hover:bg-primary hover:text-white dark:hover:bg-primary" data-filter="minuman">🥤 Minuman</button>
+            </div>
+
+            <!-- Swiper Slider for Menu Items -->
+            <div class="swiper mySwiperMenu reveal pb-12">
+                <div class="swiper-wrapper">
+                    <!-- Item 1 -->
+                    <div class="swiper-slide p-2">
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow group h-full flex flex-col">
+                            <div class="h-48 overflow-hidden rounded-xl mb-4 relative">
+                                <img src="https://picsum.photos/seed/kopi1/400/300" alt="Kopi Susu" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                <span class="absolute top-2 right-2 bg-accent text-white text-xs font-bold px-2 py-1 rounded">Best Seller</span>
+                            </div>
+                            <h3 class="text-xl font-bold font-heading dark:text-white">Kopi Susu Gula Aren</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Espresso house blend dengan susu segar dan gula aren asli.</p>
+                            <div class="mt-auto flex justify-between items-center">
+                                <span class="text-primary font-bold">Rp 28.000</span>
+                                <span class="text-xs bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-gray-600 dark:text-gray-300">Kopi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="swiper-slide p-2">
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow group h-full flex flex-col">
+                            <div class="h-48 overflow-hidden rounded-xl mb-4 relative">
+                                <img src="https://picsum.photos/seed/food1/400/300" alt="Nasi Goreng" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <h3 class="text-xl font-bold font-heading dark:text-white">Nasi Goreng Spesial</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Nasi goreng bumbu rempah dengan telur mata sapi dan sate.</p>
+                            <div class="mt-auto flex justify-between items-center">
+                                <span class="text-primary font-bold">Rp 35.000</span>
+                                <span class="text-xs bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-gray-600 dark:text-gray-300">Makanan</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="swiper-slide p-2">
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow group h-full flex flex-col">
+                            <div class="h-48 overflow-hidden rounded-xl mb-4 relative">
+                                <img src="https://picsum.photos/seed/drink1/400/300" alt="Matcha Latte" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <h3 class="text-xl font-bold font-heading dark:text-white">Iced Matcha Latte</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Teh hijau Jepang premium dengan susu creamy.</p>
+                            <div class="mt-auto flex justify-between items-center">
+                                <span class="text-primary font-bold">Rp 32.000</span>
+                                <span class="text-xs bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-gray-600 dark:text-gray-300">Minuman</span>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Item 4 -->
+                     <div class="swiper-slide p-2">
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow group h-full flex flex-col">
+                            <div class="h-48 overflow-hidden rounded-xl mb-4 relative">
+                                <img src="https://picsum.photos/seed/food2/400/300" alt="Pasta" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <h3 class="text-xl font-bold font-heading dark:text-white">Spaghetti Aglio Olio</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Pasta sederhana dengan bawang putih, olive oil, dan cabai.</p>
+                            <div class="mt-auto flex justify-between items-center">
+                                <span class="text-primary font-bold">Rp 38.000</span>
+                                <span class="text-xs bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-gray-600 dark:text-gray-300">Makanan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination mt-4"></div>
+            </div>
+
+            <p class="text-center text-sm text-gray-500 dark:text-gray-400 italic mt-4">* Menu lengkap tersedia di lokasi</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white dark:bg-darkbg transition-colors duration-300">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="text-center mb-12 reveal">
+                <h4 class="text-primary dark:text-accent font-bold uppercase tracking-wider mb-2">Galeri</h4>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold dark:text-white">Suasana Kami</h2>
+            </div>
+
+            <!-- Masonry Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
+                <div class="relative group overflow-hidden rounded-xl cursor-pointer h-64" onclick="openLightbox(this)">
+                    <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn1QU8Zau8lLe8MuLNKV2E6wzMwMd0UDz7DDztjyUfHi4n5SMVxaWvjlWlQLhJgd1uaG-DzEDlFVwiXFfNsQNhIkS8O50-g2t1crUbxzYwfu5vui0jQgLX0JKuiBdLYXiVkZ1uFUqHymbB2p=w338-h253-p-k-no" alt="Interior Cafe" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl cursor-pointer h-64" onclick="openLightbox(this)">
+                    <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn117g4oRZ5YCdFaMVWndMXxAE_aTeLagDJ6iLyMvo9jP5pNtPAmtpb3elBqKsVejc1gGRJqA71HBG0zROQce_bjIRizTQ0InRYFS3ix-mbEqkqN6Nl8sLqZ7xZOi-Cx2wPcwSoTVXTBQm9d=w338-h253-p-k-no" alt="Makanan" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+                 <div class="relative group overflow-hidden rounded-xl cursor-pointer h-64 md:col-span-2 lg:col-span-1" onclick="openLightbox(this)">
+                    <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn1AV5BXC5_Im_ywiRHWvvoF1q2R-HpJ6EOzo9cpA9ypmwNU-XINEuRlElEk89pA3jzplV3YQkMkgQDt1ieOm4kNwBRu7exYbrddXY1sOXJh3GDEvEXlDu-3avBIiHR3-VNJwS6qPF1Tdods=w338-h253-p-k-no" alt="Detail Makanan" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 bg-gray-50 dark:bg-[#222] transition-colors duration-300 overflow-hidden">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="text-center mb-12 reveal">
+                <h4 class="text-primary dark:text-accent font-bold uppercase tracking-wider mb-2">Testimoni</h4>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold dark:text-white">Kata Mereka</h2>
+                <div class="flex justify-center items-center gap-2 mt-2">
+                    <div class="flex text-yellow-400 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <span class="text-gray-600 dark:text-gray-400 text-sm font-bold">4.8/5.0 (8 Ulasan)</span>
+                </div>
+            </div>
+
+            <!-- Swiper Testimonials -->
+            <div class="swiper mySwiperReviews reveal">
+                <div class="swiper-wrapper">
+                    <!-- Review 1 -->
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg h-full">
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="https://ui-avatars.com/api/?name=Bernadette&background=8B4513&color=fff" alt="Bernadette" class="w-12 h-12 rounded-full">
+                                <div>
+                                    <h5 class="font-bold dark:text-white">Bernadette</h5>
+                                    <div class="text-yellow-400 text-xs">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 italic mb-4">"Nemu cafe cozy deket rumah. Akhirnya! Semoga semakin rame ya, menu nya makin banyak. Makanan enak, kopi nya juga enak. Mantap"</p>
+                            <div class="flex gap-2">
+                                <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn1AV5BXC5_Im_ywiRHWvvoF1q2R-HpJ6EOzo9cpA9ypmwNU-XINEuRlElEk89pA3jzplV3YQkMkgQDt1ieOm4kNwBRu7exYbrddXY1sOXJh3GDEvEXlDu-3avBIiHR3-VNJwS6qPF1Tdods=w338-h253-p-k-no" class="w-16 h-16 object-cover rounded-lg cursor-pointer hover:opacity-80" onclick="openLightbox(this)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg h-full">
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="https://ui-avatars.com/api/?name=Melisa+Mel&background=D2691E&color=fff" alt="Melisa Mel" class="w-12 h-12 rounded-full">
+                                <div>
+                                    <h5 class="font-bold dark:text-white">Melisa Mel</h5>
+                                    <div class="text-yellow-400 text-xs">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 italic mb-4">"Ada tempat ngopi baru di daerah Wisma Harapan, Regency 2, Tangerang. Lokasinya pas di seberang Masjid yang di Wisma Harapan, deretan kompleks Alamanda."</p>
+                            <div class="flex gap-2">
+                                <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn09Snt3Ordziapb_2PvB-MnHZp8tyMrliFeuOlRRZTPxe0C_sqhetJML7ElLjtUKh1SM0miFx1En3o369ctnDF7HRv0A_H09wIM6ovwswoxtH0b00t1wFwhkcprcyzaasCcOsPl9cCR_biY=w338-h253-p-k-no" class="w-16 h-16 object-cover rounded-lg cursor-pointer hover:opacity-80" onclick="openLightbox(this)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg h-full">
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="https://ui-avatars.com/api/?name=Erinna+Engelberta&background=F4A460&color=fff" alt="Erinna" class="w-12 h-12 rounded-full">
+                                <div>
+                                    <h5 class="font-bold dark:text-white">Erinna Engelberta Prasetio</h5>
+                                    <div class="text-yellow-400 text-xs">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 italic mb-4">"So glad to find this place😁 Tempatnya nyaman, bersih, dan tenang. Cocok buat WFA atau nongkrong santai."</p>
+                            <div class="flex gap-2">
+                                <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn1Hllcf-nb2YxyOGlWqEuGt9E4n9J9fcc19DM3aROlPnEPy2Z4G5tPAqK5znCyDbKyyjMgl2_wK9bMwdrixDOcXATNaZ9JuGojfA94fINpYkcEHw_838GgFOvAmi15J_HqrAqkYrLd4ilo=w338-h506-p-k-no" class="w-16 h-16 object-cover rounded-lg cursor-pointer hover:opacity-80" onclick="openLightbox(this)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Highlight Card -->
+                    <div class="swiper-slide p-4">
+                        <div class="bg-primary text-white p-6 rounded-2xl shadow-lg h-full flex flex-col justify-center items-center text-center">
+                            <i class="fa-solid fa-quote-left text-4xl mb-4 text-white/50"></i>
+                            <p class="text-xl font-bold italic mb-4">"Cocok buat ngumpul keluarga, arisan, nugas atau me time"</p>
+                            <span class="text-sm text-accent font-semibold">- Highlight Review Pengunjung -</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-darkbg transition-colors duration-300">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="reveal">
+                    <h4 class="text-primary dark:text-accent font-bold uppercase tracking-wider mb-2">Kunjungi Kami</h4>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 dark:text-white">Lokasi & Kontak</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center shrink-0 text-primary dark:text-accent">
+                                <i class="fa-solid fa-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-lg dark:text-white">Alamat</h5>
+                                <p class="text-gray-600 dark:text-gray-400">Jl. Wisma Harapan No.3 Blok D5, RT.002/RW.011, Gembor, Kec. Periuk, Kota Tangerang, Banten 15133</p>
+                                <p class="text-xs text-gray-500 mt-1">Plus Code: <span class="font-mono bg-gray-200 dark:bg-gray-700 px-1 rounded">RHHM+36</span></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center shrink-0 text-primary dark:text-accent">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-lg dark:text-white">WhatsApp</h5>
+                                <p class="text-gray-600 dark:text-gray-400">Hubungi kami untuk reservasi</p>
+                                <a href="https://wa.me/6281234567890" target="_blank" class="text-primary dark:text-accent hover:underline font-semibold">+62 812-3456-7890</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center shrink-0 text-primary dark:text-accent">
+                                <i class="fa-regular fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-lg dark:text-white">Jam Buka</h5>
+                                <div class="flex items-center gap-2 mt-1">
+                                    <span class="relative flex h-3 w-3">
+                                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                      <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                                    </span>
+                                    <span class="text-green-600 dark:text-green-400 font-semibold text-sm">Buka Sekarang</span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">15:30 - 23:30 (Senin Tutup)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Terra+Socius+Coffee+%26+Eatery" target="_blank" class="flex-1 bg-primary hover:bg-secondary text-white text-center font-bold py-3 px-6 rounded-lg transition-colors shadow-md flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-diamond-turn-right"></i> Petunjuk Arah
+                        </a>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="flex-1 bg-green-600 hover:bg-green-700 text-white text-center font-bold py-3 px-6 rounded-lg transition-colors shadow-md flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i> Chat WA
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Embed -->
+                <div class="reveal h-[400px] lg:h-auto rounded-2xl overflow-hidden shadow-xl border-4 border-gray-100 dark:border-gray-800">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.466453534976!2d106.6335533147693!3d-6.175056395529889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fa056e4e3177%3A0xc4c5b6d6b6c5b6c5!2sTerra%20Socius%20Coffee%20%26%20Eatery!5e0!3m2!1sen!2sid!4v1698765432100!5m2!1sen!2sid" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Google Maps Terra Socius">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkbg text-white pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <a href="#" class="text-2xl font-heading font-bold text-accent tracking-wide flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-mug-hot"></i> Terra Socius
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Tempat ngopi cozy di Wisma Harapan, Tangerang. Menyajikan kopi enak dan suasana yang tenang untuk produktivitas dan relaksasi Anda.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h5 class="font-bold text-lg mb-4 text-white">Tautan Cepat</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-accent transition-colors">Beranda</a></li>
+                        <li><a href="#about" class="hover:text-accent transition-colors">Tentang Kami</a></li>
+                        <li><a href="#menu" class="hover:text-accent transition-colors">Menu</a></li>
+                        <li><a href="#gallery" class="hover:text-accent transition-colors">Galeri</a></li>
+                        <li><a href="#contact" class="hover:text-accent transition-colors">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h5 class="font-bold text-lg mb-4 text-white">Hubungi Kami</h5>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-map-pin mt-1 text-accent"></i>
+                            <span>Jl. Wisma Harapan No.3 Blok D5, Gembor, Periuk, Tangerang</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-accent"></i>
+                            <span>+62 812-3456-7890</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div>
+                    <h5 class="font-bold text-lg mb-4 text-white">Ikuti Kami</h5>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm text-center md:text-left">
+                    &copy; 2023 Terra Socius Coffee & Eatery. All rights reserved.
+                </p>
+                <p class="text-gray-500 text-xs font-light tracking-wide">
+                    * Made by Amantrana*
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281234567890" target="_blank" class="fixed bottom-6 right-6 z-40 bg-green-500 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl hover:bg-green-600 transition-colors animate-pulse-slow group" aria-label="Chat WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="absolute right-16 bg-white text-gray-800 text-xs font-bold py-1 px-3 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            Chat WhatsApp
+        </span>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 left-6 z-40 bg-primary text-white w-12 h-12 rounded-full shadow-xl flex items-center justify-center text-xl hover:bg-secondary transition-all translate-y-20 opacity-0 duration-300" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="close-lightbox" onclick="closeLightbox(event)">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="">
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Main Logic -->
+    <script>
+        // --- 1. Preloader ---
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+
+        // --- 2. Dark Mode Logic ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        const icon = themeToggleBtn.querySelector('i');
+
+        // Check Local Storage
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            htmlElement.classList.remove('dark');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                localStorage.theme = 'light';
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        // --- 3. Mobile Menu ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- 4. Sticky Navbar & Back to Top ---
+        const header = document.getElementById('header');
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+                header.classList.replace('py-4', 'py-2');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.replace('py-2', 'py-4');
+            }
+
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('translate-y-20', 'opacity-0');
+            } else {
+                backToTopBtn.classList.add('translate-y-20', 'opacity-0');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- 5. Scroll Animations (Intersection Observer) ---
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Run once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // --- 6. Swiper Initialization ---
+        
+        // Menu Swiper
+        new Swiper(".mySwiperMenu", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: { slidesPerView: 2, spaceBetween: 20 },
+                768: { slidesPerView: 3, spaceBetween: 30 },
+                1024: { slidesPerView: 4, spaceBetween: 30 },
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            }
+        });
+
+        // Reviews Swiper
+        new Swiper(".mySwiperReviews", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 30 },
+                1024: { slidesPerView: 3, spaceBetween: 30 },
+            },
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            }
+        });
+
+        // --- 7. Lightbox Logic ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            if (img) {
+                lightboxImg.src = img.src;
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            }
+        }
+
+        function closeLightbox(event) {
+            // Close if clicked on background or close button
+            if (event.target === lightbox || event.target.classList.contains('close-lightbox')) {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Enable scrolling
+            }
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Pentuk View Coffe & Resto | Rumah Makan & Coffee Shop Tawangmangu</title>
+    <meta name="description" content="Nikmati suasana sejuk dan makanan enak di Pentuk View Coffe & Resto Tawangmangu. Buka setiap hari 09.00-21.00. Harga terjangkau mulai Rp 25rb.">
+    <meta name="keywords" content="Pentuk View, Coffee Shop Tawangmangu, Resto Tawangmangu, Sate Kelinci, Nasi Goreng Kelinci, Wisata Kuliner Karanganyar">
+    <meta name="author" content="Amantrana">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="restaurant.restaurant">
+    <meta property="og:url" content="https://pentukview.com/">
+    <meta property="og:title" content="Pentuk View Coffe & Resto | Tawangmangu">
+    <meta property="og:description" content="Rumah makan dan coffee shop dengan suasana sejuk, pemandangan indah, dan menu terjangkau.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGwx1iSAyioyurrfouabcCrPwRb8ebjaY1BJF1YiIQWUkJCWJZ9XwlWTBIaNNKzgbAEU0Y46JoTOTp6S_FAz_h2waKa6kkmuQlTArrqbRjjAVX9NnMy7S53g346-RrrPwIk6U0KGg=w400-h400-k-no">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            light: '#fbbf24', // amber-400
+                            DEFAULT: '#d97706', // amber-600
+                            dark: '#b45309', // amber-700
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for specific animations -->
+    <style>
+        /* Loading Screen */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: #ffffff;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        .dark #loader {
+            background: #111827;
+        }
+        .coffee-loader {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #d97706;
+            border-top: 4px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hide scrollbar for gallery but allow scroll */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Pentuk View Coffe & Resto",
+      "image": [
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGwx1iSAyioyurrfouabcCrPwRb8ebjaY1BJF1YiIQWUkJCWJZ9XwlWTBIaNNKzgbAEU0Y46JoTOTp6S_FAz_h2waKa6kkmuQlTArrqbRjjAVX9NnMy7S53g346-RrrPwIk6U0KGg=w400-h400-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGbsUttMk9eGeTOMSWtlj8sxj-av3zB2ktMi636lnz0pXPVvBdHIohoy0fbmaQb4Pg4P1Kb0WkgpQmoqnXfSBqNos4fi0Mb_if_suGBMOPQUugWJdg01zmBCRGuSf0icNDp4-rV=w400-h400-k-no"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dawuhan, Blumbang, Kec. Tawangmangu",
+        "addressLocality": "Karanganyar",
+        "addressRegion": "Jawa Tengah",
+        "postalCode": "57792",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -7.676, 
+        "longitude": 111.121
+      },
+      "url": "https://maps.google.com/?q=Dawuhan,+Blumbang,+Kec.+Tawangmangu,+Kabupaten+Karanganyar,+Jawa+Tengah+57792",
+      "telephone": "+6281227446322",
+      "servesCuisine": "Indonesian, Coffee",
+      "priceRange": "Rp 25.000 - Rp 50.000",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "09:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "09:00",
+          "closes": "20:30"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.6",
+        "reviewCount": "377"
+      }
+    }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans selection:bg-primary selection:text-white">
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="text-center">
+            <div class="coffee-loader mx-auto mb-4"></div>
+            <h2 class="font-display font-bold text-xl text-primary">Pentuk View</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Memuat...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 backdrop-blur-md bg-white/80 dark:bg-gray-900/80 shadow-sm" id="navbar">
+        <div class="px-6 md:px-12 lg:px-24 mx-auto">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <i class="fa-solid fa-mug-hot text-2xl text-primary group-hover:rotate-12 transition-transform"></i>
+                    <span class="font-display font-bold text-xl md:text-2xl tracking-wide">Pentuk View</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                    <a href="#home" class="hover:text-primary transition-colors">Beranda</a>
+                    <a href="#about" class="hover:text-primary transition-colors">Tentang</a>
+                    <a href="#menu" class="hover:text-primary transition-colors">Menu</a>
+                    <a href="#gallery" class="hover:text-primary transition-colors">Galeri</a>
+                    <a href="#reviews" class="hover:text-primary transition-colors">Ulasan</a>
+                    <!-- Link diupdate ke #location -->
+                    <a href="#location" class="hover:text-primary transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle Dark Mode">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:inline text-yellow-400"></i>
+                    </button>
+                    <a href="https://wa.me/6281227446322" target="_blank" class="bg-primary hover:bg-primary-dark text-white px-5 py-2 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-sm">
+                        Reservasi
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-gray-900 transform translate-x-full transition-transform duration-300 z-40 pt-24 px-6 flex flex-col space-y-6 md:hidden">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-3xl text-gray-500 hover:text-primary">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <a href="#home" class="text-xl font-medium hover:text-primary mobile-link">Beranda</a>
+            <a href="#about" class="text-xl font-medium hover:text-primary mobile-link">Tentang</a>
+            <a href="#menu" class="text-xl font-medium hover:text-primary mobile-link">Menu</a>
+            <a href="#gallery" class="text-xl font-medium hover:text-primary mobile-link">Galeri</a>
+            <a href="#reviews" class="text-xl font-medium hover:text-primary mobile-link">Ulasan</a>
+            <!-- Link diupdate ke #location -->
+            <a href="#location" class="text-xl font-medium hover:text-primary mobile-link">Kontak</a>
+            
+            <div class="border-t border-gray-200 dark:border-gray-700 pt-6 flex items-center justify-between">
+                <span class="text-gray-500">Mode Gelap</span>
+                <button id="mobile-theme-toggle" class="w-12 h-6 bg-gray-300 rounded-full relative transition-colors focus:outline-none">
+                    <div class="w-4 h-4 bg-white rounded-full absolute top-1 left-1 transition-transform transform dark:translate-x-6"></div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                 alt="Suasana Cafe Tawangmangu dengan pemandangan alam" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/50 dark:bg-black/70"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto mt-16">
+            <span class="inline-block py-1 px-3 rounded-full bg-primary/20 text-primary-light border border-primary/50 text-sm font-semibold mb-4 animate-pulse backdrop-blur-sm">
+                <i class="fa-solid fa-location-dot mr-2"></i>Tawangmangu, Karanganyar
+            </span>
+            <h1 class="font-display font-bold text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight drop-shadow-lg">
+                Nikmati Kopi di <br> <span class="text-primary-light">Tengah Alam</span>
+            </h1>
+            <p class="text-gray-200 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+                Rumah makan dan coffee shop dengan suasana sejuk, nyaman, dan pemandangan indah. Harga terjangkau untuk semua kalangan.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#menu" class="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-full transition-all shadow-lg hover:shadow-primary/40 transform hover:-translate-y-1">
+                    Lihat Menu
+                </a>
+                <a href="#location" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold py-3 px-8 rounded-full transition-all hover:border-white">
+                    Lokasi Kami
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/70">
+            <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 md:px-12 lg:px-24 bg-white dark:bg-gray-900 transition-colors">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Content -->
+                <div class="reveal">
+                    <h4 class="text-primary font-bold uppercase tracking-wider mb-2">Tentang Kami</h4>
+                    <h2 class="font-display font-bold text-3xl md:text-4xl mb-6 text-gray-900 dark:text-white">
+                        Suasana Sejuk Pegunungan dengan Cita Rasa Istimewa
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        Pentuk View Coffe & Resto hadir di kawasan Tawangmangu sebagai destinasi kuliner yang menawarkan kenyamanan maksimal. Kami menyajikan berbagai menu makanan dan minuman dengan harga terjangkau, ditemani pemandangan alam yang asri dan udara yang sejuk.
+                    </p>
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="flex -space-x-2">
+                            <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://picsum.photos/seed/user1/100/100" alt="Pelanggan">
+                            <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://picsum.photos/seed/user2/100/100" alt="Pelanggan">
+                            <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://picsum.photos/seed/user3/100/100" alt="Pelanggan">
+                        </div>
+                        <div class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                            <span class="text-yellow-400 font-bold text-lg">4.6</span>/5.0 (377 Ulasan)
+                        </div>
+                    </div>
+                    <a href="#location" class="text-primary font-semibold hover:underline inline-flex items-center">
+                        Hubungi Kami <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Facilities Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 reveal">
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl hover:shadow-xl transition-shadow border border-gray-100 dark:border-gray-700">
+                        <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center text-primary text-xl mb-4">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Fasilitas Lengkap</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Dine-in, Takeaway, Contactless delivery, Baby chair, Parkir luas.</p>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl hover:shadow-xl transition-shadow border border-gray-100 dark:border-gray-700">
+                        <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center text-green-600 text-xl mb-4">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Harga Terjangkau</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Mulai Rp 25.000 - Rp 50.000 per orang. Makan enak tanpa menguras kantong.</p>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl hover:shadow-xl transition-shadow border border-gray-100 dark:border-gray-700 sm:col-span-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 text-xl shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-1">Jam Operasional</h3>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">
+                                    <span class="block">Senin - Sabtu: 09.00 - 21.00</span>
+                                    <span class="block">Minggu: 09.00 - 20.30</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 px-6 md:px-12 lg:px-24 bg-gray-50 dark:bg-gray-800 transition-colors">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h4 class="text-primary font-bold uppercase tracking-wider mb-2">Menu Favorit</h4>
+                <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white">
+                    Pilihan Terbaik Untuk Anda
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Menu Item 1 -->
+                <article class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group reveal border border-gray-100 dark:border-gray-700">
+                    <div class="relative overflow-hidden h-64">
+                        <div class="absolute top-3 left-3 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full z-10">POPULER</div>
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGwx1iSAyioyurrfouabcCrPwRb8ebjaY1BJF1YiIQWUkJCWJZ9XwlWTBIaNNKzgbAEU0Y46JoTOTp6S_FAz_h2waKa6kkmuQlTArrqbRjjAVX9NnMy7S53g346-RrrPwIk6U0KGg=w400-h400-k-no" alt="Sate Kelinci Spesial" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display font-bold text-xl mb-2 group-hover:text-primary transition-colors">Sate Kelinci</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Sate kelinci spesial dengan bumbu khas yang gurih dan meresap sempurna.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">Best Seller</span>
+                            <a href="https://wa.me/6281227446322?text=Halo,%20saya%20mau%20pesan%20Sate%20Kelinci" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa-solid fa-cart-shopping text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Menu Item 2 -->
+                <article class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group reveal border border-gray-100 dark:border-gray-700">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGbsUttMk9eGeTOMSWtlj8sxj-av3zB2ktMi636lnz0pXPVvBdHIohoy0fbmaQb4Pg4P1Kb0WkgpQmoqnXfSBqNos4fi0Mb_if_suGBMOPQUugWJdg01zmBCRGuSf0icNDp4-rV=w400-h400-k-no" alt="Nasi Goreng Kelinci" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display font-bold text-xl mb-2 group-hover:text-primary transition-colors">Nasi Goreng Kelinci</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Nasi goreng dengan irisan ati dan suwiran ayam melimpah.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">Rp 19.000</span>
+                            <a href="https://wa.me/6281227446322?text=Halo,%20saya%20mau%20pesan%20Nasi%20Goreng%20Kelinci" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa-solid fa-cart-shopping text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Menu Item 3 -->
+                <article class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group reveal border border-gray-100 dark:border-gray-700">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHdFyEANcOhcdiqodMo6Ni-7I4Yw4jt_eYKMO1ioSdip8dGt7Jikd2sczkpBI0FyQypCEtsa5_aU3ht1WBvtSDYtwc-8eSnUKT05VhfHMLghGq--KIFUdegRoQMBZqb12SNcXwmGYSqnqmo=w400-h400-k-no" alt="Kopi & Kapucino" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display font-bold text-xl mb-2 group-hover:text-primary transition-colors">Kopi & Kapucino</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Berbagai varian kopi dan minuman hangat untuk menemani cerita Anda.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">Mulai Rp 15k</span>
+                            <a href="https://wa.me/6281227446322?text=Halo,%20saya%20mau%20pesan%20Kopi" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa-solid fa-cart-shopping text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Menu Item 4 -->
+                <article class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group reveal border border-gray-100 dark:border-gray-700">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn0GYaAjZbHRFS3XHBGfNvo2MKqInDsGUpvbKovufmB8pm5Em9EeH2Zupc-SiU4bpNbdUW5VEyp8My4XxtMsLMFaKRAX0QjrC9iAGhNJE5yZnWHrE5-ui_FQkJ9Oi5ztnqkqcGl3KQ=w400-h400-k-no" alt="Cah Brokoli" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display font-bold text-xl mb-2 group-hover:text-primary transition-colors">Cah Brokoli</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Tumis brokoli segar dengan sosis pilihan, sehat dan lezat.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">Harga Pas</span>
+                            <a href="https://wa.me/6281227446322?text=Halo,%20saya%20mau%20pesan%20Cah%20Brokoli" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa-solid fa-cart-shopping text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center mt-12 reveal">
+                <a href="https://wa.me/6281227446322" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-8 rounded-full transition-all">
+                    Lihat Menu Lengkap via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Swiper) -->
+    <section id="gallery" class="py-20 bg-white dark:bg-gray-900 transition-colors overflow-hidden">
+        <div class="px-6 md:px-12 lg:px-24 mb-10 flex justify-between items-end reveal">
+            <div>
+                <h4 class="text-primary font-bold uppercase tracking-wider mb-2">Galeri</h4>
+                <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white">
+                    Momen Indah
+                </h2>
+            </div>
+            <div class="hidden md:flex gap-2">
+                <button class="gallery-prev w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-colors">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button class="gallery-next w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-colors">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Swiper -->
+        <div class="swiper gallery-swiper reveal">
+            <div class="swiper-wrapper">
+                <!-- Slides (Mix of provided images and generic ambience) -->
+                <div class="swiper-slide h-[300px] md:h-[500px] w-full">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGwx1iSAyioyurrfouabcCrPwRb8ebjaY1BJF1YiIQWUkJCWJZ9XwlWTBIaNNKzgbAEU0Y46JoTOTp6S_FAz_h2waKa6kkmuQlTArrqbRjjAVX9NnMy7S53g346-RrrPwIk6U0KGg=w800-h600-k-no" class="w-full h-full object-cover" alt="Sate Kelinci">
+                </div>
+                <div class="swiper-slide h-[300px] md:h-[500px] w-full">
+                    <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Suasana Cafe">
+                </div>
+                <div class="swiper-slide h-[300px] md:h-[500px] w-full">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGbsUttMk9eGeTOMSWtlj8sxj-av3zB2ktMi636lnz0pXPVvBdHIohoy0fbmaQb4Pg4P1Kb0WkgpQmoqnXfSBqNos4fi0Mb_if_suGBMOPQUugWJdg01zmBCRGuSf0icNDp4-rV=w800-h600-k-no" class="w-full h-full object-cover" alt="Nasi Goreng">
+                </div>
+                <div class="swiper-slide h-[300px] md:h-[500px] w-full">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Kopi Senja">
+                </div>
+                <div class="swiper-slide h-[300px] md:h-[500px] w-full">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHdFyEANcOhcdiqodMo6Ni-7I4Yw4jt_eYKMO1ioSdip8dGt7Jikd2sczkpBI0FyQypCEtsa5_aU3ht1WBvtSDYtwc-8eSnUKT05VhfHMLghGq--KIFUdegRoQMBZqb12SNcXwmGYSqnqmo=w800-h600-k-no" class="w-full h-full object-cover" alt="Menu Kopi">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 px-6 md:px-12 lg:px-24 bg-gray-50 dark:bg-gray-800 transition-colors">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h4 class="text-primary font-bold uppercase tracking-wider mb-2">Testimoni</h4>
+                <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white">
+                    Kata Pelanggan Kami
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 reveal relative">
+                    <div class="text-primary text-4xl absolute top-6 right-6 opacity-20">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="flex items-center gap-1 mb-4 text-yellow-400 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 italic leading-relaxed">
+                        "Resto yg pelayanannya bagus, pegawainya ramah dan tempatnya nyaman. ada baby chairnya jg jadi ga susah kalo nyuapin anak. lokasinya dipinggir jalan dan parkirannya lumayan luas buat bbrp mobil muat. makanan enak dan porsinya banyak dgn harga yg affordable."
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-gray-100 dark:border-gray-700 pt-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
+                             <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn2jX7XiRfntcn0F2ypRu9LdNEhbKMRG6k8YmLVgH7NDB47-72t-HO-ZELEvvm6ei_nBUwE6ypc-y-7SL1uo1j8uJ7Cpzptv6SWkkWwxHQeJqgDWcF38zRx16GK1QQ1UEZIyUgS37EV3gfwX=w338-h253-p-k-no" alt="Foto Review" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-gray-900 dark:text-white">Khairunissa Luthfi</h5>
+                            <span class="text-xs text-gray-500">Local Guide · 2 bulan lalu</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 reveal relative">
+                    <div class="text-primary text-4xl absolute top-6 right-6 opacity-20">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="flex items-center gap-1 mb-4 text-yellow-400 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 italic leading-relaxed">
+                        "Dari awal datang disambut sama pelayanan yang ramah banget, harga makanannya affordable nasi goreng 19k tapi porsinya banyak, irisan ati sama suwiran ayamnya melimpah..."
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-gray-100 dark:border-gray-700 pt-4">
+                         <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
+                             <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn3SdQ-rHKNRlh3cZBHQM0MJiJKjaMjRu8OwNf1ee5dqqg7ItyqxeSzyLiI3KfhbyrKISC0bKPIHTJTR0rfRMdTH7Mkt-ye3_r9dZK_bCIniJQXsfFFk_gKAA4eewkjooHhKpHEZIFkw_OZg=w675-h506-p-k-no" alt="Foto Review" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-gray-900 dark:text-white">syakira aulia</h5>
+                            <span class="text-xs text-gray-500">Local Guide · 5 bulan lalu</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 reveal relative">
+                    <div class="text-primary text-4xl absolute top-6 right-6 opacity-20">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="flex items-center gap-1 mb-4 text-yellow-400 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 italic leading-relaxed">
+                        "Suasana oke, cuma musik terasa keras bagiku. Enaknya sih sayup sayup waé... Untuk keluarga cocok juga. Tehnya kurang panas, tapi gula belum diaduk, jadi bisa menyesuaikan mau diaduk atau tidak."
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-gray-100 dark:border-gray-700 pt-4">
+                         <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
+                             <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn2TfNDCu939upGuRfLx26IHhiThwKzz7nBYYzVLMW1MP8Qy__4KROJpWfRsQjkCfrkaoJT2Kc5PYd3Wdpl3GC-Af_ok0FpK7qpm-NIpAqsW9TtCr9bQTdFeN6tZDFRrsCi_7kE=w338-h253-p-k-no" alt="Foto Review" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-gray-900 dark:text-white">Pesona Fragrance</h5>
+                            <span class="text-xs text-gray-500">Local Guide · 1 tahun lalu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Hours -->
+    <section id="location" class="py-20 bg-white dark:bg-gray-900 transition-colors">
+        <div class="px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-12 rounded-3xl overflow-hidden shadow-2xl reveal">
+                <!-- Maps -->
+                <div class="h-[400px] lg:h-auto w-full bg-gray-200">
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        loading="lazy" 
+                        allowfullscreen 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://maps.google.com/maps?q=Dawuhan,+Blumbang,+Kec.+Tawangmangu,+Kabupaten+Karanganyar,+Jawa+Tengah+57792&t=&z=13&ie=UTF8&iwloc=&output=embed">
+                    </iframe>
+                </div>
+                
+                <!-- Info -->
+                <div class="p-8 md:p-12 bg-gray-50 dark:bg-gray-800 flex flex-col justify-center">
+                    <h3 class="font-display font-bold text-2xl mb-6">Kunjungi Kami</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white dark:bg-gray-700 flex items-center justify-center text-primary shadow-sm shrink-0">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-sm uppercase text-gray-500 dark:text-gray-400">Alamat</h5>
+                                <p class="text-gray-800 dark:text-gray-200">Dawuhan, Blumbang, Kec. Tawangmangu, Kabupaten Karanganyar, Jawa Tengah 57792</p>
+                                <a href="https://maps.google.com/?q=Dawuhan,+Blumbang,+Kec.+Tawangmangu,+Kabupaten+Karanganyar,+Jawa+Tengah+57792" target="_blank" class="text-primary text-sm hover:underline">Buka di Google Maps</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white dark:bg-gray-700 flex items-center justify-center text-primary shadow-sm shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-sm uppercase text-gray-500 dark:text-gray-400">Kontak</h5>
+                                <p class="text-gray-800 dark:text-gray-200">0812-2744-6322</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white dark:bg-gray-700 flex items-center justify-center text-primary shadow-sm shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-sm uppercase text-gray-500 dark:text-gray-400">Jam Buka</h5>
+                                <ul class="text-sm text-gray-800 dark:text-gray-200 space-y-1 mt-1">
+                                    <li class="flex justify-between w-48"><span>Senin - Sabtu</span> <span>09.00 - 21.00</span></li>
+                                    <li class="flex justify-between w-48"><span>Minggu</span> <span>09.00 - 20.30</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+        <div class="px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-mug-hot text-2xl text-primary"></i>
+                        <span class="font-display font-bold text-2xl">Pentuk View</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Menyajikan kopi dan masakan terbaik dengan pemandangan alam Tawangmangu yang menenangkan. Tempat terbaik untuk berkumpul bersama keluarga dan teman.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-primary">Tautan Cepat</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#home" class="hover:text-primary transition-colors">Beranda</a></li>
+                        <li><a href="#about" class="hover:text-primary transition-colors">Tentang Kami</a></li>
+                        <li><a href="#menu" class="hover:text-primary transition-colors">Menu</a></li>
+                        <li><a href="#reviews" class="hover:text-primary transition-colors">Ulasan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-primary">Sosial Media</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://wa.me/6281227446322" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-500 hover:text-white transition-colors">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm text-center md:text-left">
+                    &copy; <span id="year"></span> Pentuk View Coffe & Resto. All rights reserved.
+                </p>
+                <p class="text-primary text-sm font-semibold italic">
+                    * Made by Amantrana*
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/6281227446322" target="_blank" class="fixed bottom-6 right-6 z-40 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-2xl transition-all hover:scale-110 animate-bounce-slow" aria-label="Chat WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <button id="backToTop" class="fixed bottom-24 right-6 z-40 bg-primary hover:bg-primary-dark text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-xl transition-all opacity-0 translate-y-10 pointer-events-none duration-300" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        const gallerySwiper = new Swiper('.gallery-swiper', {
+            loop: true,
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            centeredSlides: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.gallery-next',
+                prevEl: '.gallery-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    centeredSlides: false,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                }
+            }
+        });
+
+        // Dark Mode Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+        const html = document.documentElement;
+
+        function toggleTheme() {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Check LocalStorage on load
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        themeToggle.addEventListener('click', toggleTheme);
+        mobileThemeToggle.addEventListener('click', toggleTheme);
+
+        // Loading Screen
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            loader.style.visibility = 'hidden';
+            
+            // Trigger animations for elements in viewport on load
+            checkScroll(); 
+        });
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        closeMobileMenuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+        // Back to Top & Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            // Navbar Style
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+
+            // Back to Top Visibility
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+            } else {
+                backToTop.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+            }
+
+            checkScroll();
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        function checkScroll() {
+            const triggerBottom = window.innerHeight * 0.85;
+            
+            revealElements.forEach(box => {
+                const boxTop = box.getBoundingClientRect().top;
+                if(boxTop < triggerBottom) {
+                    box.classList.add('active');
+                }
+            });
+        }
+
+        // Copyright Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

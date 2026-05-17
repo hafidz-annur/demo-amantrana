@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mongkrang Resto & Villa - Glamping & Kuliner Tawangmangu</title>
+    <meta name="description" content="The Mongkrang Resto & Villa adalah destinasi wisata kuliner dan penginapan glamping di Tawangmangu. Nikmati suasana alam asri dan menu khas Indonesia.">
+    <meta name="keywords" content="The Mongkrang, Resto Tawangmangu, Villa Tawangmangu, Glamping Jawa Tengah, Kuliner Karanganyar, Wisata Alam">
+    <meta name="author" content="Amantrana">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://themongkrang.com/">
+    <meta property="og:title" content="The Mongkrang Resto & Villa - Glamping & Kuliner Tawangmangu">
+    <meta property="og:description" content="Nikmati pengalaman glamping nyaman dengan kuliner khas Indonesia di kawasan asri Tawangmangu.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGzCyMOT42nKtv5rcYsmxThFure1ftkEOGnvPf7JybXpcbhVNWagJfxAOh_SI4q49orqhG1RN4thpphtH8HHCY3723YezfeTqhuWUJmonJk-ahqJKcOQ0HvFkVkpitLyfcKg0r-=w1200-h600-k-no">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://themongkrang.com/">
+    <meta property="twitter:title" content="The Mongkrang Resto & Villa">
+    <meta property="twitter:description" content="Glamping & Kuliner Terbaik di Tawangmangu">
+    <meta property="twitter:image" content="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGzCyMOT42nKtv5rcYsmxThFure1ftkEOGnvPf7JybXpcbhVNWagJfxAOh_SI4q49orqhG1RN4thpphtH8HHCY3723YezfeTqhuWUJmonJk-ahqJKcOQ0HvFkVkpitLyfcKg0r-=w1200-h600-k-no">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "The Mongkrang Resto & Villa",
+      "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGzCyMOT42nKtv5rcYsmxThFure1ftkEOGnvPf7JybXpcbhVNWagJfxAOh_SI4q49orqhG1RN4thpphtH8HHCY3723YezfeTqhuWUJmonJk-ahqJKcOQ0HvFkVkpitLyfcKg0r-=w1200-h600-k-no",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gondosuli Kidul, Gondosuli, Kec. Tawangmangu",
+        "addressLocality": "Kabupaten Karanganyar",
+        "addressRegion": "Jawa Tengah",
+        "postalCode": "57792",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -7.673, 
+        "longitude": 111.123
+      },
+      "url": "https://maps.google.com/?q=The+Mongkrang+Resto+Villa+Tawangmangu",
+      "telephone": "+628xxxxxxxxxx",
+      "servesCuisine": "Indonesian",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "07:00",
+          "closes": "20:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.6",
+        "reviewCount": "899"
+      }
+    }
+    </script>
+
+    <!-- Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons: Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        },
+                        amber: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        slate: {
+                            850: '#151e32', // Custom dark for cards
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations & Utilities -->
+    <style>
+        /* Loading Skeleton Animation */
+        .skeleton {
+            background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        .dark .skeleton {
+            background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+            background-size: 200% 100%;
+        }
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Scroll Animation Utilities */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hide scrollbar for clean look in gallery */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Swiper Customization */
+        .swiper-pagination-bullet-active {
+            background-color: #10b981 !important;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #10b981;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-300 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- Navbar -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center text-white text-xl shadow-lg group-hover:bg-emerald-500 transition-colors">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">The Mongkrang</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-sm font-medium hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors">Home</a>
+                    <a href="#about" class="text-sm font-medium hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors">Tentang</a>
+                    <a href="#menu" class="text-sm font-medium hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors">Menu</a>
+                    <a href="#gallery" class="text-sm font-medium hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors">Galeri</a>
+                    <a href="#reviews" class="text-sm font-medium hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors">Ulasan</a>
+                    <a href="#location" class="text-sm font-medium hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors">Lokasi</a>
+                </nav>
+
+                <!-- Actions (Dark Mode & Mobile Toggle) -->
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 hover:ring-2 ring-emerald-500 transition-all" aria-label="Toggle Dark Mode">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block"></i>
+                    </button>
+
+                    <!-- Mobile Hamburger -->
+                    <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 text-slate-800 dark:text-slate-200 focus:outline-none">
+                        <span class="w-6 h-0.5 bg-current transition-all duration-300" id="bar1"></span>
+                        <span class="w-6 h-0.5 bg-current transition-all duration-300" id="bar2"></span>
+                        <span class="w-6 h-0.5 bg-current transition-all duration-300" id="bar3"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 shadow-xl absolute w-full left-0 top-20">
+            <nav class="flex flex-col p-6 gap-4">
+                <a href="#home" class="mobile-link text-base font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600">Home</a>
+                <a href="#about" class="mobile-link text-base font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600">Tentang</a>
+                <a href="#menu" class="mobile-link text-base font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600">Menu</a>
+                <a href="#gallery" class="mobile-link text-base font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600">Galeri</a>
+                <a href="#reviews" class="mobile-link text-base font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600">Ulasan</a>
+                <a href="#location" class="mobile-link text-base font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600">Lokasi</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGzCyMOT42nKtv5rcYsmxThFure1ftkEOGnvPf7JybXpcbhVNWagJfxAOh_SI4q49orqhG1RN4thpphtH8HHCY3723YezfeTqhuWUJmonJk-ahqJKcOQ0HvFkVkpitLyfcKg0r-=w1200-h600-k-no" 
+                     alt="The Mongkrang Resto & Villa View" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-slate-50 dark:to-slate-900"></div>
+            </div>
+
+            <div class="relative z-10 container mx-auto px-6 md:px-12 lg:px-24 text-center text-white reveal">
+                <span class="inline-block py-1 px-3 rounded-full bg-emerald-500/90 backdrop-blur-sm text-sm font-semibold mb-4 animate-bounce">
+                    Destinasi Wisata & Kuliner #1 di Tawangmangu
+                </span>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight drop-shadow-lg">
+                    Nikmati Pengalaman <br> 
+                    <span class="text-emerald-400">Kuliner & Glamping</span> Terbaik
+                </h1>
+                <p class="text-lg md:text-xl text-slate-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    The Mongkrang Resto & Villa menawarkan suasana alam yang asri dengan penginapan glamping nyaman dan cita rasa masakan Indonesia yang otentik.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#menu" class="px-8 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-emerald-500/50 transform hover:-translate-y-1">
+                        Lihat Menu
+                    </a>
+                    <a href="#location" class="px-8 py-3.5 bg-transparent border-2 border-white hover:bg-white hover:text-slate-900 text-white rounded-full font-semibold transition-all duration-300 backdrop-blur-sm">
+                        Hubungi Kami
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/80">
+                <a href="#about" aria-label="Scroll Down">
+                    <i class="fa-solid fa-chevron-down text-2xl"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24 bg-slate-50 dark:bg-slate-900">
+            <div class="container mx-auto px-6 md:px-12 lg:px-24">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Image Side -->
+                    <div class="relative reveal">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-emerald-200 dark:bg-emerald-900 rounded-2xl -z-10"></div>
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFi5rNCBkLMiRvTgmYH3br3P3jJ86q_0mQ1zgbcaeXGl7m5WscSsPKSqE4DjlPZv1nSUfR8QJV3OL_dKg6i1MIjou0JBR2qRzGzkM1SBDqUEhiJ29c3GIJrisY2y6ZlEsvx65co3m2MDU0S=w400-h300-p-k-no" 
+                             alt="Suasana The Mongkrang" 
+                             class="rounded-2xl shadow-2xl w-full object-cover h-[400px] hover:scale-[1.02] transition-transform duration-500">
+                        
+                        <!-- Rating Badge Floating -->
+                        <div class="absolute -bottom-6 -right-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl flex items-center gap-3">
+                            <div class="text-3xl font-bold text-emerald-600">4.6</div>
+                            <div class="flex flex-col">
+                                <div class="text-amber-500 text-xs">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">899 Google Reviews</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Side -->
+                    <div class="reveal">
+                        <h4 class="text-emerald-600 font-semibold uppercase tracking-wider mb-2">Tentang Kami</h4>
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Destinasi Tepat untuk Bersantai di Tawangmangu</h2>
+                        <p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
+                            Terletak di Gondosuli Kidul, The Mongkrang Resto & Villa menghadirkan konsep glamping modern yang dipadukan dengan restoran keluarga. Harga mulai dari Rp 215.577 per malam, kami menjamin pengalaman menginap yang nyaman dengan udara sejuk khas pegunungan.
+                        </p>
+
+                        <!-- Facilities Grid -->
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-campground text-emerald-500 text-xl"></i>
+                                <span class="text-sm font-medium dark:text-slate-200">Glamping & Villa</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-utensils text-emerald-500 text-xl"></i>
+                                <span class="text-sm font-medium dark:text-slate-200">Restoran Keluarga</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-car text-emerald-500 text-xl"></i>
+                                <span class="text-sm font-medium dark:text-slate-200">Area Parkir Luas</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-tree text-emerald-500 text-xl"></i>
+                                <span class="text-sm font-medium dark:text-slate-200">Suasana Asri</span>
+                            </div>
+                        </div>
+
+                        <!-- Operating Hours -->
+                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+                            <h3 class="font-bold text-lg mb-4 dark:text-white">Jam Operasional</h3>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between border-b border-slate-100 dark:border-slate-700 pb-2">
+                                    <span class="text-slate-500 dark:text-slate-400">Senin - Jumat</span>
+                                    <span class="font-semibold dark:text-slate-200">08.00 - 20.00 WIB</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-100 dark:border-slate-700 pb-2">
+                                    <span class="text-slate-500 dark:text-slate-400">Sabtu</span>
+                                    <span class="font-semibold dark:text-slate-200">08.00 - 21.00 WIB</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500 dark:text-slate-400">Minggu</span>
+                                    <span class="font-semibold dark:text-slate-200">07.00 - 20.00 WIB</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="py-16 md:py-24 bg-white dark:bg-slate-800">
+            <div class="container mx-auto px-6 md:px-12 lg:px-24">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Menu Unggulan</h2>
+                    <p class="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                        Nikmati berbagai hidangan lezat khas Indonesia dan minuman segar yang disajikan dengan bahan-bahan berkualitas.
+                    </p>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="flex justify-center gap-4 mb-10 reveal">
+                    <button onclick="filterMenu('all')" class="filter-btn active px-6 py-2 rounded-full text-sm font-medium transition-all bg-emerald-600 text-white shadow-md" data-filter="all">Semua</button>
+                    <button onclick="filterMenu('makanan')" class="filter-btn px-6 py-2 rounded-full text-sm font-medium transition-all bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-emerald-100 dark:hover:bg-emerald-900" data-filter="makanan">Makanan</button>
+                    <button onclick="filterMenu('minuman')" class="filter-btn px-6 py-2 rounded-full text-sm font-medium transition-all bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-emerald-100 dark:hover:bg-emerald-900" data-filter="minuman">Minuman</button>
+                </div>
+
+                <!-- Menu Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="menu-grid">
+                    
+                    <!-- Item 1: Makanan -->
+                    <div class="menu-card group bg-slate-50 dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 reveal" data-category="makanan">
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAESnwMAkNqRDULe0Z94WMy9DeDlLvw0Q_4NLILQ9ANb0ZxuUDn6HcliI6fyugAlxVLoePBDSd1BNIwVq0bC6xk2wffGh25wFLOFGh1ebCa8hwd03nW1jJyfKjL7LSmOfEJOAqc=w400-h400-p-k-no" alt="Tempe Mendoan" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Makanan</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Tempe Mendoan</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">Tempe goreng khas dengan bumbu tradisional yang gurih dan renyah.</p>
+                            <a href="#" class="text-emerald-600 dark:text-emerald-400 text-sm font-semibold hover:underline">Lihat Detail <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Makanan -->
+                    <div class="menu-card group bg-slate-50 dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 reveal" data-category="makanan">
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAE89eDsokwjGnUotPmVf9Hm5XpRLzsi02cmgxbtrzNb-dULnRe5it8b1AWZRR3ttigqDEhQkexVIPw5vmYVUDEhRoezp7hHwmRUIbvheGt48gN1FSr1XONfl7JrJjDViQ-pxKGE=w400-h400-p-k-no" alt="Nasi Goreng Seafood" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Makanan</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Nasi Goreng Seafood</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">Nasi goreng spesial dengan topping seafood segar pilihan.</p>
+                            <a href="#" class="text-emerald-600 dark:text-emerald-400 text-sm font-semibold hover:underline">Lihat Detail <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Makanan -->
+                    <div class="menu-card group bg-slate-50 dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 reveal" data-category="makanan">
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHIhqsx4HN-MsxQvirwcuJckQnXBdvqX6Q5GhbAIKb_aYsfHx_pQG8aojS92UG5qk8O1EKPw_bGyrCUXN5D7TnzKnqoI_qfDNkPQ2GjmtOKn4N38kTa4LLB4hy3eb3cDbtdAE0=w400-h400-p-k-no" alt="Sate" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Makanan</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Sate Spesial</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">Sate ayam atau kambing dengan bumbu kacang khas yang meresap sempurna.</p>
+                            <a href="#" class="text-emerald-600 dark:text-emerald-400 text-sm font-semibold hover:underline">Lihat Detail <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Makanan -->
+                    <div class="menu-card group bg-slate-50 dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 reveal" data-category="makanan">
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFeU9kuXNkHMbL23NTABg8yO0gswUcARg-ml-nxE7cHO2D6PiyCs_K9GrOPPJj04VWbbwvTW_VUzLtGSwp1050NK8uYfnximg03oUgZQuNAdaUgoc3WZ9IdDh2AdcQH9NTyjqDVbA=w400-h400-p-k-no" alt="Sup Daging" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Makanan</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Sup Daging</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">Sup daging hangat yang kaya rempah, cocok untuk cuaca dingin Tawangmangu.</p>
+                            <a href="#" class="text-emerald-600 dark:text-emerald-400 text-sm font-semibold hover:underline">Lihat Detail <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Makanan -->
+                    <div class="menu-card group bg-slate-50 dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 reveal" data-category="makanan">
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAH3QVHpPQKulyL-nfe3fwv3SF0DOh0ik1S5GVut-5loSNuSD2x8nEW4rPn8wTxM1Zeih4zntH68r499MTODWkFVNrNLusM7P5f1NBF1kqTXXStiEXRwtM-OD61Cm5iTK8NEBqhK=w400-h400-p-k-no" alt="Nasi Goreng Spesial" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Makanan</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Nasi Goreng Spesial</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">Nasi goreng dengan racikan bumbu rahasia The Mongkrang.</p>
+                            <a href="#" class="text-emerald-600 dark:text-emerald-400 text-sm font-semibold hover:underline">Lihat Detail <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+
+                     <!-- Item 6: Minuman -->
+                     <div class="menu-card group bg-slate-50 dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 reveal" data-category="minuman">
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFRgAYHAydw6CayCejOU6OF_cfzNoMEHsHJb9Hopz-f9vNjktoNxTUSU3m44ELkeNuhMTjNJElvU4XIruAA3Yo6i-pepdy_ax_fHmjeoGoakDKxwgZSNZcXnyBRbAVmM4jp6c6Ocw=w400-h400-p-k-no" alt="Kopi" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Minuman</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Aneka Kopi</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">Berbagai varian kopi pilihan untuk menemani santai Anda.</p>
+                            <a href="#" class="text-emerald-600 dark:text-emerald-400 text-sm font-semibold hover:underline">Lihat Detail <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Item 7: Minuman -->
+                    <div class="menu-card group bg-slate-50 dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 reveal" data-category="minuman">
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFJDvPos7Btk8NPKZ8jZNSoj5ANgPWx2odUrRPA6mOEUgpT0VMAHonL2tlmkUxQM1DBc6A6-rdG_AkEhhRdqlUZbrFZ-C_LixV0yOQ7sZpixSEhdQ4tyOjclOFFT9VbeJpkY7hh=w400-h400-p-k-no" alt="Squash" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Minuman</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Fruit Squash</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">Minuman segar buah asli yang menyegarkan tenggorokan.</p>
+                            <a href="#" class="text-emerald-600 dark:text-emerald-400 text-sm font-semibold hover:underline">Lihat Detail <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Item 8: Snack (Categorized as Food/General) -->
+                    <div class="menu-card group bg-slate-50 dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 reveal" data-category="makanan">
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAE15Jzq8v8jS_KrvtPBkT2joeZIWIX5PKjrPy6i_4ttgrC2fu0ars3JzC49w4MvOxch-Ac-wOjBkNLqQ4hiE4N_wbuGs2nbU81ujeujY0DYneybTQDxd77Y9ai-OkrhnauLuOPu=w400-h400-p-k-no" alt="Tempura" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Snack</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Tempura Crispy</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">Gorengan tepung renyah dengan sayuran segar.</p>
+                            <a href="#" class="text-emerald-600 dark:text-emerald-400 text-sm font-semibold hover:underline">Lihat Detail <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-16 md:py-24 bg-slate-50 dark:bg-slate-900">
+            <div class="container mx-auto px-6 md:px-12 lg:px-24">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Galeri Foto</h2>
+                    <p class="text-slate-600 dark:text-slate-300">Intip keindahan suasana dan fasilitas The Mongkrang.</p>
+                </div>
+
+                <!-- Swiper Gallery -->
+                <div class="swiper gallerySwiper reveal">
+                    <div class="swiper-wrapper pb-12">
+                        <!-- Slides (Reusing images + mixing layout) -->
+                        <div class="swiper-slide">
+                            <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn0wjjOae1pbHsVcHnbffTYMUbYgS4FCj6gqoakojtr67MYNHeLliAjK9Ez5QGP1zFDNVIbOKNMaYlXnJ8eaw9h0na69CeCqNq1NFkhtmiiSL8OHYxO2sC7wHYC1TgAQ_m3q7TPJAsk-JNHC=w400-h300-p-k-no" alt="Glamping Area" class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-md">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFi5rNCBkLMiRvTgmYH3br3P3jJ86q_0mQ1zgbcaeXGl7m5WscSsPKSqE4DjlPZv1nSUfR8QJV3OL_dKg6i1MIjou0JBR2qRzGzkM1SBDqUEhiJ29c3GIJrisY2y6ZlEsvx65co3m2MDU0S=w400-h300-p-k-no" alt="Dining Area" class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-md">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEWps-Q5xVU0I1K5ERSdZD7QJxFkQAcCkRQWCc9T4o8IEbAuafCPGJlRz_fFyi9-Zpyc4z4ZiX6203jwQdDv4wi34Dhbhfdj22D1nDntvp1oWSVceZAsxhkaeEY3_xQ2hzE77acwQ=w400-h300-p-k-no" alt="Night View" class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-md">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEVU5ahF-818Jd7uzQW5NntuzrcXWaMgL4GxLd2lK_UVzZl5ZcUUrwOsXIPMVsg3Ut6X0jkYq3hTK226vVPfRLPXgIAhVhsk-PGhX9Jceiy1YV0B-R7HEYNRKx5EDkaPWTFq-t2O3hBKz3K=w400-h300-p-k-no" alt="Villa Interior" class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-md">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGzCyMOT42nKtv5rcYsmxThFure1ftkEOGnvPf7JybXpcbhVNWagJfxAOh_SI4q49orqhG1RN4thpphtH8HHCY3723YezfeTqhuWUJmonJk-ahqJKcOQ0HvFkVkpitLyfcKg0r-=w400-h300-p-k-no" alt="Family Gathering" class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-md">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="py-16 md:py-24 bg-white dark:bg-slate-800">
+            <div class="container mx-auto px-6 md:px-12 lg:px-24">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+                    <div class="mb-6 md:mb-0">
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">Apa Kata Mereka?</h2>
+                        <p class="text-slate-600 dark:text-slate-300">Ulasan jujur dari pengunjung The Mongkrang.</p>
+                    </div>
+                    
+                    <!-- Rating Summary Card -->
+                    <div class="flex items-center gap-6 bg-slate-50 dark:bg-slate-700 p-6 rounded-2xl shadow-sm">
+                        <div class="text-center">
+                            <div class="text-5xl font-bold text-slate-900 dark:text-white">4.6</div>
+                            <div class="text-amber-500 text-sm my-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400">899 Ulasan</div>
+                        </div>
+                        <!-- Progress Bars -->
+                        <div class="space-y-1 w-32 md:w-48">
+                            <div class="flex items-center gap-2 text-xs">
+                                <span class="w-2">5</span><div class="flex-1 h-1.5 bg-slate-200 dark:bg-slate-600 rounded-full overflow-hidden"><div class="h-full bg-emerald-500" style="width: 80%"></div></div>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs">
+                                <span class="w-2">4</span><div class="flex-1 h-1.5 bg-slate-200 dark:bg-slate-600 rounded-full overflow-hidden"><div class="h-full bg-emerald-500" style="width: 15%"></div></div>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs">
+                                <span class="w-2">3</span><div class="flex-1 h-1.5 bg-slate-200 dark:bg-slate-600 rounded-full overflow-hidden"><div class="h-full bg-emerald-500" style="width: 3%"></div></div>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs">
+                                <span class="w-2">2</span><div class="flex-1 h-1.5 bg-slate-200 dark:bg-slate-600 rounded-full overflow-hidden"><div class="h-full bg-emerald-500" style="width: 1%"></div></div>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs">
+                                <span class="w-2">1</span><div class="flex-1 h-1.5 bg-slate-200 dark:bg-slate-600 rounded-full overflow-hidden"><div class="h-full bg-emerald-500" style="width: 1%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial Swiper -->
+                <div class="swiper reviewSwiper reveal">
+                    <div class="swiper-wrapper pb-12">
+                        <!-- Review 1 -->
+                        <div class="swiper-slide">
+                            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 h-full flex flex-col">
+                                <div class="text-amber-500 mb-3 text-sm">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-slate-700 dark:text-slate-300 text-sm mb-4 italic">"Bagus bgtt glampingnya, pelayanannya baik2 cmn kurang air panasnya susah d pakai dan airnya dingin trs tdk hangat"</p>
+                                <div class="mt-auto flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-slate-300 overflow-hidden">
+                                         <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn0wjjOae1pbHsVcHnbffTYMUbYgS4FCj6gqoakojtr67MYNHeLliAjK9Ez5QGP1zFDNVIbOKNMaYlXnJ8eaw9h0na69CeCqNq1NFkhtmiiSL8OHYxO2sC7wHYC1TgAQ_m3q7TPJAsk-JNHC=w400-h300-p-k-no" class="w-full h-full object-cover" alt="Reviewer">
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-sm text-slate-900 dark:text-white">Pengunjung</div>
+                                        <div class="text-xs text-slate-500">2 minggu lalu</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 2 -->
+                        <div class="swiper-slide">
+                            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 h-full flex flex-col">
+                                <div class="text-amber-500 mb-3 text-sm">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-slate-700 dark:text-slate-300 text-sm mb-4 italic">"Tempatnya nyaman dan asri, cocok untuk family gathering. Makanannya enak-enak terutama nasi goreng seafoodnya."</p>
+                                <div class="mt-auto flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-slate-300 overflow-hidden">
+                                        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFi5rNCBkLMiRvTgmYH3br3P3jJ86q_0mQ1zgbcaeXGl7m5WscSsPKSqE4DjlPZv1nSUfR8QJV3OL_dKg6i1MIjou0JBR2qRzGzkM1SBDqUEhiJ29c3GIJrisY2y6ZlEsvx65co3m2MDU0S=w400-h300-p-k-no" class="w-full h-full object-cover" alt="Reviewer">
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-sm text-slate-900 dark:text-white">Pengunjung</div>
+                                        <div class="text-xs text-slate-500">1 bulan lalu</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 3 -->
+                        <div class="swiper-slide">
+                            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 h-full flex flex-col">
+                                <div class="text-amber-500 mb-3 text-sm">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-slate-700 dark:text-slate-300 text-sm mb-4 italic">"Suasana malamnya indah banget, cocok untuk dinner romantis. Pelayanan ramah dan makanan cepat disajikan."</p>
+                                <div class="mt-auto flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-slate-300 overflow-hidden">
+                                        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEWps-Q5xVU0I1K5ERSdZD7QJxFkQAcCkRQWCc9T4o8IEbAuafCPGJlRz_fFyi9-Zpyc4z4ZiX6203jwQdDv4wi34Dhbhfdj22D1nDntvp1oWSVceZAsxhkaeEY3_xQ2hzE77acwQ=w400-h300-p-k-no" class="w-full h-full object-cover" alt="Reviewer">
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-sm text-slate-900 dark:text-white">Pengunjung</div>
+                                        <div class="text-xs text-slate-500">3 minggu lalu</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 4 -->
+                        <div class="swiper-slide">
+                            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 h-full flex flex-col">
+                                <div class="text-amber-500 mb-3 text-sm">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                                </div>
+                                <p class="text-slate-700 dark:text-slate-300 text-sm mb-4 italic">"Villa bersih dan nyaman. Harga terjangkau untuk fasilitas yang didapat. Recommended untuk weekend getaway."</p>
+                                <div class="mt-auto flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-slate-300 overflow-hidden">
+                                        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEVU5ahF-818Jd7uzQW5NntuzrcXWaMgL4GxLd2lK_UVzZl5ZcUUrwOsXIPMVsg3Ut6X0jkYq3hTK226vVPfRLPXgIAhVhsk-PGhX9Jceiy1YV0B-R7HEYNRKx5EDkaPWTFq-t2O3hBKz3K=w400-h300-p-k-no" class="w-full h-full object-cover" alt="Reviewer">
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-sm text-slate-900 dark:text-white">Pengunjung</div>
+                                        <div class="text-xs text-slate-500">1 minggu lalu</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <!-- Review 5 -->
+                         <div class="swiper-slide">
+                            <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 h-full flex flex-col">
+                                <div class="text-amber-500 mb-3 text-sm">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-slate-700 dark:text-slate-300 text-sm mb-4 italic">"Tempat favorit keluarga kami di Tawangmangu. Anak-anak senang bermain di area outdoor sambil menikmati hidangan lezat."</p>
+                                <div class="mt-auto flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-slate-300 overflow-hidden">
+                                        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGzCyMOT42nKtv5rcYsmxThFure1ftkEOGnvPf7JybXpcbhVNWagJfxAOh_SI4q49orqhG1RN4thpphtH8HHCY3723YezfeTqhuWUJmonJk-ahqJKcOQ0HvFkVkpitLyfcKg0r-=w400-h300-p-k-no" class="w-full h-full object-cover" alt="Reviewer">
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-sm text-slate-900 dark:text-white">Pengunjung</div>
+                                        <div class="text-xs text-slate-500">2 bulan lalu</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="location" class="py-16 md:py-24 bg-slate-50 dark:bg-slate-900">
+            <div class="container mx-auto px-6 md:px-12 lg:px-24">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Lokasi Kami</h2>
+                    <p class="text-slate-600 dark:text-slate-300">Temukan kami di kawasan indah Tawangmangu.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 reveal">
+                    <!-- Map Embed -->
+                    <div class="h-[400px] bg-slate-200 dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg relative group">
+                        <iframe 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0" 
+                            style="border:0"
+                            src="https://maps.google.com/maps?q=The+Mongkrang+Resto+Villa+Tawangmangu&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            allowfullscreen>
+                        </iframe>
+                        <div class="absolute inset-0 bg-transparent pointer-events-none group-hover:bg-emerald-900/10 transition-colors duration-500"></div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="flex flex-col justify-center space-y-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Informasi Kontak</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mb-6">
+                                Jangan ragu untuk menghubungi kami untuk reservasi atau pertanyaan seputar fasilitas.
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 flex-shrink-0">
+                                    <i class="fa-solid fa-map-location-dot text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 dark:text-white">Alamat</h4>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">
+                                        Gondosuli Kidul, Gondosuli, Kec. Tawangmangu, Kabupaten Karanganyar, Jawa Tengah 57792
+                                    </p>
+                                    <p class="text-xs text-slate-500 mt-1">Plus Code: 85JH+XM Gondosuli</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 flex-shrink-0">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 dark:text-white">WhatsApp</h4>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">
+                                        +62 812-3456-7890 (Placeholder)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://maps.google.com/?q=The+Mongkrang+Resto+Villa+Tawangmangu" target="_blank" class="inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-semibold hover:underline mt-4">
+                            Buka di Google Maps <i class="fa-solid fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 border-t border-slate-800">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center text-white">
+                            <i class="fa-solid fa-leaf text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white">The Mongkrang</span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6 text-slate-400">
+                        Destinasi glamping dan kuliner terbaik di Tawangmangu dengan nuansa alam yang asri dan pelayanan sepenuh hati.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-600 hover:text-white transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-600 hover:text-white transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-600 hover:text-white transition-colors" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Tautan Cepat</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#home" class="hover:text-emerald-500 transition-colors">Beranda</a></li>
+                        <li><a href="#about" class="hover:text-emerald-500 transition-colors">Tentang Kami</a></li>
+                        <li><a href="#menu" class="hover:text-emerald-500 transition-colors">Menu</a></li>
+                        <li><a href="#gallery" class="hover:text-emerald-500 transition-colors">Galeri</a></li>
+                        <li><a href="#location" class="hover:text-emerald-500 transition-colors">Lokasi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Hubungi Kami</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-emerald-500"></i>
+                            <span>Gondosuli Kidul, Tawangmangu, Karanganyar, Jateng 57792</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fa-solid fa-phone mt-1 text-emerald-500"></i>
+                            <span>+62 812-3456-7890</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fa-solid fa-envelope mt-1 text-emerald-500"></i>
+                            <span>info@themongkrang.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Opening Hours Footer -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Jam Buka</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex justify-between">
+                            <span>Senin - Jumat</span>
+                            <span>08:00 - 20:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sabtu</span>
+                            <span>08:00 - 21:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Minggu</span>
+                            <span>07:00 - 20:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-slate-500">
+                    &copy; 2026 The Mongkrang Resto & Villa. All rights reserved.
+                </p>
+                <p class="text-sm text-slate-500">
+                    Made by <a href="https://amantrana.com" target="_blank" class="text-emerald-500 hover:text-emerald-400 font-semibold">Amantrana</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <!-- WhatsApp -->
+    <a href="https://wa.me/6281234567890" target="_blank" class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-emerald-500 hover:scale-110 transition-all duration-300" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="fixed bottom-6 left-6 z-40 w-12 h-12 bg-slate-800 dark:bg-slate-700 text-white rounded-full flex items-center justify-center shadow-lg translate-y-24 opacity-0 transition-all duration-300 hover:bg-emerald-600" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+    <script>
+        // --- 1. Dark Mode Logic ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        // Check local storage or system preference
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        } else {
+            htmlElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // --- 2. Mobile Menu Toggle ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            // Animate hamburger
+            if (mobileMenu.classList.contains('hidden')) {
+                bar1.classList.remove('rotate-45', 'translate-y-2');
+                bar2.classList.remove('opacity-0');
+                bar3.classList.remove('-rotate-45', '-translate-y-2');
+            } else {
+                bar1.classList.add('rotate-45', 'translate-y-2');
+                bar2.classList.add('opacity-0');
+                bar3.classList.add('-rotate-45', '-translate-y-2');
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        
+        // Close menu when link clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // --- 3. Menu Filtering ---
+        function filterMenu(category) {
+            const cards = document.querySelectorAll('.menu-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Button active state
+            buttons.forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.classList.add('bg-emerald-600', 'text-white', 'shadow-md');
+                    btn.classList.remove('bg-slate-100', 'dark:bg-slate-700', 'text-slate-600', 'dark:text-slate-300');
+                } else {
+                    btn.classList.remove('bg-emerald-600', 'text-white', 'shadow-md');
+                    btn.classList.add('bg-slate-100', 'dark:bg-slate-700', 'text-slate-600', 'dark:text-slate-300');
+                }
+            });
+
+            // Filtering logic
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    // Add tiny animation
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.9)';
+                }
+            });
+        }
+
+        // --- 4. Scroll Animations (Intersection Observer) ---
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // --- 5. Navbar Blur & Back to Top Visibility ---
+        const navbar = document.getElementById('navbar');
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            // Navbar effect
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md', 'bg-white/95', 'dark:bg-slate-900/95');
+                navbar.classList.remove('bg-white/80', 'dark:bg-slate-900/80');
+            } else {
+                navbar.classList.remove('shadow-md', 'bg-white/95', 'dark:bg-slate-900/95');
+                navbar.classList.add('bg-white/80', 'dark:bg-slate-900/80');
+            }
+
+            // Back to Top
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('translate-y-24', 'opacity-0');
+            } else {
+                backToTopBtn.classList.add('translate-y-24', 'opacity-0');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // --- 6. Initialize Swiper ---
+        
+        // Gallery Swiper
+        const gallerySwiper = new Swiper('.gallerySwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: { slidesPerView: 2, spaceBetween: 20 },
+                768: { slidesPerView: 3, spaceBetween: 30 },
+                1024: { slidesPerView: 4, spaceBetween: 30 },
+            }
+        });
+
+        // Review Swiper
+        const reviewSwiper = new Swiper('.reviewSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            grabCursor: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 3, spaceBetween: 30 },
+            }
+        });
+
+    </script>
+</body>
+</html>

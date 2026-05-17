@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Brain Coffee Surabaya - Kedai Kopi Premium di Wonokromo</title>
+    <meta name="description" content="Brain Coffee Surabaya: kedai kopi dengan rating 4.6⭐, suasana nyaman, menu kopi & makanan enak. Buka 07.00-22.00 WIB. Order via WA: 0895-0396-9086">
+    <meta name="keywords" content="coffee shop surabaya, brain coffee, kedai kopi wonokromo, wfc surabaya, ngopi surabaya">
+    <meta name="author" content="Brain Coffee Surabaya">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Brain Coffee Surabaya">
+    <meta property="og:description" content="Kedai kopi premium dengan suasana nyaman di Wonokromo, Surabaya">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://braincoffeesurabaya.com">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEwJPhxmos-YWatNsp6AQkdxAxUuOUfzTliMxiDphhX26gDSISCPei40k5dGR6JsmXAj-iP0S_Ghib-TAY5--TOJlymZkP3T_sTr7IG1Bvg4sRi3qqaKjw8ZbBFRNK50EtNwEk=w408-h544-k-no">
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { DEFAULT: '#6F4E37', dark: '#5A3E2B' }, // Coffee Brown
+                        secondary: '#D4A574', // Cream/Gold
+                        accent: '#D4AF37', // Gold
+                        wa: '#25D366' // WhatsApp Green
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'steam': 'steam 3s ease-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        steam: {
+                            '0%': { transform: 'translateY(0) scale(1)', opacity: '0.6' },
+                            '100%': { transform: 'translateY(-20px) scale(1.5)', opacity: '0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- Font Awesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS for Animations & Utilities -->
+    <style>
+        /* Smooth fade-in animation class triggered by JS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading Skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        .dark .skeleton {
+            background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+        }
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #1f2937; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6F4E37; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5A3E2B; 
+        }
+
+        /* Hero Parallax Fix */
+        .hero-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll; /* Better performance on mobile */
+            }
+        }
+    </style>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "Brain Coffee Surabaya",
+      "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEwJPhxmos-YWatNsp6AQkdxAxUuOUfzTliMxiDphhX26gDSISCPei40k5dGR6JsmXAj-iP0S_Ghib-TAY5--TOJlymZkP3T_sTr7IG1Bvg4sRi3qqaKjw8ZbBFRNK50EtNwEk=w408-h544-k-no",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Wonokromo Tangkis No.52",
+        "addressLocality": "Surabaya",
+        "addressRegion": "Jawa Timur",
+        "postalCode": "60243",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -7.2819,
+        "longitude": 112.7389
+      },
+      "telephone": "+6289503969086",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "07:00",
+        "closes": "22:00"
+      },
+      "priceRange": "Rp 25.000 - Rp 50.000",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.6",
+        "reviewCount": "1926"
+      }
+    }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans selection:bg-primary selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <header id="navbar" class="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i class="fa-solid fa-mug-hot text-3xl text-primary animate-float"></i>
+                    <span class="font-bold text-2xl tracking-tight text-gray-900 dark:text-white">
+                        Brain <span class="text-primary">Coffee</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors font-medium">Beranda</a>
+                    <a href="#about" class="text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors font-medium">Tentang</a>
+                    <a href="#menu" class="text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors font-medium">Menu</a>
+                    <a href="#gallery" class="text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors font-medium">Galeri</a>
+                    <a href="#reviews" class="text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors font-medium">Ulasan</a>
+                    <a href="#location" class="text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors font-medium">Lokasi</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-4">
+                    <!-- Theme Toggle -->
+                    <button id="themeToggle" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800 transition-colors focus:outline-none" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon text-xl dark:hidden"></i>
+                        <i class="fas fa-sun text-xl hidden dark:block text-yellow-400"></i>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 focus:outline-none" aria-label="Open Menu">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-lg absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#home" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-800">Beranda</a>
+                <a href="#about" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-800">Tentang</a>
+                <a href="#menu" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-800">Menu</a>
+                <a href="#gallery" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-800">Galeri</a>
+                <a href="#reviews" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-800">Ulasan</a>
+                <a href="#location" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-800">Lokasi</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="home" class="relative min-h-[85vh] flex items-center justify-center hero-bg" style="background-image: url('https://lh3.googleusercontent.com/gps-cs-s/APNQkAEwJPhxmos-YWatNsp6AQkdxAxUuOUfzTliMxiDphhX26gDSISCPei40k5dGR6JsmXAj-iP0S_Ghib-TAY5--TOJlymZkP3T_sTr7IG1Bvg4sRi3qqaKjw8ZbBFRNK50EtNwEk=w1080-h720-k-no');">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+            
+            <div class="relative z-10 text-center text-white px-4 max-w-5xl mx-auto pt-16">
+                <div class="mb-6 inline-block animate-steam">
+                    <i class="fa-solid fa-mug-hot text-6xl text-primary/80"></i>
+                </div>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg reveal">
+                    Brain Coffee <span class="text-secondary">Surabaya</span>
+                </h1>
+                <p class="text-lg md:text-2xl mb-8 text-gray-200 font-light max-w-2xl mx-auto reveal">
+                    Nikmati kopi berkualitas dengan suasana teduh dan tenang di jantung kota Surabaya.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4 reveal">
+                    <a href="https://wa.me/6289503969086?text=Halo%20Brain%20Coffee%2C%20saya%20ingin%20memesan..." target="_blank" 
+                       class="bg-wa hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full shadow-lg transition-all hover:scale-105 flex items-center justify-center gap-3">
+                        <i class="fab fa-whatsapp text-xl"></i> Pesan via WhatsApp
+                    </a>
+                    <a href="#menu" 
+                       class="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-full border border-white/30 transition-all hover:scale-105 flex items-center justify-center gap-3">
+                        Lihat Menu <i class="fas fa-arrow-down animate-bounce"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Scroll Down Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-white/70">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-20 px-4 max-w-7xl mx-auto bg-white dark:bg-gray-900">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="reveal">
+                    <h2 class="text-primary font-bold uppercase tracking-wider text-sm mb-2">Tentang Kami</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Suasana Teduh untuk Produktivitas Anda</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-lg">
+                        Brain Coffee Surabaya adalah kedai kopi modern yang menawarkan pengalaman ngopi nyaman dengan suasana teduh dan tenang. Terletak di area Wonokromo, kami menyajikan berbagai varian kopi berkualitas serta makanan western dan lokal dengan plating yang menarik.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                        Dengan rating <span class="font-bold text-yellow-500">4.6</span> dari ribuan ulasan, kami menjadi destinasi favorit untuk WFC (Work From Cafe), nongkrong, dan bersantai bersama teman atau keluarga.
+                    </p>
+
+                    <!-- Features Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <!-- Hours -->
+                        <div class="bg-gray-50 dark:bg-gray-800 p-5 rounded-xl text-center border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+                            <div class="text-primary text-2xl mb-2"><i class="far fa-clock"></i></div>
+                            <h4 class="font-bold text-gray-900 dark:text-white">Jam Buka</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Setiap Hari</p>
+                            <p class="text-sm font-semibold text-primary">07.00 - 22.00</p>
+                        </div>
+                        <!-- Price -->
+                        <div class="bg-gray-50 dark:bg-gray-800 p-5 rounded-xl text-center border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+                            <div class="text-primary text-2xl mb-2"><i class="fas fa-tags"></i></div>
+                            <h4 class="font-bold text-gray-900 dark:text-white">Harga</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Range / orang</p>
+                            <p class="text-sm font-semibold text-primary">Rp 25k - 50k</p>
+                        </div>
+                        <!-- Facilities -->
+                        <div class="bg-gray-50 dark:bg-gray-800 p-5 rounded-xl text-center border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+                            <div class="text-primary text-2xl mb-2"><i class="fas fa-wifi"></i></div>
+                            <h4 class="font-bold text-gray-900 dark:text-white">Fasilitas</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">WFC Friendly</p>
+                            <p class="text-sm font-semibold text-primary">Indoor & Outdoor</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Content -->
+                <div class="relative reveal delay-200">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-secondary/20 rounded-full z-0"></div>
+                    <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/20 rounded-full z-0"></div>
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEwJPhxmos-YWatNsp6AQkdxAxUuOUfzTliMxiDphhX26gDSISCPei40k5dGR6JsmXAj-iP0S_Ghib-TAY5--TOJlymZkP3T_sTr7IG1Bvg4sRi3qqaKjw8ZbBFRNK50EtNwEk=w408-h544-k-no" 
+                         alt="Interior Brain Coffee Surabaya yang nyaman" 
+                         class="relative z-10 rounded-2xl shadow-2xl w-full h-auto object-cover hover:scale-[1.02] transition-transform duration-500">
+                </div>
+            </div>
+        </section>
+
+        <!-- MENU SECTION -->
+        <section id="menu" class="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-primary font-bold uppercase tracking-wider text-sm mb-2">Menu Kami</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Favorit Pelanggan</h3>
+                    <div class="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+                    <p class="mt-4 text-gray-600 dark:text-gray-300">Nikmati perpaduan rasa terbaik dari bahan berkualitas.</p>
+                </div>
+
+                <!-- Menu Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Item 1: Cappucino -->
+                    <article class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group reveal">
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGN3fArHP8KyVvU1PEpKZcx80jjkX3R3GoH3r06m3af1mA-k4slB3jEMGkDRPiLFocxFuDyLOPpYZyVHsh-70EaciNuczwu1sRkRIO0edN1HZfge5DbeaGcZtk1CvP9kAIlqFjr=w126-h126-p-k-no" alt="Cappucino Brain Coffee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">Best Seller</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Cappucino</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Kopi susu creamy dengan foam sempurna, pilihan tepus untuk menemani harimu.</p>
+                        </div>
+                    </article>
+
+                    <!-- Item 2: Pollo Aglio E Olio -->
+                    <article class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group reveal delay-100">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHmu1NLuGXMF0ofYleiIM2GtIeHdXYeEAgfDjQNkzzpDazE2mQf0lQfd5ES4MC22UwWKGA6HuEC8KbYMijaaKEvL_sVdv5DDg_Zu8BRUdhtpoEkCNP3j2NSQv7zIoMQd5tgHFm2=w126-h126-p-k-no" alt="Pollo Aglio E Olio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Pollo Aglio E Olio</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Pasta ayam dengan bawang putih dan minyak zaitun, aromatik dan lezat.</p>
+                        </div>
+                    </article>
+
+                    <!-- Item 3: Es Kopi -->
+                    <article class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group reveal delay-200">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGoJ3AV21ILoo5Ua708EY1kgDIxSZXL1eYKZqcP3Ks4G7qvtH8WiFWUWtav2ZwHLjxsk6WH-I6oNyo5pFz6ZxLjbx7JGhLP-HS-b60fFDxeXg27VJB0meNrPO8vpkErou1HfJUY65dESjo=w224-h298-k-no" alt="Es Kopi" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Es Kopi</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Kopi dingin segar yang menyegarkan, cocok untuk cuaca panas Surabaya.</p>
+                        </div>
+                    </article>
+
+                    <!-- Item 4: Carbonara -->
+                    <article class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group reveal">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFGC3UPfjtDijb-8sSRDTFQdK2dmtl08I8da-itAHWK0w5jNiVLaoA_EAiZqq-5yGCrQetozpg-84yIDFVURfDRc_CEtcaeb2qQP0Afh0nyK_LbvdBQG2uGmfuxXHTFsJKX7x3xssKU_eA=w397-h298-k-no" alt="Carbonara" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Carbonara</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Creamy pasta dengan saus carbonara autentik yang kaya rasa.</p>
+                        </div>
+                    </article>
+
+                    <!-- Item 5: Nasi Goreng -->
+                    <article class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group reveal delay-100">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFrSOiZe6U_aYNMEfORN-Jt92QxIQurfGhIIkzcwp8Rgjry6xdMNwmWn0laDaz9uGvCd_0wqHDQ1d7VsfX4TqTKUhw97VGOXmEcVfIqTu5xHY7vVRTQqI0i_teslMnN6rn3t-Hna7-o9_s=w224-h298-k-no" alt="Nasi Goreng Spesial" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Nasi Goreng Spesial</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Nasi goreng spesial khas Brain Coffee dengan bumbu rahasia.</p>
+                        </div>
+                    </article>
+
+                    <!-- Item 6: Cheesecake -->
+                    <article class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group reveal delay-200">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGcZEBaaxN5sdtcPagLnOlhXRLzIw5Oq3zHZIYHSq8sLV6HiwV8egOR6EedbRWdkQAKKwCA9J_5aFDkmYfBED8ZO9MOfz26YOhX--vgfqYsOgOtQQ3cp-zkBWDMPHOOV2eShwiyFuFdtvE=w445-h298-k-no" alt="Cheesecake" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Cheesecake</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Dessert creamy lembut dengan topping buah segar.</p>
+                        </div>
+                    </article>
+
+                </div>
+                
+                <div class="text-center mt-12">
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">* Harga menu berkisar Rp 25.000 - Rp 50.000</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section id="gallery" class="py-20 px-4 max-w-7xl mx-auto bg-white dark:bg-gray-900">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-primary font-bold uppercase tracking-wider text-sm mb-2">Galeri</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Suasana Brain Coffee</h3>
+            </div>
+            
+            <!-- Swiper Container -->
+            <div class="swiper gallerySwiper reveal pb-12">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide rounded-xl overflow-hidden shadow-lg h-64 md:h-96">
+                        <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn0k0zmAO3wncD4IqGaenUniGlXe1iu2G5zwPls6Uaorp4i24YaqRBoAZxUqj9paqflWnPyPBzG6sY0BCrsYWRUg6KM62lehcMh7L4tyAHD2RV_fwqUTT0Fh3uaremGZHAJ72ZVBamDtn4Cz=w338-h253-p-k-no" alt="Suasana Cafe 1" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide rounded-xl overflow-hidden shadow-lg h-64 md:h-96">
+                        <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn3cVjer6abX_rAdpRjjkBjc7QIyK8QiVhSQ_fxnlovCyqDau4PDUPQqv2K8DcTokkEXcje4I2cw-k5DKxE2Kdp5bbtRmJx8xRtwIAy7yIRFP3rH0Ufrn9BdPIfIv4wstxqaIXw1FhRVGAPa=w338-h253-p-k-no" alt="Suasana Cafe 2" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide rounded-xl overflow-hidden shadow-lg h-64 md:h-96">
+                        <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn3Ejj9m-Z3JfDRLnxIMqpCOBhIShahZbwNj1FXogWmFmrj6maIYrhYdUeq6tmROmRFYcF9wuaiSkgpe8sUG6l9u3_40PUgqILXCZfbHEKTRLyoYHSE8Ave2tXleZUTqVk6-Q2HdzMFfW7P_=w338-h253-p-k-no" alt="Suasana Cafe 3" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide rounded-xl overflow-hidden shadow-lg h-64 md:h-96">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAH8TVTZ9cy_8UltyjbdQK-dXseVD-n92OlpcganR9IUs5u76BeIcQ_r5e8tilWAcG0ukazxCcHHwwtsOyyiuJGGUhit-Caqi1uUNyYMa3nNV88PFSMwf3nB6an3wETsxm05wJBpBudUy2OK=w224-h298-k-no" alt="Makanan" class="w-full h-full object-cover">
+                    </div>
+                     <!-- Slide 5 -->
+                     <div class="swiper-slide rounded-xl overflow-hidden shadow-lg h-64 md:h-96">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAE8n_tkm3m7yWSbDde-vxRbvTh_o7GLxD3sqSV6YNzobvuFdsbAlgwUFvxUvSnzhsd6AdkbDvQjgOixP2VXwYCauNACMqGWZNvQE5PQe-BmwZ48YX_xWrWiF06OoKoC3NvkTVfHMg=w224-h398-k-no" alt="Croissant" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination mt-8"></div>
+                <!-- Navigation -->
+                <div class="swiper-button-next text-primary dark:text-white"></div>
+                <div class="swiper-button-prev text-primary dark:text-white"></div>
+            </div>
+        </section>
+
+        <!-- REVIEWS SECTION -->
+        <section id="reviews" class="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-primary font-bold uppercase tracking-wider text-sm mb-2">Ulasan</h2>
+                        <h3 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Kata Pelanggan</h3>
+                    </div>
+                    <div class="mt-4 md:mt-0 bg-white dark:bg-gray-900 px-6 py-3 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 flex items-center gap-3">
+                        <div class="text-3xl font-bold text-gray-900 dark:text-white">4.6</div>
+                        <div>
+                            <div class="text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">dari 1.926 ulasan</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Review 1 -->
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-700 reveal">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">FY</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white text-sm">fira yasinta</h4>
+                                <span class="text-xs text-gray-500">2 bulan lalu</span>
+                            </div>
+                            <div class="ml-auto text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm italic mb-4">"Sekalipun tempatnya masuk gang dan kecil, tapi ambiencenya sangat2 nyaman, servicenya oke banget. Makanannya enak dan fresh..."</p>
+                        <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn0k0zmAO3wncD4IqGaenUniGlXe1iu2G5zwPls6Uaorp4i24YaqRBoAZxUqj9paqflWnPyPBzG6sY0BCrsYWRUg6KM62lehcMh7L4tyAHD2RV_fwqUTT0Fh3uaremGZHAJ72ZVBamDtn4Cz=w338-h253-p-k-no" alt="Foto Review Fira" class="w-full h-32 object-cover rounded-lg">
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-700 reveal delay-100">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold">DA</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white text-sm">Diva Nur Azizah</h4>
+                                <span class="text-xs text-gray-500">3 bulan lalu</span>
+                            </div>
+                            <div class="ml-auto text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm italic mb-4">"Saya sangat suka bisa mendapatkan cafe yang nuansanya teduh, nyaman, dan membuat customer tenang. Dengan harga dan rasa dari makanan..."</p>
+                        <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn3cVjer6abX_rAdpRjjkBjc7QIyK8QiVhSQ_fxnlovCyqDau4PDUPQqv2K8DcTokkEXcje4I2cw-k5DKxE2Kdp5bbtRmJx8xRtwIAy7yIRFP3rH0Ufrn9BdPIfIv4wstxqaIXw1FhRVGAPa=w338-h253-p-k-no" alt="Foto Review Diva" class="w-full h-32 object-cover rounded-lg">
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-700 reveal delay-200">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold">AN</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white text-sm">Anasthasia N.U.</h4>
+                                <span class="text-xs text-gray-500">3 bulan lalu</span>
+                            </div>
+                            <div class="ml-auto text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm italic mb-4">"Gak expect bakal seenak itu makanan dan minumannya, sangat worth it!! Makanannya enak, proper, plating, quality and quantity bintang 5 bangettt."</p>
+                        <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn3Ejj9m-Z3JfDRLnxIMqpCOBhIShahZbwNj1FXogWmFmrj6maIYrhYdUeq6tmROmRFYcF9wuaiSkgpe8sUG6l9u3_40PUgqILXCZfbHEKTRLyoYHSE8Ave2tXleZUTqVk6-Q2HdzMFfW7P_=w338-h253-p-k-no" alt="Foto Review Anasthasia" class="w-full h-32 object-cover rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOCATION SECTION -->
+        <section id="location" class="py-20 px-4 max-w-7xl mx-auto bg-white dark:bg-gray-900">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Info -->
+                <div class="reveal">
+                    <h2 class="text-primary font-bold uppercase tracking-wider text-sm mb-2">Lokasi</h2>
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Kunjungi Kami</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0 text-primary">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white">Alamat</h4>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1">
+                                    Jl. Wonokromo Tangkis No.52, Wonokromo, Kec. Wonokromo,<br>
+                                    Surabaya, Jawa Timur 60243
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0 text-primary">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white">Telepon / WhatsApp</h4>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1">0895-0396-9086</p>
+                                <a href="https://wa.me/6289503969086" class="text-primary hover:text-primary-dark font-medium text-sm mt-1 inline-block">Chat Sekarang &rarr;</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0 text-primary">
+                                <i class="far fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white">Jam Operasional</h4>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1">
+                                    Senin - Minggu<br>
+                                    <span class="font-semibold text-gray-900 dark:text-white">07.00 - 22.00 WIB</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="https://www.google.com/maps/place/Brain+Coffee+Surabaya" target="_blank" 
+                           class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark transition-colors">
+                            <i class="fas fa-location-arrow mr-2"></i> Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="h-96 lg:h-auto rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 reveal delay-100">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.756646524714!2d112.7367193147746!3d-7.281899997473937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f970736e6267%3A0x6337381d1342730!2sBrain%20Coffee%20Surabaya!5e0!3m2!1sid!2sid!4v1679800000000!5m2!1sid!2sid" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; min-height: 400px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Peta Lokasi Brain Coffee Surabaya">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-mug-hot text-2xl text-primary"></i>
+                        <span class="font-bold text-xl text-gray-900 dark:text-white">Brain Coffee</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm max-w-sm mb-6">
+                        Tempat ngopi nyaman di Wonokromo, Surabaya. Cocok untuk WFC, bersantai, atau menikmati makanan berkualitas.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white mb-4">Menu Cepat</h4>
+                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <li><a href="#home" class="hover:text-primary transition-colors">Beranda</a></li>
+                        <li><a href="#about" class="hover:text-primary transition-colors">Tentang Kami</a></li>
+                        <li><a href="#menu" class="hover:text-primary transition-colors">Menu Favorit</a></li>
+                        <li><a href="#location" class="hover:text-primary transition-colors">Lokasi</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white mb-4">Hubungi Kami</h4>
+                    <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone text-primary"></i> 0895-0396-9086
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-map-marker-alt text-primary mt-1"></i> 
+                            <span>Jl. Wonokromo Tangkis No.52, Surabaya</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-200 dark:border-gray-700 pt-8 text-center">
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                    &copy; 2024 Brain Coffee Surabaya. *Made by Amantrana*
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/6289503969086?text=Halo%20Brain%20Coffee%20Surabaya%2C%20saya%20ingin%20bertanya%20tentang%20menu..." 
+       target="_blank"
+       class="fixed bottom-6 right-6 z-50 bg-wa hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:scale-110 transition-all duration-300 animate-float group"
+       aria-label="Chat via WhatsApp">
+        <i class="fab fa-whatsapp text-3xl"></i>
+        <!-- Tooltip -->
+        <span class="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            Chat via WhatsApp
+        </span>
+    </a>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTop" 
+            class="fixed bottom-6 right-24 z-40 bg-primary hover:bg-primary-dark text-white p-3 rounded-full shadow-lg hover:scale-110 transition-all duration-300 opacity-0 invisible"
+            aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up text-lg"></i>
+    </button>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. THEME TOGGLE LOGIC
+            const themeToggle = document.getElementById('themeToggle');
+            const html = document.documentElement;
+            
+            // Check LocalStorage or System Preference
+            const savedTheme = localStorage.getItem('brain-coffee-theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                html.classList.add('dark');
+            } else {
+                html.classList.remove('dark');
+            }
+
+            themeToggle.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                const isDark = html.classList.contains('dark');
+                localStorage.setItem('brain-coffee-theme', isDark ? 'dark' : 'light');
+            });
+
+            // 2. MOBILE MENU LOGIC
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const isHidden = mobileMenu.classList.contains('hidden');
+                mobileMenuBtn.innerHTML = isHidden ? '<i class="fas fa-bars text-2xl"></i>' : '<i class="fas fa-times text-2xl"></i>';
+            });
+
+            // Close mobile menu when clicking a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
+                });
+            });
+
+            // 3. BACK TO TOP BUTTON LOGIC
+            const backToTopBtn = document.getElementById('backToTop');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    backToTopBtn.classList.remove('opacity-0', 'invisible');
+                    backToTopBtn.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopBtn.classList.add('opacity-0', 'invisible');
+                    backToTopBtn.classList.remove('opacity-100', 'visible');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // 4. SCROLL ANIMATION (INTERSECTION OBSERVER)
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+
+            // 5. SWIPER JS INITIALIZATION
+            new Swiper('.gallerySwiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                }
+            });
+        });
+    </script>
+</body>
+</html>

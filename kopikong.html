@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Kopikong Coffee Regency Tangerang | Kedai Kopi Terbaik 4.8⭐</title>
+    <meta name="description" content="Nikmati kopi berkualitas di Kopikong Coffee Regency Tangerang. Buka 09.00-22.00. Rating 4.8 dari 48 ulasan. Spesialis kopi strong dan autentik. WA: 0822-4952-2331">
+    <meta name="keywords" content="Kopikong Coffee, Coffee Shop Tangerang, Kopi Enak Tangerang, Tempat Nongkrong Periuk, Kopi Regency">
+    <meta name="author" content="Amantrana">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kopikongcoffee.com/">
+    <meta property="og:title" content="Kopikong Coffee Regency Tangerang | Kedai Kopi Terbaik">
+    <meta property="og:description" content="Spesialis kopi dengan cita rasa strong dan autentik. Tempat nyaman untuk dine-in, takeaway, atau delivery.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- Tailwind Config for Custom Colors -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        coffee: {
+                            100: '#f3e5d8',
+                            200: '#e6cbaa',
+                            300: '#d9b27d',
+                            400: '#cc994f',
+                            500: '#6F4E37', // Primary Coffee Brown
+                            600: '#5a3e2c',
+                            700: '#452e21',
+                            800: '#301f16',
+                            900: '#1b100b',
+                        },
+                        cream: '#F9F5F0',
+                        gold: '#FFD700',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS Overrides -->
+    <style>
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #F9F5F0;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6F4E37;
+            border-radius: 5px;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #2d2d2d;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #d9b27d;
+        }
+
+        /* Swiper Pagination Customization */
+        .swiper-pagination-bullet-active {
+            background-color: #6F4E37 !important;
+        }
+        .dark .swiper-pagination-bullet-active {
+            background-color: #d9b27d !important;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            backdrop-filter: blur(5px);
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80vh;
+            border-radius: 8px;
+            animation: zoom 0.6s;
+        }
+        @keyframes zoom {
+            from {transform:scale(0)} 
+            to {transform:scale(1)}
+        }
+        .close-lightbox {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .close-lightbox:hover,
+        .close-lightbox:focus {
+            color: #6F4E37;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CoffeeShop",
+      "name": "Kopikong Coffee Regency Tangerang",
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93",
+      "priceRange": "Rp 1.000 - Rp 75.000",
+      "telephone": "0822-4952-2331",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Perumahan VTI, RT.008/RW.010, Gebang Raya",
+        "addressLocality": "Kec. Periuk",
+        "addressRegion": "Banten",
+        "postalCode": "15132",
+        "addressCountry": "ID"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "22:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "48"
+      }
+    }
+    </script>
+</head>
+<body class="bg-cream text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="flex flex-col items-center">
+            <i class="fas fa-mug-hot text-6xl text-coffee-500 animate-bounce"></i>
+            <p class="mt-4 text-coffee-600 font-bold text-xl">Kopikong Coffee</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 bg-cream/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md transition-all duration-300">
+        <div class="container mx-auto px-6 lg:px-12 xl:px-24">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-bold text-coffee-600 dark:text-coffee-300 flex items-center gap-2">
+                    <i class="fas fa-coffee"></i> Kopikong
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="hover:text-coffee-500 transition">Beranda</a>
+                    <a href="#about" class="hover:text-coffee-500 transition">Tentang</a>
+                    <a href="#menu" class="hover:text-coffee-500 transition">Menu</a>
+                    <a href="#gallery" class="hover:text-coffee-500 transition">Galeri</a>
+                    <a href="#testimonials" class="hover:text-coffee-500 transition">Ulasan</a>
+                    <a href="#contact" class="hover:text-coffee-500 transition">Kontak</a>
+                    
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle-desktop" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                        <i class="fas fa-moon text-coffee-600 dark:text-yellow-300 text-xl"></i>
+                    </button>
+                    
+                    <a href="https://wa.me/6282249522331" target="_blank" class="bg-coffee-500 text-white px-5 py-2 rounded-full font-medium hover:bg-coffee-600 transition shadow-lg">
+                        Pesan Sekarang
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <button id="theme-toggle-mobile" class="p-2">
+                        <i class="fas fa-moon text-coffee-600 dark:text-yellow-300 text-xl"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-coffee-600 dark:text-coffee-300 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg absolute w-full left-0 border-t dark:border-gray-700">
+            <div class="flex flex-col px-6 py-4 space-y-4">
+                <a href="#home" class="mobile-link block hover:text-coffee-500">Beranda</a>
+                <a href="#about" class="mobile-link block hover:text-coffee-500">Tentang</a>
+                <a href="#menu" class="mobile-link block hover:text-coffee-500">Menu</a>
+                <a href="#gallery" class="mobile-link block hover:text-coffee-500">Galeri</a>
+                <a href="#testimonials" class="mobile-link block hover:text-coffee-500">Ulasan</a>
+                <a href="#contact" class="mobile-link block hover:text-coffee-500">Kontak</a>
+                <a href="https://wa.me/6282249522331" class="block text-center bg-coffee-500 text-white px-5 py-2 rounded-full font-medium">
+                    Pesan via WA
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80" 
+                 alt="Kopi Kong Coffee Shop Interior" 
+                 class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-black/60 dark:bg-black/80"></div>
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 lg:px-12 xl:px-24 text-center text-white">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <span class="bg-coffee-500 text-white px-4 py-1 rounded-full text-sm font-semibold mb-4 inline-block shadow-lg">
+                    ⭐ 4.8 Rating (48 Ulasan)
+                </span>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+                    Kopikong Coffee <br> <span class="text-coffee-300">Regency Tangerang</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+                    Ngopi asik dengan cita rasa strong dan autentik. Tempat nyaman, pelayanan ramah, dan suasana yang bikin betah.
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <a href="#menu" class="bg-white text-coffee-700 px-8 py-3 rounded-full font-bold hover:bg-coffee-100 transition shadow-lg transform hover:-translate-y-1">
+                        Lihat Menu
+                    </a>
+                    <a href="https://wa.me/6282249522331" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-coffee-700 transition shadow-lg transform hover:-translate-y-1">
+                        Hubungi Kami
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <a href="#about" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6 lg:px-12 xl:px-24">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Image Column -->
+                <div class="w-full md:w-1/2" data-aos="fade-right">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                             alt="Barista Kopikong Coffee" 
+                             class="rounded-2xl shadow-2xl relative z-10 w-full">
+                        <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-coffee-200 dark:bg-coffee-800 rounded-2xl -z-0"></div>
+                    </div>
+                </div>
+
+                <!-- Content Column -->
+                <div class="w-full md:w-1/2" data-aos="fade-left">
+                    <h4 class="text-coffee-500 font-bold uppercase tracking-wider mb-2">Tentang Kami</h4>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 dark:text-white">Lebih Dari Sekedar Kopi</h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        Kopikong Coffee adalah kedai kopi lokal di Tangerang dengan rating 4.8 bintang. Kami berdedikasi untuk menyajikan kopi berkualitas dengan cita rasa yang strong dan autentik. Baik Anda ingin dine-in, takeaway cepat, atau contactless delivery, kami siap melayani.
+                    </p>
+                    
+                    <!-- Features Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                        <div class="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition">
+                            <i class="fas fa-utensils text-2xl text-coffee-500 mb-2"></i>
+                            <p class="font-semibold text-sm dark:text-white">Dine-in</p>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition">
+                            <i class="fas fa-shopping-bag text-2xl text-coffee-500 mb-2"></i>
+                            <p class="font-semibold text-sm dark:text-white">Takeaway</p>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition">
+                            <i class="fas fa-motorcycle text-2xl text-coffee-500 mb-2"></i>
+                            <p class="font-semibold text-sm dark:text-white">Delivery</p>
+                        </div>
+                    </div>
+
+                    <!-- Status & Info -->
+                    <div class="flex items-center gap-4">
+                        <div class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-4 py-2 rounded-lg font-bold text-sm flex items-center gap-2">
+                            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                            <span id="open-status">Buka Sekarang</span>
+                        </div>
+                        <div class="text-gray-500 dark:text-gray-400 text-sm">
+                            <i class="far fa-clock mr-1"></i> 09.00 - 22.00 WIB
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-cream dark:bg-gray-800">
+        <div class="container mx-auto px-6 lg:px-12 xl:px-24">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h4 class="text-coffee-500 font-bold uppercase tracking-wider mb-2">Menu Andalan</h4>
+                <h2 class="text-3xl md:text-4xl font-bold dark:text-white">Pilihan Favorit Pelanggan</h2>
+                <p class="text-gray-600 dark:text-gray-400 mt-2">Dibuat dengan bahan premium dan penuh cinta.</p>
+            </div>
+
+            <!-- Swiper for Mobile/Grid for Desktop Wrapper -->
+            <!-- Note: We use a grid layout that acts like a flex container for Swiper on mobile, standard grid on desktop -->
+            <div class="swiper mySwiperMenu pb-12">
+                <div class="swiper-wrapper">
+                    
+                    <!-- Menu Item 1 -->
+                    <div class="swiper-slide w-full md:w-1/2 lg:w-1/3 p-2">
+                        <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition duration-300 h-full flex flex-col">
+                            <div class="relative overflow-hidden h-64">
+                                <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Kopi Engkong" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                                <div class="absolute bottom-0 left-0 bg-coffee-500 text-white px-3 py-1 text-xs font-bold rounded-tr-lg">
+                                    Best Seller
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="text-xl font-bold mb-2 dark:text-white">Kopi Engkong</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 flex-grow">Signature coffee kami dengan rasa strong, autentik, dan membangkitkan semangat.</p>
+                                <div class="flex justify-between items-center mt-auto">
+                                    <span class="text-coffee-600 dark:text-coffee-300 font-bold">Rp 18k - 25k</span>
+                                    <span class="text-xs bg-gray-100 dark:bg-gray-600 px-2 py-1 rounded text-gray-500 dark:text-gray-300">Hot/Ice</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 2 -->
+                    <div class="swiper-slide w-full md:w-1/2 lg:w-1/3 p-2">
+                        <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition duration-300 h-full flex flex-col">
+                            <div class="relative overflow-hidden h-64">
+                                <img src="https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Hot Chocolate" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="text-xl font-bold mb-2 dark:text-white">Hot Chocolate</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 flex-grow">Coklat panas premium dengan tekstur creamy yang meleleh di mulut.</p>
+                                <div class="flex justify-between items-center mt-auto">
+                                    <span class="text-coffee-600 dark:text-coffee-300 font-bold">Rp 20k - 28k</span>
+                                    <span class="text-xs bg-gray-100 dark:bg-gray-600 px-2 py-1 rounded text-gray-500 dark:text-gray-300">Premium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 3 -->
+                    <div class="swiper-slide w-full md:w-1/2 lg:w-1/3 p-2">
+                        <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition duration-300 h-full flex flex-col">
+                            <div class="relative overflow-hidden h-64">
+                                <img src="https://images.unsplash.com/photo-1626200419199-391ae4be7a41?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Macaroni Kukus" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="text-xl font-bold mb-2 dark:text-white">Macaroni Kukus</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 flex-grow">Pasangan sempurna untuk coklat panas. Lembut, gurih, dan mengenyangkan.</p>
+                                <div class="flex justify-between items-center mt-auto">
+                                    <span class="text-coffee-600 dark:text-coffee-300 font-bold">Rp 15k</span>
+                                    <span class="text-xs bg-gray-100 dark:bg-gray-600 px-2 py-1 rounded text-gray-500 dark:text-gray-300">Snack</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 4 -->
+                    <div class="swiper-slide w-full md:w-1/2 lg:w-1/3 p-2">
+                        <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition duration-300 h-full flex flex-col">
+                            <div class="relative overflow-hidden h-64">
+                                <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Oat Milk Coffee" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                                <div class="absolute top-0 right-0 bg-green-500 text-white px-3 py-1 text-xs font-bold rounded-bl-lg">
+                                    Healthy
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="text-xl font-bold mb-2 dark:text-white">Oat Milk Series</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 flex-grow">Pilihan susu non-laktosa (oat milk) untuk kopi yang lebih sehat dan tetap lezat.</p>
+                                <div class="flex justify-between items-center mt-auto">
+                                    <span class="text-coffee-600 dark:text-coffee-300 font-bold">+Rp 5k</span>
+                                    <span class="text-xs bg-gray-100 dark:bg-gray-600 px-2 py-1 rounded text-gray-500 dark:text-gray-300">Non-Lactose</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="swiper-pagination mt-8"></div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="https://linktr.ee/kopikong.id" target="_blank" class="inline-flex items-center gap-2 text-coffee-600 dark:text-coffee-400 font-bold hover:underline">
+                    Lihat Menu Lengkap di Linktree <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6 lg:px-12 xl:px-24">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12" data-aos="fade-up">
+                <div>
+                    <h4 class="text-coffee-500 font-bold uppercase tracking-wider mb-2">Galeri</h4>
+                    <h2 class="text-3xl md:text-4xl font-bold dark:text-white">Suasana Kopikong</h2>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 mt-4 md:mt-0 text-sm">Klik foto untuk memperbesar</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 h-[600px] md:h-[500px]">
+                <!-- Gallery Item 1 (Large) -->
+                <div class="col-span-2 row-span-2 relative group overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         alt="Interior Coffee Shop" 
+                         class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="col-span-1 row-span-1 relative group overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         alt="Latte Art" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="col-span-1 row-span-1 relative group overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         alt="Coffee Beans" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 (Wide) -->
+                <div class="col-span-2 row-span-1 relative group overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         alt="Cozy Corner" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-cream dark:bg-gray-800">
+        <div class="container mx-auto px-6 lg:px-12 xl:px-24">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h4 class="text-coffee-500 font-bold uppercase tracking-wider mb-2">Testimoni</h4>
+                <h2 class="text-3xl md:text-4xl font-bold dark:text-white">Kata Mereka</h2>
+                <div class="flex justify-center items-center gap-1 mt-2 text-yellow-500">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    <span class="text-gray-600 dark:text-gray-400 ml-2 text-sm font-medium">4.8/5.0 dari 48 Ulasan</span>
+                </div>
+            </div>
+
+            <!-- Swiper Container -->
+            <div class="swiper mySwiperTestimonial pb-10" data-aos="zoom-in">
+                <div class="swiper-wrapper">
+                    
+                    <!-- Review 1 -->
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg h-full flex flex-col">
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn24BQlLueg8Vwm75CtTNYVkgftmMyCrtoGD48mgsOFgUlZaBQoRs4WJzIahIz81avSsIoSGdsC_9sYLuyCStXUbp24mvxBdiWsLuLCf6aQfhMeHkivO8hF6h_Z4-7H-Oy8aiilWDg=w338-h506-p-k-no" 
+                                     alt="Haris Kurniawan" class="w-14 h-14 rounded-full object-cover border-2 border-coffee-300">
+                                <div>
+                                    <h5 class="font-bold dark:text-white">Haris Kurniawan</h5>
+                                    <div class="text-yellow-400 text-xs">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 italic mb-4 flex-grow">
+                                "Baristanya hapal bener yg biasa di pesan langganan. Good job Cecil! Pelayanan sangat personal dan mengingat preferensi pelanggan."
+                            </p>
+                            <div class="mt-2 pt-4 border-t dark:border-gray-600 flex justify-between items-center">
+                                <span class="text-xs text-gray-400">Google Review</span>
+                                <i class="fab fa-google text-red-500"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg h-full flex flex-col">
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn3XWGTix6XB6LgHESs03V9qQSE-rOQyK5rLQL_dxxeCKL9DAlAUQzF_wI_FMIpejhAChRwAKQzN3S4JyPNFvHSUbeCWzBfjikYQyq6Nm4xF0bvWGZpTDt4SMlLkx3FnrnzbRXYPcA=w338-h506-p-k-no" 
+                                     alt="Brndtte Prsl" class="w-14 h-14 rounded-full object-cover border-2 border-coffee-300">
+                                <div>
+                                    <h5 class="font-bold dark:text-white">Brndtte Prsl</h5>
+                                    <div class="text-yellow-400 text-xs">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 italic mb-4 flex-grow">
+                                "Enak banget dah pokok nyaaaaaa dabestttt! Yang laen minggir dulu. Kualitas produk benar-benar terbaik."
+                            </p>
+                            <div class="mt-2 pt-4 border-t dark:border-gray-600 flex justify-between items-center">
+                                <span class="text-xs text-gray-400">Google Review</span>
+                                <i class="fab fa-google text-red-500"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg h-full flex flex-col">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-14 h-14 rounded-full bg-coffee-100 dark:bg-coffee-600 flex items-center justify-center text-coffee-600 dark:text-white font-bold text-xl">
+                                    C
+                                </div>
+                                <div>
+                                    <h5 class="font-bold dark:text-white">Customer</h5>
+                                    <div class="text-yellow-400 text-xs">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 italic mb-4 flex-grow">
+                                "Pelayanan nya memuaskan, minumannya good, barista nya ramah banget! Highly recommended untuk pecinta kopi."
+                            </p>
+                            <div class="mt-2 pt-4 border-t dark:border-gray-600 flex justify-between items-center">
+                                <span class="text-xs text-gray-400">Google Review</span>
+                                <i class="fab fa-google text-red-500"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg h-full flex flex-col">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-14 h-14 rounded-full bg-coffee-100 dark:bg-coffee-600 flex items-center justify-center text-coffee-600 dark:text-white font-bold text-xl">
+                                    C
+                                </div>
+                                <div>
+                                    <h5 class="font-bold dark:text-white">Customer</h5>
+                                    <div class="text-yellow-400 text-xs">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 italic mb-4 flex-grow">
+                                "Tempat nyaman bersih, owner ramah, produk enak berkualitas. Suasana cozy untuk nongkrong atau kerja."
+                            </p>
+                            <div class="mt-2 pt-4 border-t dark:border-gray-600 flex justify-between items-center">
+                                <span class="text-xs text-gray-400">Google Review</span>
+                                <i class="fab fa-google text-red-500"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg h-full flex flex-col">
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="https://lh3.googleusercontent.com/grass-cs/ANxoTn1nPCfTG7iVKOferj7ILKHQusdlxcG6_I8DTiCz2OvGzVhOI3O9s4B2WCEGvX1IuKk0XJe0gRYcVYUONc6bkIB8jdeKRz1ORc6xDg_1FsldQk_CgK4yP-Q2ceqjixh9_TdH_99RI-VxAZOB=w675-h506-p-k-no" 
+                                     alt="Rasyadhiwa Wiratna" class="w-14 h-14 rounded-full object-cover border-2 border-coffee-300">
+                                <div>
+                                    <h5 class="font-bold dark:text-white">Rasyadhiwa W.</h5>
+                                    <div class="text-yellow-400 text-xs">⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 italic mb-4 flex-grow">
+                                "Pesen lewat gofood dan ternyata enak! Rasa kopinya bener-bener strong, gula bisa request, ada pilihan oat milk. Harga standar coffee shop."
+                            </p>
+                            <div class="mt-2 pt-4 border-t dark:border-gray-600 flex justify-between items-center">
+                                <span class="text-xs text-gray-400">Google Review</span>
+                                <i class="fab fa-google text-red-500"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination mt-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-6 lg:px-12 xl:px-24">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Map Column -->
+                <div class="w-full lg:w-1/2 h-96 lg:h-auto rounded-2xl overflow-hidden shadow-lg border-4 border-gray-100 dark:border-gray-700" data-aos="fade-right">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Perumahan+VTI,+RT.008/RW.010,+Gebang+Raya,+Kec.+Periuk,+Kota+Tangerang,+Banten+15132&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        title="Lokasi Kopikong Coffee">
+                    </iframe>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div class="w-full lg:w-1/2 flex flex-col justify-center" data-aos="fade-left">
+                    <h4 class="text-coffee-500 font-bold uppercase tracking-wider mb-2">Lokasi & Kontak</h4>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8 dark:text-white">Kunjungi Kami</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-coffee-100 dark:bg-coffee-800 rounded-full flex items-center justify-center text-coffee-600 dark:text-coffee-300 shrink-0">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-lg dark:text-white">Alamat</h5>
+                                <p class="text-gray-600 dark:text-gray-400">Perumahan VTI, RT.008/RW.010, Gebang Raya, Kec. Periuk, Kota Tangerang, Banten 15132</p>
+                                <a href="https://plus.codes/6P4J+CJR Tangerang City, Banten" target="_blank" class="text-sm text-coffee-500 hover:underline">Plus Code: 6P4J+CJR</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-coffee-100 dark:bg-coffee-800 rounded-full flex items-center justify-center text-coffee-600 dark:text-coffee-300 shrink-0">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-lg dark:text-white">WhatsApp / Telepon</h5>
+                                <a href="https://wa.me/6282249522331" class="text-gray-600 dark:text-gray-400 hover:text-coffee-500 transition">0822-4952-2331</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-coffee-100 dark:bg-coffee-800 rounded-full flex items-center justify-center text-coffee-600 dark:text-coffee-300 shrink-0">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-lg dark:text-white">Instagram</h5>
+                                <a href="https://instagram.com/kopikong.id" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-coffee-500 transition">@kopikong.id</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-coffee-100 dark:bg-coffee-800 rounded-full flex items-center justify-center text-coffee-600 dark:text-coffee-300 shrink-0">
+                                <i class="far fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-lg dark:text-white">Jam Operasional</h5>
+                                <p class="text-gray-600 dark:text-gray-400">Setiap Hari: 09.00 - 22.00 WIB</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex gap-4">
+                        <a href="https://maps.google.com/maps?q=Perumahan+VTI,+RT.008/RW.010,+Gebang+Raya,+Kec.+Periuk,+Kota+Tangerang,+Banten+15132" target="_blank" class="bg-blue-500 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-600 transition flex items-center gap-2">
+                            <i class="fas fa-directions"></i> Petunjuk Arah
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-coffee-900 text-coffee-100 py-12">
+        <div class="container mx-auto px-6 lg:px-12 xl:px-24">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <a href="#" class="text-2xl font-bold flex items-center gap-2 justify-center md:justify-start mb-2">
+                        <i class="fas fa-coffee"></i> Kopikong Coffee
+                    </a>
+                    <p class="text-coffee-300 text-sm">Ngopi Asik di Regency Tangerang.</p>
+                </div>
+                <div class="flex gap-6">
+                    <a href="https://instagram.com/kopikong.id" class="w-10 h-10 rounded-full bg-coffee-800 flex items-center justify-center hover:bg-coffee-700 transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/6282249522331" class="w-10 h-10 rounded-full bg-coffee-800 flex items-center justify-center hover:bg-coffee-700 transition">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://maps.google.com" class="w-10 h-10 rounded-full bg-coffee-800 flex items-center justify-center hover:bg-coffee-700 transition">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-coffee-800 pt-8 text-center text-sm text-coffee-400 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>&copy; 2023 Kopikong Coffee. All rights reserved.</p>
+                <p>Made by <span class="text-coffee-300 font-bold">Amantrana</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button (WA) -->
+    <a href="https://wa.me/6282249522331" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-3xl z-40 hover:bg-green-600 transition hover:-translate-y-1" aria-label="Chat WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-24 right-6 bg-coffee-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-xl z-40 opacity-0 pointer-events-none transition-all duration-300 hover:bg-coffee-600" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+        // 1. Initialize AOS (Animate On Scroll)
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+
+        // 2. Preloader
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+
+        // 3. Dark Mode Logic
+        const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const html = document.documentElement;
+
+        // Check Local Storage
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            updateIcons(true);
+        } else {
+            html.classList.remove('dark');
+            updateIcons(false);
+        }
+
+        function toggleTheme() {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.theme = 'light';
+                updateIcons(false);
+            } else {
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+                updateIcons(true);
+            }
+        }
+
+        function updateIcons(isDark) {
+            const iconClass = isDark ? 'fa-sun' : 'fa-moon';
+            const colorClass = isDark ? 'text-yellow-300' : 'text-coffee-600';
+            
+            [themeToggleDesktop, themeToggleMobile].forEach(btn => {
+                const icon = btn.querySelector('i');
+                icon.className = `fas ${iconClass} ${colorClass} text-xl`;
+            });
+        }
+
+        themeToggleDesktop.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+
+        // 4. Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // 5. Swiper.js Initialization
+        // Menu Swiper
+        const swiperMenu = new Swiper(".mySwiperMenu", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    allowTouchMove: false, // Disable swipe on desktop for better scroll experience if needed
+                    pagination: false, // Hide pagination on desktop grid look
+                },
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+
+        // Testimonials Swiper
+        const swiperTestimonial = new Swiper(".mySwiperTestimonial", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+        });
+
+        // 6. Open Status Logic
+        function updateOpenStatus() {
+            const now = new Date();
+            const hour = now.getHours();
+            const statusEl = document.getElementById('open-status');
+            // Buka 09.00 - 22.00
+            if (hour >= 9 && hour < 22) {
+                statusEl.textContent = "Buka Sekarang";
+                statusEl.parentElement.className = "bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-4 py-2 rounded-lg font-bold text-sm flex items-center gap-2";
+                statusEl.previousElementSibling.className = "w-2 h-2 bg-green-500 rounded-full animate-pulse";
+            } else {
+                statusEl.textContent = "Tutup Sekarang";
+                statusEl.parentElement.className = "bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 px-4 py-2 rounded-lg font-bold text-sm flex items-center gap-2";
+                statusEl.previousElementSibling.className = "w-2 h-2 bg-red-500 rounded-full";
+            }
+        }
+        updateOpenStatus();
+        setInterval(updateOpenStatus, 60000); // Check every minute
+
+        // 7. Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src;
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeLightbox(event) {
+            if (event.target !== lightboxImg) {
+                lightbox.style.display = "none";
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // 8. Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 9. Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+    </script>
+</body>
+</html>
